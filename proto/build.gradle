@@ -1,0 +1,12 @@
+dependencies {
+  implementation 'com.google.protobuf:protobuf-java:3.6.1'
+}
+
+tasks.register("runApp", JavaExec) {
+    group = "application"
+    description = "Run the app module"
+
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = "bftsmart.serde.proto.Test"
+    args "foo", "bar"
+}

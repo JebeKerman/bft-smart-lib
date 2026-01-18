@@ -1,1 +1,5 @@
 rootProject.name = 'library'
+
+include(
+	"proto",
+)

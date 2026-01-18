@@ -1,0 +1,46 @@
+
+syntax = "proto3";
+
+package bftsmart.serde.proto;
+
+enum TOMMessageType {
+  ORDERED_REQUEST          = 0;
+  UNORDERED_REQUEST        = 1;
+  REPLY                    = 2;
+  RECONFIG                 = 3;
+  ASK_STATUS               = 4;
+  STATUS_REPLY             = 5;
+  UNORDERED_HASHED_REQUEST = 6;
+  ORDERED_HASHED_REQUEST   = 7;
+}
+
+message SystemMessage {
+  int32 sender_id = 1;
+  oneof payload {
+    ConsensusMessage consensus_msg = 2;
+    TOMMessage       tom_msg       = 3;
+  }
+}
+
+message TOMMessage {
+  int32          view_id      = 1;
+  TOMMessageType type         = 2;
+  int32          session      = 3;
+  int32          sequence     = 4;
+  int32          operation_id = 5;
+  int32          reply_server = 6;
+  string         content      = 7;
+}
+
+enum PaxosType {
+  COLLECT = 0;
+  PROPOSE = 1;
+}
+
+message ConsensusMessage {
+  int32     number = 1;
+  int32     epoch  = 2;
+  PaxosType type   = 3;
+  bytes     value  = 4; // Value used when PROPOSE
+  bytes     proof  = 5; // Proof, when COLLECT TODO: How to handle 'Object?'
+}
