@@ -187,6 +187,7 @@ tasks.withType(Javadoc) {
 dependencies {
 	implementation fileTree('lib'){include '*.jar'}
 	
+	implementation project(":messages")
 	implementation project(":proto")
 
 	// https://mvnrepository.com/artifact/org.bouncycastle/bcpkix-jdk15on

@@ -1,7 +1,7 @@
 
 syntax = "proto3";
 
-package bftsmart.serde.proto;
+package bftsmart.serialization.proto;
 
 enum TOMMessageType {
   ORDERED_REQUEST          = 0;
@@ -33,8 +33,11 @@ message TOMMessage {
 }
 
 enum PaxosType {
-  COLLECT = 0;
-  PROPOSE = 1;
+  PROPOSE = 0;
+  WRITE = 1;
+  ACCEPT = 2;
+  REQ_DECISION = 3;
+  FWD_DECISION = 4;
 }
 
 message ConsensusMessage {

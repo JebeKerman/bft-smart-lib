@@ -1,14 +1,14 @@
-package bftsmart.serde.proto;
+package bftsmart.serialization.proto;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import com.google.protobuf.ByteString;
-import bftsmart.serde.proto.Messages.ConsensusMessage;
-import bftsmart.serde.proto.Messages.PaxosType;
-import bftsmart.serde.proto.Messages.SystemMessage;
-import bftsmart.serde.proto.Messages.TOMMessage;
-import bftsmart.serde.proto.Messages.TOMMessageType;
+import bftsmart.serialization.proto.ProtoMessages.ConsensusMessage;
+import bftsmart.serialization.proto.ProtoMessages.PaxosType;
+import bftsmart.serialization.proto.ProtoMessages.SystemMessage;
+import bftsmart.serialization.proto.ProtoMessages.TOMMessage;
+import bftsmart.serialization.proto.ProtoMessages.TOMMessageType;
 
 public class Test {
   public static void main(String[] args) {

@@ -1,4 +1,6 @@
 dependencies {
+	implementation project(":messages")
+
   implementation 'com.google.protobuf:protobuf-java:3.6.1'
 }
 
