@@ -22,20 +22,10 @@ message SystemMessage {
   }
 }
 
-message TOMMessage {
-  int32          view_id      = 1;
-  TOMMessageType type         = 2;
-  int32          session      = 3;
-  int32          sequence     = 4;
-  int32          operation_id = 5;
-  int32          reply_server = 6;
-  string         content      = 7;
-}
-
 enum PaxosType {
-  PROPOSE = 0;
-  WRITE = 1;
-  ACCEPT = 2;
+  PROPOSE      = 0;
+  WRITE        = 1;
+  ACCEPT       = 2;
   REQ_DECISION = 3;
   FWD_DECISION = 4;
 }
@@ -46,4 +36,70 @@ message ConsensusMessage {
   PaxosType type   = 3;
   bytes     value  = 4; // Value used when PROPOSE
   bytes     proof  = 5; // Proof, when COLLECT TODO: How to handle 'Object?'
+}
+
+message VMMessage {
+  ReconfigurationReply reply = 1;
+}
+
+message SMMessage {
+  // Application state.. How?
+  View  view               = 1;
+  int32 cid                = 2;
+  int32 type               = 3;
+  int32 regency            = 4;
+  bool  trigger_sm_locally = 5;
+}
+
+message CSTSMMessage {
+  CSTRequestF1 cst_config = 1;
+}
+
+message StandardSMMMessage {
+  SMMessage parent  = 1;
+  int32     replica = 2;
+}
+
+message ForwardedMessage {
+  TOMMessage request = 1;
+}
+
+message TOMMessage {
+  int32          view_id      = 1;
+  TOMMessageType type         = 2;
+  int32          session      = 3;
+  int32          sequence     = 4;
+  int32          operation_id = 5;
+  int32          reply_server = 6;
+  string         content      = 7;
+}
+
+message LCMessage {
+  int32 type               = 1;
+  int32 ts                 = 2;
+  bytes payload            = 3;
+  bool  trigger_lc_locally = 4;
+}
+
+message ReconfigurationReply {
+  View            view     = 1;
+  repeated string join_set = 2;
+}
+
+message View {
+  int32              id        = 1;
+  int32              f         = 2;
+  repeated int32     processes = 3;
+  map<int32, string> addresses = 4;
+}
+
+message CSTRequestF1 {
+  int32  cid                = 1;
+  int32  checkpoint_replica = 2;
+  int32  log_upper          = 3;
+  int32  log_lower          = 4;
+  int32  ckp_period         = 5;
+  int32  log_upper_size     = 6;
+  int32  log_lower_size     = 7;
+  string address            = 8;
 }
