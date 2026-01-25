@@ -124,3 +124,24 @@ If you are interested in learning more about BFT-SMaRt, you can read:
 - The paper about read-only optimization published in [SRDS'21](https://arxiv.org/pdf/2107.11144).
 
 ***Feel free to contact us if you have any questions!***
+
+## Gradle Tasks
+
+Formatting:
+
+```bash
+./gradlew spotlessApply # Applies code formatting steps to sourcecode in-place.
+./gradlew spotlessCheck # Checks that sourcecode satisfies formatting steps.
+```
+
+Coverage Reports:
+
+```bash
+./gradlew jacocoTestReport # Generates code coverage reports.
+```
+
+Benchmarks
+
+```bash
+./gradlew jvm # Runs all JVM-based benchmarks.
+```

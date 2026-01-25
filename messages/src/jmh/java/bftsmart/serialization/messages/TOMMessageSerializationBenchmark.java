@@ -1,7 +1,5 @@
 package bftsmart.serialization.messages;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import bftsmart.serialization.JavaSerializer;
 import bftsmart.serialization.MessageSerializer;
 import bftsmart.tom.core.messages.TOMMessageType;
@@ -48,6 +46,7 @@ public class TOMMessageSerializationBenchmark {
 
     @Benchmark
     public void jacksonSerialize() throws Exception {
+        os.reset();
         serializer.serialize(message, os);
     }
 }
