@@ -18,6 +18,7 @@ package bftsmart.communication.client.netty;
 import bftsmart.communication.client.CommunicationSystemServerSide;
 import bftsmart.communication.client.RequestReceiver;
 import bftsmart.reconfiguration.ServerViewController;
+import bftsmart.serialization.JavaSerializer;
 import bftsmart.tom.core.messages.TOMMessage;
 import bftsmart.tom.util.TOMUtil;
 import io.netty.bootstrap.ServerBootstrap;
@@ -283,14 +284,10 @@ public class NettyClientServerCommunicationSystemServerSide extends SimpleChanne
 	public void send(int[] targets, TOMMessage sm, boolean serializeClassHeaders) {
 
 		// serialize message
-		ObjectOutputStream dos = null;
-
 		byte[] data = null;
 		try {
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			dos = new ObjectOutputStream(baos);
-			sm.writeExternal(dos);
-			dos.flush();
+			JavaSerializer.getInstance().serialize(sm, baos);
 			data = baos.toByteArray();
 			sm.serializedMessage = data;
 		} catch (IOException ex) {

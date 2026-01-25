@@ -19,6 +19,7 @@ public class JavaSerializer implements MessageSerializer {
     public <T extends SystemMessage> void serialize(T msg, OutputStream out) throws IOException {
         try (ObjectOutputStream oos = new ObjectOutputStream(out)) {
             msg.writeExternal(oos);
+            out.flush();
         }
     }
 

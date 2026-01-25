@@ -18,9 +18,10 @@ package bftsmart.tom.core.messages;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.io.ObjectInput;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
+import bftsmart.serialization.JavaSerializer;
 import bftsmart.serialization.messages.TOMMessagePlain;
 import bftsmart.tom.util.DebugInfo;
 import org.slf4j.LoggerFactory;
@@ -225,27 +226,23 @@ public class TOMMessage extends TOMMessagePlain implements Comparable<TOMMessage
 	 }
 
 	 public static byte[] messageToBytes(TOMMessage m) {
-		 ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		 try (ObjectOutputStream dos = new ObjectOutputStream(baos)) {
-			 m.writeExternal(dos);
-			 dos.flush();
+		 try (ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
+			 JavaSerializer.getInstance().serialize(m, baos);
+			 return baos.toByteArray();
 		 }catch(Exception e) {
 		 }
-		 return baos.toByteArray();
+		 return new byte[0];
 	 }
 
 	 public static TOMMessage bytesToMessage(byte[] b) {
 		 ByteArrayInputStream bais = new ByteArrayInputStream(b);
 		 
-		 TOMMessage m = new TOMMessage();
 		 try (ObjectInputStream dis = new ObjectInputStream(bais)) {
-			 m.readExternal(dis);
+			return JavaSerializer.getInstance().deserialize(bais, TOMMessage.class);
 		 }catch(Exception e) {
 			 LoggerFactory.getLogger(TOMMessage.class).error("Failed to deserialize TOMMessage",e);
 			 return null;
 		 }
-
-		 return m;
 	 }
 
 	 @Override

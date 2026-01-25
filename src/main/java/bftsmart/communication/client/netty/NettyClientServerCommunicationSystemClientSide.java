@@ -47,6 +47,7 @@ import org.slf4j.LoggerFactory;
 import bftsmart.communication.client.CommunicationSystemClientSide;
 import bftsmart.communication.client.ReplyReceiver;
 import bftsmart.reconfiguration.ClientViewController;
+import bftsmart.serialization.JavaSerializer;
 import bftsmart.tom.core.messages.TOMMessage;
 import bftsmart.tom.util.TOMUtil;
 import io.netty.bootstrap.Bootstrap;
@@ -339,12 +340,9 @@ public class NettyClientServerCommunicationSystemClientSide extends SimpleChanne
 	 */
 	private void serializeMessage(TOMMessage sm) {
 		// serialize message
-		ObjectOutputStream dos = null;
 		try {
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			dos = new ObjectOutputStream(baos);
-			sm.writeExternal(dos);
-			dos.flush();
+			JavaSerializer.getInstance().serialize(sm, baos);
 			sm.serializedMessage = baos.toByteArray();
 		} catch (IOException ex) {
 			logger.error("Impossible to serialize message: " + sm);
@@ -353,13 +351,10 @@ public class NettyClientServerCommunicationSystemClientSide extends SimpleChanne
 
 	public void sign(TOMMessage sm) {
 		// serialize message
-		ObjectOutputStream dos = null;
 		byte[] data = null;
 		try {
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			dos = new ObjectOutputStream(baos);
-			sm.writeExternal(dos);
-			dos.flush();
+			JavaSerializer.getInstance().serialize(sm, baos);
 			data = baos.toByteArray();
 			sm.serializedMessage = data;
 		} catch (IOException ex) {

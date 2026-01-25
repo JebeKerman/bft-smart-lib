@@ -17,10 +17,7 @@ package bftsmart.communication.server;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import bftsmart.serialization.JavaSerializer;
 import bftsmart.tom.core.messages.TOMMessage;
 import bftsmart.tom.core.messages.TOMMessageType;
 
@@ -32,28 +29,18 @@ public class TestSerialization {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
-        // TODO code application logic here
         TOMMessage tm = new TOMMessage(0,0,0,0, new String("abc").getBytes(),0, TOMMessageType.ORDERED_REQUEST);
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream(4);
-        ObjectOutputStream oos = new ObjectOutputStream(baos);
-
-        tm.writeExternal(oos);
-        oos.flush();
-        //oos.writeObject(tm);
-
+        JavaSerializer.getInstance().serialize(tm, baos);
 
         byte[] message = baos.toByteArray();
         System.out.println(message.length);
 
         ByteArrayInputStream bais = new ByteArrayInputStream(message);
-        ObjectInputStream ois = new ObjectInputStream(bais);
+        TOMMessage tm2 = JavaSerializer.getInstance().deserialize(bais, TOMMessage.class);
 
-        //TOMMessage tm2 = (TOMMessage) ois.readObject();
-        TOMMessage tm2 = new TOMMessage();
-        tm2.readExternal(ois);
-
-//        System.out.println(new String(tm2.getContent()));
+        System.out.println(new String(tm2.getContent()));
     }
 
 }
