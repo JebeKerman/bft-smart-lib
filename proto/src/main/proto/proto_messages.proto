@@ -21,13 +21,6 @@ message TOMMessage {
   bytes          content      = 7;
 }
 
-enum PaxosType {
-  PROPOSE      = 0;
-  WRITE        = 1;
-  ACCEPT       = 2;
-  REQ_DECISION = 3;
-  FWD_DECISION = 4;
-}
 
 message ConsensusMessage {
   int32     number = 1;
@@ -35,6 +28,14 @@ message ConsensusMessage {
   PaxosType type   = 3;
   bytes     value  = 4; // Value used when PROPOSE
   bytes     proof  = 5; // Proof, when COLLECT TODO: How to handle 'Object?'
+}
+
+enum PaxosType {
+  PROPOSE      = 0;
+  WRITE        = 1;
+  ACCEPT       = 2;
+  REQ_DECISION = 3;
+  FWD_DECISION = 4;
 }
 
 message VMMessage {
@@ -50,7 +51,7 @@ message SMMessage {
   bool  trigger_sm_locally = 5;
 }
 
-message CSTSMMessage {
+message CSTSMMessage { // Extends SMMessage...
   CSTRequestF1 cst_config = 1;
 }
 
