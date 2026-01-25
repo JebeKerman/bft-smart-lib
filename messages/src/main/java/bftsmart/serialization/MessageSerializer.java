@@ -1,12 +1,13 @@
 package bftsmart.serialization;
 
+import bftsmart.communication.SystemMessage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import bftsmart.communication.SystemMessage;
 
 public interface MessageSerializer {
-  void serialize(SystemMessage msg, OutputStream out) throws IOException;
+    <T extends SystemMessage> void serialize(T msg, OutputStream out) throws IOException;
 
-  SystemMessage deserialize(InputStream in) throws IOException;
+    <T extends SystemMessage> T deserialize(InputStream in, Class<T> clazz)
+            throws IOException, ClassNotFoundException;
 }
