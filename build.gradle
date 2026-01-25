@@ -2,7 +2,11 @@ plugins {
 	id 'java'
 	id 'distribution'
 	id 'org.hidetake.ssh' version '2.10.1'
- 	id 'com.google.protobuf' version '0.9.6'
+
+	// Coverage report
+	id 'jacoco' 
+	// Formatting
+	id 'com.diffplug.spotless' version '8.2.0'
 }
 
 group 'BFT-SMaRt'
@@ -14,8 +18,9 @@ java {
 }
 
 subprojects {
-    apply plugin: "java"
-		apply plugin: "com.google.protobuf"
+    apply plugin: 'java'
+    apply plugin: 'jacoco'
+    apply plugin: 'com.diffplug.spotless'
 
     repositories {
         mavenCentral()
@@ -24,6 +29,37 @@ subprojects {
 		java {
 			sourceCompatibility = JavaLanguageVersion.of(8)
 			targetCompatibility = JavaLanguageVersion.of(8)
+		}
+
+		spotless {
+				java {
+    			targetExclude("build/generated/**/*.java")
+					googleJavaFormat().aosp()
+								
+					importOrder()
+
+					formatAnnotations()
+				}
+		}
+
+		dependencies {
+			testImplementation 'org.junit.jupiter:junit-jupiter:5.7.1'
+
+			testImplementation 'net.jqwik:jqwik:1.9.3'
+
+			testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+		}
+	
+		test {
+			useJUnitPlatform()
+			testLogging {
+				events "passed", "failed", "skipped"
+        exceptionFormat "full"
+        showExceptions true
+        showCauses true
+        showStackTraces true
+        showStandardStreams true
+			}
 		}
 }
 
