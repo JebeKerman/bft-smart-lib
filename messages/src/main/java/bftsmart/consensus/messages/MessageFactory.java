@@ -1,49 +1,47 @@
 /**
-Copyright (c) 2007-2013 Alysson Bessani, Eduardo Alchieri, Paulo Sousa, and the authors indicated in the @author tags
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
+ * Copyright (c) 2007-2013 Alysson Bessani, Eduardo Alchieri, Paulo Sousa, and the authors indicated
+ * in the @author tags
+ *
+ * <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of the License at
+ *
+ * <p>http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * <p>Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package bftsmart.consensus.messages;
 
-/**
- * This class work as a factory of messages used in the paxos protocol.
- */
-public class MessageFactory{
+/** This class work as a factory of messages used in the paxos protocol. */
+public class MessageFactory {
 
     // constants for messages types
     public static final int PROPOSE = 44781;
-    public static final int WRITE    = 44782;
-    public static final int ACCEPT  = 44783;
+    public static final int WRITE = 44782;
+    public static final int ACCEPT = 44783;
 
     // START DECISION-FORWARDING
-    public static final int REQ_DECISION  = 44784;
-    public static final int FWD_DECISION  = 44785;
+    public static final int REQ_DECISION = 44784;
+    public static final int FWD_DECISION = 44785;
     // END DECISION-FORWARDING
 
     private int from; // Replica ID of the process which sent this message
 
     /**
      * Creates a message factory
+     *
      * @param from Replica ID of the process which sent this message
      */
     public MessageFactory(int from) {
 
         this.from = from;
-
     }
 
     /**
      * Creates a PROPOSE message to be sent by this process
+     *
      * @param id Consensus's execution ID
      * @param epoch Epoch number
      * @param value Proposed value
@@ -53,11 +51,11 @@ public class MessageFactory{
     public ConsensusMessage createPropose(int id, int epoch, byte[] value) {
 
         return new ConsensusMessage(PROPOSE, id, epoch, from, value);
-
     }
 
     /**
      * Creates a WRITE message to be sent by this process
+     *
      * @param id Consensus's execution ID
      * @param epoch Epoch number
      * @param value Write value
@@ -65,12 +63,12 @@ public class MessageFactory{
      */
     public ConsensusMessage createWrite(int id, int epoch, byte[] value) {
 
-        return new ConsensusMessage(WRITE,id,epoch, from, value);
-
+        return new ConsensusMessage(WRITE, id, epoch, from, value);
     }
 
     /**
      * Creates an ACCEPT message to be sent by this process
+     *
      * @param id Consensus's execution ID
      * @param epoch Epoch number
      * @param value Accepted value
@@ -78,25 +76,24 @@ public class MessageFactory{
      */
     public ConsensusMessage createAccept(int id, int epoch, byte[] value) {
 
-        return new ConsensusMessage(ACCEPT,id,epoch, from, value);
-
+        return new ConsensusMessage(ACCEPT, id, epoch, from, value);
     }
-
 
     /**
      * Creates a REQUEST_DECISION message to be sent by this process
+     *
      * @param id Consensus's execution ID
      * @param epoch Epoch number
      * @return A consensus message of the REQ_DECISION type, with the specified id, epoch, and value
      */
     public ConsensusMessage createRequestDecision(int id, int epoch, byte[] value) {
 
-        return new ConsensusMessage(REQ_DECISION,id,epoch, from, value);
-
+        return new ConsensusMessage(REQ_DECISION, id, epoch, from, value);
     }
 
     /**
      * Creates a FWD_DECISION message to be sent by this process
+     *
      * @param id Consensus's execution ID
      * @param epoch Epoch number
      * @param value Write value
@@ -104,10 +101,6 @@ public class MessageFactory{
      */
     public ConsensusMessage createForwardDecision(int id, int epoch, byte[] value) {
 
-        return new ConsensusMessage(FWD_DECISION,id,epoch, from, value);
-
+        return new ConsensusMessage(FWD_DECISION, id, epoch, from, value);
     }
-
-
 }
-
