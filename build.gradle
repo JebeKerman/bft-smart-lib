@@ -7,6 +7,8 @@ plugins {
 	id 'jacoco' 
 	// Formatting
 	id 'com.diffplug.spotless' version '8.2.0'
+	// Benchmarks
+	id 'me.champeau.jmh' version '0.7.3'
 }
 
 group 'BFT-SMaRt'
@@ -20,7 +22,8 @@ java {
 subprojects {
     apply plugin: 'java'
     apply plugin: 'jacoco'
-    apply plugin: 'com.diffplug.spotless'
+    apply plugin: 'com.diffplug.spotless' 
+    apply plugin: 'me.champeau.jmh' 
 
     repositories {
         mavenCentral()
@@ -48,6 +51,10 @@ subprojects {
 			testImplementation 'net.jqwik:jqwik:1.9.3'
 
 			testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+			// JMH
+			testImplementation 'org.openjdk.jmh:jmh-core:1.37'
+			testImplementation 'org.openjdk.jmh:jmh-generator-annprocess:1.37'
 		}
 	
 		test {

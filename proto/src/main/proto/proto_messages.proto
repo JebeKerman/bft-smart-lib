@@ -6,9 +6,19 @@ package bftsmart.serialization.proto;
 message SystemMessage {
   int32 sender_id = 1;
   oneof payload {
-    ConsensusMessage consensus_msg = 2;
-    TOMMessage       tom_msg       = 3;
+    TOMMessage       tom_msg       = 2;
+    ConsensusMessage consensus_msg = 3;
   }
+}
+
+message TOMMessage {
+  int32          view_id      = 1;
+  TOMMessageType type         = 2;
+  int32          session      = 3;
+  int32          sequence     = 4;
+  int32          operation_id = 5;
+  int32          reply_server = 6;
+  bytes          content      = 7;
 }
 
 enum PaxosType {
@@ -53,15 +63,6 @@ message ForwardedMessage {
   TOMMessage request = 1;
 }
 
-message TOMMessage {
-  int32          view_id      = 1;
-  TOMMessageType type         = 2;
-  int32          session      = 3;
-  int32          sequence     = 4;
-  int32          operation_id = 5;
-  int32          reply_server = 6;
-  bytes          content      = 7;
-}
 
 enum TOMMessageType {
   ORDERED_REQUEST          = 0;
