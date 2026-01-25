@@ -32,6 +32,7 @@ import org.slf4j.LoggerFactory;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
@@ -282,13 +283,13 @@ public class NettyClientServerCommunicationSystemServerSide extends SimpleChanne
 	public void send(int[] targets, TOMMessage sm, boolean serializeClassHeaders) {
 
 		// serialize message
-		DataOutputStream dos = null;
+		ObjectOutputStream dos = null;
 
 		byte[] data = null;
 		try {
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			dos = new DataOutputStream(baos);
-			sm.wExternal(dos);
+			dos = new ObjectOutputStream(baos);
+			sm.writeExternal(dos);
 			dos.flush();
 			data = baos.toByteArray();
 			sm.serializedMessage = data;

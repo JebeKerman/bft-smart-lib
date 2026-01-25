@@ -17,6 +17,7 @@ package bftsmart.communication.client.netty;
 
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
+import java.io.ObjectInputStream;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -139,14 +140,14 @@ public class NettyTOMMessageDecoder extends ByteToMessageDecoder {
             buffer.readBytes(signature);
         }
 
-        DataInputStream dis = null;
+        ObjectInputStream dis = null;
         TOMMessage sm = null;
 
         try {
             ByteArrayInputStream bais = new ByteArrayInputStream(data);
-            dis = new DataInputStream(bais);
+            dis = new ObjectInputStream(bais);
             sm = new TOMMessage();
-            sm.rExternal(dis);
+            sm.readExternal(dis);
             sm.serializedMessage = data;
 
             if (signature != null) {

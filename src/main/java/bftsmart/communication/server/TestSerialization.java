@@ -19,7 +19,8 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
-
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import bftsmart.tom.core.messages.TOMMessage;
 import bftsmart.tom.core.messages.TOMMessageType;
 
@@ -35,9 +36,9 @@ public class TestSerialization {
         TOMMessage tm = new TOMMessage(0,0,0,0, new String("abc").getBytes(),0, TOMMessageType.ORDERED_REQUEST);
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream(4);
-        DataOutputStream oos = new DataOutputStream(baos);
+        ObjectOutputStream oos = new ObjectOutputStream(baos);
 
-        tm.wExternal(oos);
+        tm.writeExternal(oos);
         oos.flush();
         //oos.writeObject(tm);
 
@@ -46,11 +47,11 @@ public class TestSerialization {
         System.out.println(message.length);
 
         ByteArrayInputStream bais = new ByteArrayInputStream(message);
-        DataInputStream ois = new DataInputStream(bais);
+        ObjectInputStream ois = new ObjectInputStream(bais);
 
         //TOMMessage tm2 = (TOMMessage) ois.readObject();
         TOMMessage tm2 = new TOMMessage();
-        tm2.rExternal(ois);
+        tm2.readExternal(ois);
 
 //        System.out.println(new String(tm2.getContent()));
     }

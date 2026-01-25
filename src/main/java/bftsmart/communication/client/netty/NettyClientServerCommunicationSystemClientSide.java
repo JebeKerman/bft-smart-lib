@@ -18,6 +18,7 @@ package bftsmart.communication.client.netty;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.ConnectException;
 import java.nio.channels.ClosedChannelException;
 import java.security.InvalidKeyException;
@@ -338,11 +339,11 @@ public class NettyClientServerCommunicationSystemClientSide extends SimpleChanne
 	 */
 	private void serializeMessage(TOMMessage sm) {
 		// serialize message
-		DataOutputStream dos = null;
+		ObjectOutputStream dos = null;
 		try {
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			dos = new DataOutputStream(baos);
-			sm.wExternal(dos);
+			dos = new ObjectOutputStream(baos);
+			sm.writeExternal(dos);
 			dos.flush();
 			sm.serializedMessage = baos.toByteArray();
 		} catch (IOException ex) {
@@ -352,12 +353,12 @@ public class NettyClientServerCommunicationSystemClientSide extends SimpleChanne
 
 	public void sign(TOMMessage sm) {
 		// serialize message
-		DataOutputStream dos = null;
+		ObjectOutputStream dos = null;
 		byte[] data = null;
 		try {
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			dos = new DataOutputStream(baos);
-			sm.wExternal(dos);
+			dos = new ObjectOutputStream(baos);
+			sm.writeExternal(dos);
 			dos.flush();
 			data = baos.toByteArray();
 			sm.serializedMessage = data;

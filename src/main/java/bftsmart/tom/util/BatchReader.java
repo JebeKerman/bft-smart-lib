@@ -17,6 +17,7 @@ package bftsmart.tom.util;
 
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
+import java.io.ObjectInputStream;
 import java.nio.ByteBuffer;
 import java.util.Random;
 
@@ -85,9 +86,9 @@ public final class BatchReader {
                 rnd.nextBytes(nonces);
             }
             try {
-                DataInputStream ois = new DataInputStream(new ByteArrayInputStream(message));
+                ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(message));
                 TOMMessage tm = new TOMMessage();
-                tm.rExternal(ois);
+                tm.readExternal(ois);
 
                 tm.serializedMessage = message;
                 tm.serializedMessageSignature = signature;
