@@ -1,6 +1,5 @@
 bin
 config/currentView
-test
 
 # Ignore Gradle project-specific cache directory
 .gradle
@@ -11,3 +10,5 @@ build
 # Ignore IntelliJ IDEA setting folder
 .idea
 /gradle.properties
+
+.jqwik-database
