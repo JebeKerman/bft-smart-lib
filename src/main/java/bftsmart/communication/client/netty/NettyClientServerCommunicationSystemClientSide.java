@@ -16,9 +16,7 @@ limitations under the License.
 package bftsmart.communication.client.netty;
 
 import java.io.ByteArrayOutputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.net.ConnectException;
 import java.nio.channels.ClosedChannelException;
 import java.security.InvalidKeyException;
@@ -47,7 +45,7 @@ import org.slf4j.LoggerFactory;
 import bftsmart.communication.client.CommunicationSystemClientSide;
 import bftsmart.communication.client.ReplyReceiver;
 import bftsmart.reconfiguration.ClientViewController;
-import bftsmart.serialization.JavaSerializer;
+import bftsmart.serialization.MessageSerializerFactory;
 import bftsmart.tom.core.messages.TOMMessage;
 import bftsmart.tom.util.TOMUtil;
 import io.netty.bootstrap.Bootstrap;
@@ -342,7 +340,7 @@ public class NettyClientServerCommunicationSystemClientSide extends SimpleChanne
 		// serialize message
 		try {
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			JavaSerializer.getInstance().serialize(sm, baos);
+			MessageSerializerFactory.getSerializer().serialize(sm, baos);
 			sm.serializedMessage = baos.toByteArray();
 		} catch (IOException ex) {
 			logger.error("Impossible to serialize message: " + sm);
@@ -354,7 +352,7 @@ public class NettyClientServerCommunicationSystemClientSide extends SimpleChanne
 		byte[] data = null;
 		try {
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			JavaSerializer.getInstance().serialize(sm, baos);
+			MessageSerializerFactory.getSerializer().serialize(sm, baos);
 			data = baos.toByteArray();
 			sm.serializedMessage = data;
 		} catch (IOException ex) {

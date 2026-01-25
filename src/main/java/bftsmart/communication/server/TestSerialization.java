@@ -17,7 +17,8 @@ package bftsmart.communication.server;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import bftsmart.serialization.JavaSerializer;
+import bftsmart.serialization.MessageSerializerFactory;
+import bftsmart.serialization.messages.TOMMessagePlain;
 import bftsmart.tom.core.messages.TOMMessage;
 import bftsmart.tom.core.messages.TOMMessageType;
 
@@ -32,13 +33,14 @@ public class TestSerialization {
         TOMMessage tm = new TOMMessage(0,0,0,0, new String("abc").getBytes(),0, TOMMessageType.ORDERED_REQUEST);
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream(4);
-        JavaSerializer.getInstance().serialize(tm, baos);
+        MessageSerializerFactory.getSerializer().serialize(tm, baos);
 
         byte[] message = baos.toByteArray();
         System.out.println(message.length);
 
         ByteArrayInputStream bais = new ByteArrayInputStream(message);
-        TOMMessage tm2 = JavaSerializer.getInstance().deserialize(bais, TOMMessage.class);
+        TOMMessagePlain tmPLain = MessageSerializerFactory.getSerializer().deserialize(bais, TOMMessagePlain.class);
+        TOMMessage tm2 = new TOMMessage(tmPLain);
 
         System.out.println(new String(tm2.getContent()));
     }

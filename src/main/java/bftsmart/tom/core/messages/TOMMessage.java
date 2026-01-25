@@ -19,9 +19,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInput;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutput;
-import bftsmart.serialization.JavaSerializer;
+import bftsmart.serialization.MessageSerializerFactory;
 import bftsmart.serialization.messages.TOMMessagePlain;
 import bftsmart.tom.util.DebugInfo;
 import org.slf4j.LoggerFactory;
@@ -29,7 +27,7 @@ import org.slf4j.LoggerFactory;
 /**
  * This class represents a total ordered message
  */
-public class TOMMessage extends TOMMessagePlain implements Comparable<TOMMessage>, Cloneable {
+public class TOMMessage extends TOMMessagePlain implements Comparable<TOMMessage> {
 
 	//the fields bellow are not serialized!!!
 	private transient int id; // ID for this message. It should be unique
@@ -87,6 +85,11 @@ public class TOMMessage extends TOMMessagePlain implements Comparable<TOMMessage
 	//	this(sender, session, sequence, -1, content, view, type);
 	//}
 
+	
+	public TOMMessage(TOMMessagePlain plain) {
+		this(plain.getSender(), plain.getSession(), plain.getSequence(), plain.getOperationId(), plain.getContent(), plain.getViewID(), plain.getType());
+	}
+
 	/**
 	 * Creates a new instance of TOMMessage. This one has an operationId parameter
 	 * used for FIFO executions
@@ -102,7 +105,6 @@ public class TOMMessage extends TOMMessagePlain implements Comparable<TOMMessage
 		super(sender, session, sequence, operationId, content, view, type);
 		buildId();
 	}
-
 
 	/** THIS IS JOAO'S CODE, FOR DEBUGGING */
 	private transient DebugInfo info = null; // Debug information
@@ -227,7 +229,7 @@ public class TOMMessage extends TOMMessagePlain implements Comparable<TOMMessage
 
 	 public static byte[] messageToBytes(TOMMessage m) {
 		 try (ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
-			 JavaSerializer.getInstance().serialize(m, baos);
+			 MessageSerializerFactory.getSerializer().serialize(m, baos);
 			 return baos.toByteArray();
 		 }catch(Exception e) {
 		 }
@@ -237,8 +239,9 @@ public class TOMMessage extends TOMMessagePlain implements Comparable<TOMMessage
 	 public static TOMMessage bytesToMessage(byte[] b) {
 		 ByteArrayInputStream bais = new ByteArrayInputStream(b);
 		 
-		 try (ObjectInputStream dis = new ObjectInputStream(bais)) {
-			return JavaSerializer.getInstance().deserialize(bais, TOMMessage.class);
+		 try {
+			TOMMessagePlain plain = MessageSerializerFactory.getSerializer().deserialize(bais, TOMMessagePlain.class);
+			return new TOMMessage(plain);
 		 }catch(Exception e) {
 			 LoggerFactory.getLogger(TOMMessage.class).error("Failed to deserialize TOMMessage",e);
 			 return null;

@@ -16,8 +16,6 @@ limitations under the License.
 package bftsmart.communication.client.netty;
 
 import java.io.ByteArrayInputStream;
-import java.io.DataInputStream;
-import java.io.ObjectInputStream;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -26,7 +24,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import bftsmart.reconfiguration.ViewController;
-import bftsmart.serialization.JavaSerializer;
+import bftsmart.serialization.MessageSerializerFactory;
+import bftsmart.serialization.messages.TOMMessagePlain;
 import bftsmart.tom.core.messages.TOMMessage;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -143,7 +142,8 @@ public class NettyTOMMessageDecoder extends ByteToMessageDecoder {
 
         try {
             ByteArrayInputStream bais = new ByteArrayInputStream(data);
-            TOMMessage sm = JavaSerializer.getInstance().deserialize(bais, TOMMessage.class);
+            TOMMessagePlain smPlain = MessageSerializerFactory.getSerializer().deserialize(bais, TOMMessagePlain.class);
+            TOMMessage sm = new TOMMessage(smPlain);
             sm.serializedMessage = data;
 
             if (signature != null) {
