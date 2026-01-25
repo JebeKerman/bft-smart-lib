@@ -3,17 +3,6 @@ syntax = "proto3";
 
 package bftsmart.serialization.proto;
 
-enum TOMMessageType {
-  ORDERED_REQUEST          = 0;
-  UNORDERED_REQUEST        = 1;
-  REPLY                    = 2;
-  RECONFIG                 = 3;
-  ASK_STATUS               = 4;
-  STATUS_REPLY             = 5;
-  UNORDERED_HASHED_REQUEST = 6;
-  ORDERED_HASHED_REQUEST   = 7;
-}
-
 message SystemMessage {
   int32 sender_id = 1;
   oneof payload {
@@ -71,7 +60,18 @@ message TOMMessage {
   int32          sequence     = 4;
   int32          operation_id = 5;
   int32          reply_server = 6;
-  string         content      = 7;
+  bytes          content      = 7;
+}
+
+enum TOMMessageType {
+  ORDERED_REQUEST          = 0;
+  UNORDERED_REQUEST        = 1;
+  REPLY                    = 2;
+  RECONFIG                 = 3;
+  ASK_STATUS               = 4;
+  STATUS_REPLY             = 5;
+  UNORDERED_HASHED_REQUEST = 6;
+  ORDERED_HASHED_REQUEST   = 7;
 }
 
 message LCMessage {
