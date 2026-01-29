@@ -23,7 +23,13 @@ public class ProtoSerializer implements MessageSerializer {
     public <T extends SystemMessage> T deserialize(InputStream in, Class<T> clazz)
             throws IOException, ClassNotFoundException {
         ProtoMessages.SystemMessage result = ProtoMessages.SystemMessage.parseDelimitedFrom(in);
-        return (T) ProtoMessageMapper.toInternal(result);
+        SystemMessage internal = ProtoMessageMapper.toInternal(result);
+        if (clazz.isInstance(internal)) {
+            return clazz.cast(internal);
+        } else {
+            throw new ClassCastException(
+                    "Expected " + clazz.getName() + " but got " + internal.getClass().getName());
+        }
     }
 
     private ProtoSerializer() {}
