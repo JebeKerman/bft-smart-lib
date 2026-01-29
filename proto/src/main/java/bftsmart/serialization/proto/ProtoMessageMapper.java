@@ -3,6 +3,7 @@ package bftsmart.serialization.proto;
 import bftsmart.communication.SystemMessage;
 import bftsmart.consensus.messages.ConsensusMessage;
 import bftsmart.consensus.messages.MessageFactory;
+import bftsmart.reconfiguration.VMMessage;
 import bftsmart.serialization.messages.TOMMessagePlain;
 import bftsmart.tom.core.messages.TOMMessageType;
 import com.google.protobuf.ByteString;
@@ -12,10 +13,12 @@ public class ProtoMessageMapper {
         int senderId = msg.getSenderId();
 
         switch (msg.getPayloadCase()) {
-            case CONSENSUS_MSG:
-                return toConsensusMessage(senderId, msg.getConsensusMsg());
             case TOM_MSG:
                 return toPlainTOMMessage(senderId, msg.getTomMsg());
+            case VM_MSG:
+                return VMMessageMapper.getInstance().fromProto(senderId, msg.getVmMsg());
+            case CONSENSUS_MSG:
+                return toConsensusMessage(senderId, msg.getConsensusMsg());
             case PAYLOAD_NOT_SET:
                 break;
             default:
@@ -29,6 +32,8 @@ public class ProtoMessageMapper {
                 ProtoMessages.SystemMessage.newBuilder().setSenderId(msg.getSender());
         if (msg instanceof TOMMessagePlain) {
             builder.setTomMsg(fromPlainTOMMessage((TOMMessagePlain) msg));
+        } else if (msg instanceof VMMessage) {
+            builder.setVmMsg(VMMessageMapper.getInstance().toProto((VMMessage) msg));
         } else {
             return null;
         }

@@ -55,6 +55,9 @@ subprojects {
 			// JMH
 			testImplementation 'org.openjdk.jmh:jmh-core:1.37'
 			testImplementation 'org.openjdk.jmh:jmh-generator-annprocess:1.37'
+			
+			// Source: https://mvnrepository.com/artifact/org.assertj/assertj-core
+			testImplementation 'org.assertj:assertj-core:3.27.6'
 		}
 	
 		test {

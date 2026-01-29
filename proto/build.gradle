@@ -1,9 +1,9 @@
 plugins {  
- 	  id 'com.google.protobuf' version '0.9.6'
+	id 'com.google.protobuf' version '0.9.6'
 }
 
 dependencies {
 	implementation project(":messages")
 
-  implementation 'com.google.protobuf:protobuf-java:3.6.1'
+  	implementation 'com.google.protobuf:protobuf-java:3.6.1'
 }
