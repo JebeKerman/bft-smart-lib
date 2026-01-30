@@ -1,0 +1,5 @@
+dependencies {
+	implementation project(":messages")
+	
+	implementation 'net.jqwik:jqwik:1.9.3'
+}

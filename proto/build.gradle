@@ -4,6 +4,7 @@ plugins {
 
 dependencies {
 	implementation project(":messages")
+	testImplementation project(":test-fixtures")
 
   	implementation 'com.google.protobuf:protobuf-java:3.6.1'
 }

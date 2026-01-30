@@ -67,7 +67,7 @@ message View {
 
 message SocketAddress {
   string host = 1; // hostname or IP literal
-  uint32 port = 2; // 0–65535
+  uint32 port = 2; // 0-65535
 }
 
 message CSTSMMessage { // Extends SMMessage...
