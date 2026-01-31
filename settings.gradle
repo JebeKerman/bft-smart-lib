@@ -2,6 +2,6 @@ rootProject.name = 'library'
 
 include(
 	"messages",
-	"test-fixtures",
-	"proto",
+	"serialize-test-fixtures",
+	"serialize-proto",
 )
