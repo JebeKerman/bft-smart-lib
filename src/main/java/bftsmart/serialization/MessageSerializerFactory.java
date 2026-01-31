@@ -1,5 +1,6 @@
 package bftsmart.serialization;
 
+import bftsmart.serialization.java.JavaSerializer;
 import bftsmart.serialization.proto.ProtoSerializer;
 
 public class MessageSerializerFactory {

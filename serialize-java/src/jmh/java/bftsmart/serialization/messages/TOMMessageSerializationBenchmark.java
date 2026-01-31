@@ -1,7 +1,7 @@
 package bftsmart.serialization.messages;
 
-import bftsmart.serialization.JavaSerializer;
 import bftsmart.serialization.MessageSerializer;
+import bftsmart.serialization.java.JavaSerializer;
 import bftsmart.tom.core.messages.TOMMessageType;
 import java.io.ByteArrayOutputStream;
 import java.util.concurrent.TimeUnit;

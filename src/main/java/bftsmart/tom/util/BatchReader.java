@@ -16,13 +16,10 @@ limitations under the License.
 package bftsmart.tom.util;
 
 import java.io.ByteArrayInputStream;
-import java.io.DataInputStream;
-import java.io.ObjectInputStream;
 import java.nio.ByteBuffer;
 import java.util.Random;
 
 import bftsmart.reconfiguration.ServerViewController;
-import bftsmart.serialization.JavaSerializer;
 import bftsmart.serialization.MessageSerializerFactory;
 import bftsmart.serialization.messages.TOMMessagePlain;
 import bftsmart.tom.core.messages.TOMMessage;

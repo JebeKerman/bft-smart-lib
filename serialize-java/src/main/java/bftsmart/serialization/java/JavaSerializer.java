@@ -1,6 +1,7 @@
-package bftsmart.serialization;
+package bftsmart.serialization.java;
 
 import bftsmart.communication.SystemMessage;
+import bftsmart.serialization.MessageSerializer;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;

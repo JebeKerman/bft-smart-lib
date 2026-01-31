@@ -143,5 +143,5 @@ Coverage Reports:
 Benchmarks
 
 ```bash
-./gradlew jvm # Runs all JVM-based benchmarks.
+./gradlew jmh # Runs all JVM-based benchmarks.
 ```
