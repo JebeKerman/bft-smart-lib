@@ -8,3 +8,9 @@ dependencies {
 
   	implementation 'com.google.protobuf:protobuf-java:3.6.1'
 }
+
+protobuf {
+  protoc {
+    artifact = 'com.google.protobuf:protoc:3.0.0'
+  }
+}
