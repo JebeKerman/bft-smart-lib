@@ -17,6 +17,7 @@ class BenchmarkResult(TypedDict):
 
 class MessageResult(TypedDict):
     serialize: BenchmarkResult
+    deserialize: BenchmarkResult
     pass
 
 
@@ -50,8 +51,7 @@ def load_results(path: str, label: Literal['Java', 'Proto']) -> Result:
             for value in raw_data:
                 function_result['raw_data'].append(value)
 
-        if function_name == 'serialize':
-            result['results'][message]['serialize'] = function_result
+        result['results'][message][function_name] = function_result
     return result
 
 
@@ -75,33 +75,33 @@ def plot_message(
         msg_result_java[operation]['raw_data'],
         marker="o",
         linestyle="",
-        label="java - 1",
+        label="Java",
         color="tab:orange",
     )
     plt.axhline(
         msg_result_java[operation]["avg_time"],
         linestyle="--",
         alpha=0.7,
+        label="Java - Mean time",
         color="tab:orange",
-        label="Java - Mean time"
     )
 
     plt.plot(
         msg_result_proto[operation]['raw_data'],
         marker="o",
         linestyle="-",
-        label="proto - 1",
+        label="Proto",
         color="tab:blue",
     )
     plt.axhline(
         msg_result_proto[operation]["avg_time"],
         linestyle="--",
         alpha=0.7,
+        label="Proto - Mean time",
         color="tab:blue",
-        label="Proto - Mean time"
     )
 
-    plt.title(f"Benchmark Comparison - {message_name} Serialization")
+    plt.title(f"Benchmark Comparison - {message_name} {operation}")
     plt.ylabel("Time [ns]")
     plt.xlabel("Run")
     plt.legend()
@@ -120,7 +120,9 @@ def main():
         "serialize-proto/build/jmh/results.json", "proto")
 
     plot_message(java_res, proto_res, "TOMMessage", "serialize")
+    plot_message(java_res, proto_res, "TOMMessage", "deserialize")
     plot_message(java_res, proto_res, "VMMessage", "serialize")
+    plot_message(java_res, proto_res, "VMMessage", "deserialize")
 
 
 main()
