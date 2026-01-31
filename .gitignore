@@ -12,3 +12,6 @@ build
 /gradle.properties
 
 .jqwik-database
+
+# Benchmark analysis
+analysis/out/

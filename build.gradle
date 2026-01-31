@@ -71,6 +71,25 @@ subprojects {
         showStandardStreams true
 			}
 		}
+
+		jmh {
+				fork = 2
+				warmupIterations = 10
+				warmup = '1s'
+				iterations = 10
+				timeOnIteration = '1s'
+				benchmarkMode = ['avgt']
+				timeUnit = 'ns'
+				resultFormat = 'JSON'
+				resultsFile = file("$buildDir/jmh/results.json")
+		}
+}
+
+tasks.register('analyzeJmh', Exec) {
+    dependsOn ':serialize-java:jmh', ':serialize-proto:jmh'
+		commandLine 'python3', "$projectDir/analysis/plot_jmh.py",
+				'serialize-java/build/jmh/results.json',
+        'serialize-proto/build/jmh/results.json'
 }
 
 repositories {
