@@ -1,0 +1,4 @@
+dependencies {
+	implementation project(":messages")
+	testImplementation project(":serialize-test-fixtures")
+}

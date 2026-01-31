@@ -3,5 +3,6 @@ rootProject.name = 'library'
 include(
 	"messages",
 	"serialize-test-fixtures",
+	"serialize-java",
 	"serialize-proto",
 )

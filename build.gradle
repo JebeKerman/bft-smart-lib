@@ -234,6 +234,7 @@ dependencies {
 	implementation fileTree('lib'){include '*.jar'}
 	
 	implementation project(":messages")
+	implementation project(":serialize-java")
 	implementation project(":serialize-proto")
 
 	// https://mvnrepository.com/artifact/org.bouncycastle/bcpkix-jdk15on
