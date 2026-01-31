@@ -1,8 +1,8 @@
 package bftsmart.serialization.proto;
 
+import bftsmart.messages.bench.MessageProvider;
 import bftsmart.serialization.MessageSerializer;
 import bftsmart.serialization.messages.TOMMessagePlain;
-import bftsmart.tom.core.messages.TOMMessageType;
 import java.io.ByteArrayOutputStream;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Level;
@@ -21,20 +21,13 @@ public class ProtoBenchmark_TOMMessage {
     public void setup() throws Exception {
         serializer = ProtoSerializer.getInstance();
 
-        message = new TOMMessagePlain(1);
-        message.setSession(2);
-        message.setSequence(3);
-        message.setOperationId(4);
-        message.setContent(new byte[] {5, 6, 7});
-        message.setViewID(8);
-        message.setType(TOMMessageType.ASK_STATUS);
-        message.setReplyServer(42);
+        message = MessageProvider.getTOMMessage();
 
         os = new ByteArrayOutputStream();
     }
 
     @Benchmark
-    public void protoSerializeTOMMessage() throws Exception {
+    public void serialize() throws Exception {
         os.reset();
         serializer.serialize(message, os);
     }

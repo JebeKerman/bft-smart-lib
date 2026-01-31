@@ -35,7 +35,12 @@ subprojects {
 		}
 
 		spotless {
-				java {
+				java {        
+					target(
+            'src/main/java/**/*.java',
+            'src/test/java/**/*.java',
+            'src/jmh/java/**/*.java'
+        	)
     			targetExclude("build/generated/**/*.java")
 					googleJavaFormat().aosp()
 								

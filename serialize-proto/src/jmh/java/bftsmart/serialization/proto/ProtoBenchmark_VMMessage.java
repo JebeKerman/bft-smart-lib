@@ -1,8 +1,8 @@
-package bftsmart.serialization.messages;
+package bftsmart.serialization.proto;
 
 import bftsmart.messages.bench.MessageProvider;
+import bftsmart.reconfiguration.VMMessage;
 import bftsmart.serialization.MessageSerializer;
-import bftsmart.serialization.java.JavaSerializer;
 import java.io.ByteArrayOutputStream;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Level;
@@ -11,17 +11,17 @@ import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 
 @State(Scope.Thread)
-public class JavaBenchmark_TOMMessage {
+public class ProtoBenchmark_VMMessage {
 
     private MessageSerializer serializer;
-    private TOMMessagePlain message;
+    private VMMessage message;
     private ByteArrayOutputStream os;
 
     @Setup(Level.Trial)
     public void setup() throws Exception {
-        serializer = JavaSerializer.getInstance();
+        serializer = ProtoSerializer.getInstance();
 
-        message = MessageProvider.getTOMMessage();
+        message = MessageProvider.getVMMessage();
 
         os = new ByteArrayOutputStream();
     }
