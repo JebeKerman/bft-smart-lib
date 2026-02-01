@@ -4,7 +4,7 @@ import bftsmart.serialization.java.JavaSerializer;
 import bftsmart.serialization.proto.ProtoSerializer;
 
 public class MessageSerializerFactory {
-    private static MessageSerializer serializer = JavaSerializer.getInstance();
+    private static MessageSerializer serializer = ProtoSerializer.getInstance();
 
     public static MessageSerializer getSerializer() {
         return serializer;

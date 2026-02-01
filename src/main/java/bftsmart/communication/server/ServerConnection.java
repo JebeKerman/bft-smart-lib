@@ -18,6 +18,7 @@ package bftsmart.communication.server;
 import bftsmart.communication.SystemMessage;
 import bftsmart.reconfiguration.ServerViewController;
 import bftsmart.reconfiguration.VMMessage;
+import bftsmart.serialization.MessageSerializerFactory;
 import bftsmart.tom.ServiceReplica;
 import bftsmart.tom.util.TOMUtil;
 import org.slf4j.Logger;
@@ -450,11 +451,11 @@ public class ServerConnection {
 							read += socketInStream.read(data, read, dataLength - read);
 						} while (read < dataLength);
 
-						SystemMessage sm = (SystemMessage) (new ObjectInputStream(new ByteArrayInputStream(data))
-								.readObject());
+						ByteArrayInputStream bis = new ByteArrayInputStream(data);
+						VMMessage sm = MessageSerializerFactory.getSerializer().deserialize(bis, VMMessage.class);
 
 						if (sm.getSender() == remoteId) {
-							this.replica.joinMsgReceived((VMMessage) sm);
+							this.replica.joinMsgReceived(sm);
 						}
 
 					} catch (ClassNotFoundException ex) {
