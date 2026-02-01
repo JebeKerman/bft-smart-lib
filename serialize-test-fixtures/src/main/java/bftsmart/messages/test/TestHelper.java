@@ -17,7 +17,12 @@ public class TestHelper {
     public static <T extends SystemMessage> T fromBytes(
             MessageSerializer serializer, byte[] bytes, Class<T> clazz)
             throws IOException, ClassNotFoundException {
-        return serializer.deserialize(new ByteArrayInputStream(bytes), clazz);
+        SystemMessage msg = serializer.deserialize(new ByteArrayInputStream(bytes));
+        if (clazz.isInstance(msg)) {
+            return clazz.cast(msg);
+        } else {
+            return null;
+        }
     }
 
     private TestHelper() {}

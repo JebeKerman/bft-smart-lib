@@ -42,6 +42,7 @@ public class JavaBenchmark_VMMessage {
     @Benchmark
     public void deserialize() throws Exception {
         ByteArrayInputStream is = new ByteArrayInputStream(serializedMessage);
-        serializer.deserialize(is, VMMessage.class);
+        @SuppressWarnings("unused")
+        VMMessage message = (VMMessage) serializer.deserialize(is);
     }
 }

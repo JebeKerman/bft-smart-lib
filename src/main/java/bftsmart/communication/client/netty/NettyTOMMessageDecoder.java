@@ -142,7 +142,7 @@ public class NettyTOMMessageDecoder extends ByteToMessageDecoder {
 
         try {
             ByteArrayInputStream bais = new ByteArrayInputStream(data);
-            TOMMessagePlain smPlain = MessageSerializerFactory.getSerializer().deserialize(bais, TOMMessagePlain.class);
+            TOMMessagePlain smPlain = (TOMMessagePlain) MessageSerializerFactory.getSerializer().deserialize(bais);
             TOMMessage sm = new TOMMessage(smPlain);
             sm.serializedMessage = data;
 

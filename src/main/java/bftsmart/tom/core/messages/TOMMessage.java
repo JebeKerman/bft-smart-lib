@@ -240,7 +240,7 @@ public class TOMMessage extends TOMMessagePlain implements Comparable<TOMMessage
 		 ByteArrayInputStream bais = new ByteArrayInputStream(b);
 		 
 		 try {
-			TOMMessagePlain plain = MessageSerializerFactory.getSerializer().deserialize(bais, TOMMessagePlain.class);
+			TOMMessagePlain plain = (TOMMessagePlain) MessageSerializerFactory.getSerializer().deserialize(bais);
 			return new TOMMessage(plain);
 		 }catch(Exception e) {
 			 LoggerFactory.getLogger(TOMMessage.class).error("Failed to deserialize TOMMessage",e);

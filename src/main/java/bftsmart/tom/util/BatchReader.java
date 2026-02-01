@@ -87,7 +87,7 @@ public final class BatchReader {
             }
             try {
                 ByteArrayInputStream ois = new ByteArrayInputStream(message);
-                TOMMessagePlain tmPlain = MessageSerializerFactory.getSerializer().deserialize(ois, TOMMessagePlain.class);
+                TOMMessagePlain tmPlain = (TOMMessagePlain) MessageSerializerFactory.getSerializer().deserialize(ois);
                 TOMMessage tm = new TOMMessage(tmPlain);
 
                 tm.serializedMessage = message;

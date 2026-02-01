@@ -17,22 +17,18 @@ public class JavaSerializer implements MessageSerializer {
     }
 
     @Override
-    public <T extends SystemMessage> void serialize(T msg, OutputStream out) throws IOException {
+    public void serialize(SystemMessage msg, OutputStream out) throws IOException {
         try (ObjectOutputStream oos = new ObjectOutputStream(out)) {
-            msg.writeExternal(oos);
+            oos.writeObject(msg);
             out.flush();
         }
     }
 
     @Override
-    public <T extends SystemMessage> T deserialize(InputStream in, Class<T> clazz)
-            throws IOException, ClassNotFoundException {
+    public SystemMessage deserialize(InputStream in) throws IOException, ClassNotFoundException {
         try (ObjectInputStream ois = new ObjectInputStream(in)) {
-            T msg = clazz.getDeclaredConstructor().newInstance();
-            msg.readExternal(ois);
+            SystemMessage msg = (SystemMessage) ois.readObject();
             return msg;
-        } catch (ReflectiveOperationException e) {
-            throw new IOException("Failed to instantiate " + clazz.getName(), e);
         }
     }
 

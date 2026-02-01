@@ -15,21 +15,15 @@ public class ProtoSerializer implements MessageSerializer {
     }
 
     @Override
-    public <T extends SystemMessage> void serialize(T msg, OutputStream out) throws IOException {
+    public void serialize(SystemMessage msg, OutputStream out) throws IOException {
         ProtoMessageMapper.fromInternal(msg).writeDelimitedTo(out);
     }
 
     @Override
-    public <T extends SystemMessage> T deserialize(InputStream in, Class<T> clazz)
-            throws IOException, ClassNotFoundException {
+    public SystemMessage deserialize(InputStream in) throws IOException, ClassNotFoundException {
         ProtoMessages.SystemMessage result = ProtoMessages.SystemMessage.parseDelimitedFrom(in);
         SystemMessage internal = ProtoMessageMapper.toInternal(result);
-        if (clazz.isInstance(internal)) {
-            return clazz.cast(internal);
-        } else {
-            throw new ClassCastException(
-                    "Expected " + clazz.getName() + " but got " + internal.getClass().getName());
-        }
+        return internal;
     }
 
     private ProtoSerializer() {}

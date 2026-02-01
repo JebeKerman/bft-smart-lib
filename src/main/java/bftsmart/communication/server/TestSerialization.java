@@ -39,7 +39,7 @@ public class TestSerialization {
         System.out.println(message.length);
 
         ByteArrayInputStream bais = new ByteArrayInputStream(message);
-        TOMMessagePlain tmPLain = MessageSerializerFactory.getSerializer().deserialize(bais, TOMMessagePlain.class);
+        TOMMessagePlain tmPLain = (TOMMessagePlain) MessageSerializerFactory.getSerializer().deserialize(bais);
         TOMMessage tm2 = new TOMMessage(tmPLain);
 
         System.out.println(new String(tm2.getContent()));

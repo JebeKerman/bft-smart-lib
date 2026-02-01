@@ -42,6 +42,7 @@ public class JavaBenchmark_TOMMessage {
     @Benchmark
     public void deserialize() throws Exception {
         ByteArrayInputStream is = new ByteArrayInputStream(serializedMessage);
-        serializer.deserialize(is, TOMMessagePlain.class);
+        @SuppressWarnings("unused")
+        TOMMessagePlain plain = (TOMMessagePlain) serializer.deserialize(is);
     }
 }

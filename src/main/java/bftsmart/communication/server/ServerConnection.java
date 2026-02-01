@@ -452,7 +452,7 @@ public class ServerConnection {
 						} while (read < dataLength);
 
 						ByteArrayInputStream bis = new ByteArrayInputStream(data);
-						VMMessage sm = MessageSerializerFactory.getSerializer().deserialize(bis, VMMessage.class);
+						VMMessage sm = (VMMessage) MessageSerializerFactory.getSerializer().deserialize(bis);
 
 						if (sm.getSender() == remoteId) {
 							this.replica.joinMsgReceived(sm);
