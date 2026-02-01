@@ -16,7 +16,7 @@ public class ProtoBenchmark_TOMMessage {
 
     private MessageSerializer serializer;
     private ByteArrayOutputStream os;
-    
+
     private TOMMessagePlain message;
     private byte[] serializedMessage;
 
@@ -37,7 +37,7 @@ public class ProtoBenchmark_TOMMessage {
         os.reset();
         serializer.serialize(message, os);
     }
-    
+
     @Benchmark
     public void deserialize() throws Exception {
         ByteArrayInputStream is = new ByteArrayInputStream(serializedMessage);

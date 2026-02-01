@@ -15,7 +15,7 @@ import org.openjdk.jmh.annotations.State;
 public class JavaBenchmark_TOMMessage {
 
     private MessageSerializer serializer;
-    
+
     private ByteArrayOutputStream os;
 
     private TOMMessagePlain message;
@@ -38,7 +38,7 @@ public class JavaBenchmark_TOMMessage {
         os.reset();
         serializer.serialize(message, os);
     }
-    
+
     @Benchmark
     public void deserialize() throws Exception {
         ByteArrayInputStream is = new ByteArrayInputStream(serializedMessage);

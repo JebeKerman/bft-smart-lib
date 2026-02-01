@@ -16,7 +16,7 @@ public class ProtoBenchmark_VMMessage {
 
     private MessageSerializer serializer;
     private ByteArrayOutputStream os;
-    
+
     private VMMessage message;
     private byte[] serializedMessage;
 
@@ -37,7 +37,7 @@ public class ProtoBenchmark_VMMessage {
         os.reset();
         serializer.serialize(message, os);
     }
-    
+
     @Benchmark
     public void deserialize() throws Exception {
         ByteArrayInputStream is = new ByteArrayInputStream(serializedMessage);

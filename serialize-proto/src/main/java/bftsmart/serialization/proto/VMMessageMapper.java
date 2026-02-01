@@ -6,7 +6,7 @@ import bftsmart.reconfiguration.views.View;
 import java.net.InetSocketAddress;
 import java.util.Map;
 
-public class VMMessageMapper implements MessageMapper<VMMessage, ProtoMessages.VMMessage> {
+class VMMessageMapper implements MessageMapper<VMMessage, ProtoMessages.VMMessage> {
     private static final VMMessageMapper instance = new VMMessageMapper();
 
     static VMMessageMapper getInstance() {

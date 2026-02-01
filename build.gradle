@@ -78,10 +78,10 @@ subprojects {
 		}
 
 		jmh {
-				fork = 2
-				warmupIterations = 10
+				fork = 1
+				warmupIterations = 5
 				warmup = '1s'
-				iterations = 10
+				iterations = 5
 				timeOnIteration = '1s'
 				benchmarkMode = ['avgt']
 				timeUnit = 'ns'

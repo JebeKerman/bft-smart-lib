@@ -5,16 +5,14 @@ import bftsmart.consensus.messages.ConsensusMessage;
 import bftsmart.consensus.messages.MessageFactory;
 import bftsmart.reconfiguration.VMMessage;
 import bftsmart.serialization.messages.TOMMessagePlain;
-import bftsmart.tom.core.messages.TOMMessageType;
-import com.google.protobuf.ByteString;
 
-public class ProtoMessageMapper {
+class ProtoMessageMapper {
     static SystemMessage toInternal(ProtoMessages.SystemMessage msg) {
         int senderId = msg.getSenderId();
 
         switch (msg.getPayloadCase()) {
             case TOM_MSG:
-                return toPlainTOMMessage(senderId, msg.getTomMsg());
+                return TOMMessageMapper.getInstance().fromProto(senderId, msg.getTomMsg());
             case VM_MSG:
                 return VMMessageMapper.getInstance().fromProto(senderId, msg.getVmMsg());
             case CONSENSUS_MSG:
@@ -31,7 +29,7 @@ public class ProtoMessageMapper {
         ProtoMessages.SystemMessage.Builder builder =
                 ProtoMessages.SystemMessage.newBuilder().setSenderId(msg.getSender());
         if (msg instanceof TOMMessagePlain) {
-            builder.setTomMsg(fromPlainTOMMessage((TOMMessagePlain) msg));
+            builder.setTomMsg(TOMMessageMapper.getInstance().toProto((TOMMessagePlain) msg));
         } else if (msg instanceof VMMessage) {
             builder.setVmMsg(VMMessageMapper.getInstance().toProto((VMMessage) msg));
         } else {
@@ -63,34 +61,5 @@ public class ProtoMessageMapper {
                 break;
         }
         return null;
-    }
-
-    private static TOMMessagePlain toPlainTOMMessage(int senderId, ProtoMessages.TOMMessage msg) {
-        TOMMessagePlain plain = new TOMMessagePlain(senderId);
-        plain.setViewID(msg.getViewId());
-        plain.setType(TOMMessageType.getMessageType(msg.getTypeValue()));
-        plain.setSession(msg.getSession());
-        plain.setSequence(msg.getSequence());
-        plain.setOperationId(msg.getOperationId());
-        if (msg.getContent().toByteArray().length > 0) {
-            plain.setContent(msg.getContent().toByteArray());
-        }
-        plain.setReplyServer(msg.getReplyServer());
-        return plain;
-    }
-
-    private static ProtoMessages.TOMMessage fromPlainTOMMessage(TOMMessagePlain msg) {
-        ProtoMessages.TOMMessage.Builder tomMessage =
-                ProtoMessages.TOMMessage.newBuilder()
-                        .setViewId(msg.getViewID())
-                        .setTypeValue(msg.getType().ordinal())
-                        .setSession(msg.getSession())
-                        .setSequence(msg.getSequence())
-                        .setOperationId(msg.getOperationId())
-                        .setReplyServer(msg.getReplyServer());
-        if (msg.getContent() != null) {
-            tomMessage.setContent(ByteString.copyFrom(msg.getContent()));
-        }
-        return tomMessage.build();
     }
 }
