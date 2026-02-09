@@ -5,6 +5,7 @@ import bftsmart.consensus.messages.ConsensusMessage;
 import bftsmart.consensus.messages.MessageFactory;
 import bftsmart.reconfiguration.VMMessage;
 import bftsmart.serialization.messages.TOMMessagePlain;
+import bftsmart.tom.leaderchange.LCMessageWire;
 
 class ProtoMessageMapper {
     static SystemMessage toInternal(ProtoMessages.SystemMessage msg) {
@@ -15,6 +16,8 @@ class ProtoMessageMapper {
                 return TOMMessageMapper.getInstance().fromProto(senderId, msg.getTomMsg());
             case VM_MSG:
                 return VMMessageMapper.getInstance().fromProto(senderId, msg.getVmMsg());
+            case LC_MSG:
+                return LCMessageMapper.getInstance().fromProto(senderId, msg.getLcMsg());
             case CONSENSUS_MSG:
                 return toConsensusMessage(senderId, msg.getConsensusMsg());
             case PAYLOAD_NOT_SET:
@@ -32,6 +35,8 @@ class ProtoMessageMapper {
             builder.setTomMsg(TOMMessageMapper.getInstance().toProto((TOMMessagePlain) msg));
         } else if (msg instanceof VMMessage) {
             builder.setVmMsg(VMMessageMapper.getInstance().toProto((VMMessage) msg));
+        } else if (msg instanceof LCMessageWire) {
+            builder.setLcMsg(LCMessageMapper.getInstance().toProto((LCMessageWire) msg));
         } else {
             return null;
         }

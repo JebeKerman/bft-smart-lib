@@ -29,12 +29,12 @@ public class LCMessageWire extends SystemMessage {
     private int type;
     private int ts;
     private byte[] payload;
-    public final boolean TRIGGER_LC_LOCALLY; // indicates that the replica should
+    public final transient boolean TRIGGER_LC_LOCALLY; // indicates that the replica should
 
     // initiate the LC protocol locally
 
     /** Empty constructor */
-    protected LCMessageWire() {
+    public LCMessageWire() {
         this.TRIGGER_LC_LOCALLY = false;
     }
 
@@ -46,8 +46,7 @@ public class LCMessageWire extends SystemMessage {
      * @param ts timestamp of leader change and synchronization
      * @param payload dada that comes with the message
      */
-    protected LCMessageWire(
-            int from, int type, int ts, byte[] payload, boolean trigger_lc_locally) {
+    public LCMessageWire(int from, int type, int ts, byte[] payload, boolean trigger_lc_locally) {
         super(from);
         this.type = type;
         this.ts = ts;
