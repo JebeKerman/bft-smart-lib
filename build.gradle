@@ -90,13 +90,6 @@ subprojects {
 		}
 }
 
-tasks.register('analyzeJmh', Exec) {
-    dependsOn ':serialize-java:jmh', ':serialize-proto:jmh'
-		commandLine 'python3', "$projectDir/analysis/plot_jmh.py",
-				'serialize-java/build/jmh/results.json',
-        'serialize-proto/build/jmh/results.json'
-}
-
 repositories {
 	mavenCentral()
 }

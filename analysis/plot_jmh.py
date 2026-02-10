@@ -4,9 +4,11 @@ import json
 import pathlib
 import matplotlib.pyplot as plt
 from typing import TypedDict, Literal, Dict, List, Tuple
+import sys
+from pathlib import Path
 
 
-out_dir = pathlib.Path("analysis/out")
+out_dir = pathlib.Path("out")
 out_dir.mkdir(parents=True, exist_ok=True)
 
 
@@ -23,7 +25,7 @@ class MessageResult(TypedDict):
 
 class Result(TypedDict):
     label: Literal['Java', 'Proto']
-    results: Dict[Literal['TOMMessage', 'VMMessage'], MessageResult]
+    results: Dict[Literal['TOMMessage', 'VMMessage', 'LCMessage'], MessageResult]
 
 
 def load_results(path: str, label: Literal['Java', 'Proto']) -> Result:
@@ -36,6 +38,7 @@ def load_results(path: str, label: Literal['Java', 'Proto']) -> Result:
         "results": {
             'TOMMessage': {},
             'VMMessage': {},
+            'LCMessage': {},
         }
     }
     for bench in benchmarks:
@@ -65,7 +68,7 @@ def getBenchmarkName(name: str) -> Tuple[str, str]:
 def plot_message(
         java_res: Result,
         proto_res: Result,
-        message_name: Literal['TOMMessage', 'VMMessage'],
+        message_name: Literal['TOMMessage', 'VMMessage', 'LCMessage'],
         operation: str
         ):
     msg_result_java = java_res["results"][message_name]
@@ -115,9 +118,9 @@ def plot_message(
 
 def main():
     java_res: Result = load_results(
-        "serialize-java/build/jmh/results.json", "java")
+        Path(sys.argv[1]), "java")
     proto_res: Result = load_results(
-        "serialize-proto/build/jmh/results.json", "proto")
+        Path(sys.argv[2]), "proto")
 
     plot_message(java_res, proto_res, "TOMMessage", "serialize")
     plot_message(java_res, proto_res, "TOMMessage", "deserialize")

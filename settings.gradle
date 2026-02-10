@@ -5,4 +5,5 @@ include(
 	"serialize-test-fixtures",
 	"serialize-java",
 	"serialize-proto",
+	"analysis",
 )

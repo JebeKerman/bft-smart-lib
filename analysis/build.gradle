@@ -1,0 +1,35 @@
+dependencies {
+	implementation project(":messages")
+	implementation project(":serialize-java")
+	implementation project(":serialize-proto")
+	implementation project(":serialize-test-fixtures")
+	
+	// Source: https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+	implementation("com.fasterxml.jackson.core:jackson-databind:2.21.0")
+}
+
+tasks.register('analyzeMsgSizesJava', JavaExec) {
+    group = "analysis"
+    description = "Serializes message and writes size to file"
+
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'bftsmart.analysis.MemoryAnalysis'
+
+    def outputFile = layout.buildDirectory.file("metrics/message-size.json")
+    args outputFile.get().asFile.absolutePath
+
+    outputs.file(outputFile)
+}
+
+tasks.register('analyzeMsgSizes', Exec) {
+    dependsOn ':analysis:analyzeMsgSizesJava'
+		commandLine 'python3', "$projectDir/plot_memory.py",
+				"$buildDir/metrics/message-size.json"
+}
+
+tasks.register('analyzeJmh', Exec) {
+    dependsOn ':serialize-java:jmh', ':serialize-proto:jmh'
+		commandLine 'python3', "$projectDir/plot_jmh.py",
+				"$rootDir/serialize-java/build/jmh/results.json",
+        "$rootDir/serialize-proto/build/jmh/results.json"
+}
