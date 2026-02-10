@@ -123,6 +123,8 @@ def main():
     plot_message(java_res, proto_res, "TOMMessage", "deserialize")
     plot_message(java_res, proto_res, "VMMessage", "serialize")
     plot_message(java_res, proto_res, "VMMessage", "deserialize")
+    plot_message(java_res, proto_res, "LCMessage", "serialize")
+    plot_message(java_res, proto_res, "LCMessage", "deserialize")
 
 
 main()

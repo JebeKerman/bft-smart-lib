@@ -5,6 +5,7 @@ import bftsmart.reconfiguration.VMMessage;
 import bftsmart.reconfiguration.views.View;
 import bftsmart.serialization.messages.TOMMessagePlain;
 import bftsmart.tom.core.messages.TOMMessageType;
+import bftsmart.tom.leaderchange.LCMessageWire;
 import java.net.InetSocketAddress;
 
 public class MessageProvider {
@@ -32,5 +33,9 @@ public class MessageProvider {
         String[] joinSet = new String[] {"123", "hello world!"};
         ReconfigureReply reply = new ReconfigureReply(view, joinSet, 2, 3);
         return new VMMessage(1, reply);
+    }
+
+    public static LCMessageWire getLCMessage() {
+        return new LCMessageWire(1, 2, 3, new byte[] {1, 2, 3}, true);
     }
 }
