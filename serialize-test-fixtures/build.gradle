@@ -2,4 +2,9 @@ dependencies {
 	implementation project(":messages")
 	
 	implementation 'net.jqwik:jqwik:1.9.3'
+
+	// Source: https://mvnrepository.com/artifact/org.assertj/assertj-core
+	implementation 'org.assertj:assertj-core:3.27.6'
+	
+	implementation 'org.junit.jupiter:junit-jupiter:5.7.1'
 }

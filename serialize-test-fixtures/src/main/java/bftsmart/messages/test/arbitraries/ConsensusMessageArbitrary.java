@@ -19,7 +19,7 @@ public final class ConsensusMessageArbitrary implements ArbitrarySupplier<Consen
                         Arbitraries.integers(),
                         Arbitraries.integers(),
                         Arbitraries.integers(),
-                        Arbitraries.bytes().array(byte[].class).ofMinSize(1).ofMaxSize(2 ^ 14))
+                        Arbitraries.bytes().array(byte[].class).ofMinSize(1).ofMaxSize(16384))
                 .as(ConsensusMessage::new);
     }
 }

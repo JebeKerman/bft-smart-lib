@@ -1,41 +1,32 @@
 package bftsmart.serialization.java;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import bftsmart.consensus.messages.ConsensusMessage;
-import bftsmart.consensus.messages.MessageFactory;
-import bftsmart.messages.test.TestHelper;
+import bftsmart.messages.test.AbstractMessageSerializerTest;
 import bftsmart.messages.test.arbitraries.ConsensusMessageArbitrary;
+import bftsmart.messages.test.arbitraries.ConsensusMessageFixtures;
 import bftsmart.serialization.MessageSerializer;
-import java.io.IOException;
-import net.jqwik.api.ForAll;
-import net.jqwik.api.Property;
-import net.jqwik.api.ShrinkingMode;
+import java.util.function.Supplier;
+import net.jqwik.api.Arbitrary;
 
-public class TestJavaSerializer_ConsensusMessage {
-    private final MessageSerializer serializer = JavaSerializer.getInstance();
-
-    @org.junit.jupiter.api.Test
-    public void testSerializeSimpleConsensusMessage() throws IOException, ClassNotFoundException {
-        ConsensusMessage expected =
-                new ConsensusMessage(MessageFactory.PROPOSE, 1, 1, 1, new byte[] {1, 2, 3});
-
-        byte[] bytes = TestHelper.toBytes(serializer, expected);
-        assertTrue(bytes.length > 0);
-
-        ConsensusMessage actual = TestHelper.fromBytes(serializer, bytes, ConsensusMessage.class);
-        assertThat(actual).usingRecursiveComparison().isEqualTo(expected);
+public class TestJavaSerializer_ConsensusMessage
+        extends AbstractMessageSerializerTest<ConsensusMessage> {
+    @Override
+    protected MessageSerializer serializer() {
+        return JavaSerializer.getInstance();
     }
 
-    @Property(tries = 50, shrinking = ShrinkingMode.OFF)
-    public void testSerializeArbitrary_ConsensusMessage(
-            @ForAll(supplier = ConsensusMessageArbitrary.class) ConsensusMessage expected)
-            throws IOException, ClassNotFoundException {
-        byte[] bytes = TestHelper.toBytes(serializer, expected);
-        assertTrue(bytes.length > 0);
+    @Override
+    protected Class<ConsensusMessage> messageType() {
+        return ConsensusMessage.class;
+    }
 
-        ConsensusMessage actual = TestHelper.fromBytes(serializer, bytes, ConsensusMessage.class);
-        assertThat(actual).usingRecursiveComparison().isEqualTo(expected);
+    @Override
+    protected Supplier<? extends Arbitrary<ConsensusMessage>> arbitrarySupplier() {
+        return new ConsensusMessageArbitrary();
+    }
+
+    @Override
+    protected Supplier<? extends Arbitrary<ConsensusMessage>> fixturesSupplier() {
+        return new ConsensusMessageFixtures();
     }
 }
