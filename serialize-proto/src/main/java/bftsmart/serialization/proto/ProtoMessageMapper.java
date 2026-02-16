@@ -18,7 +18,8 @@ class ProtoMessageMapper {
             case LC_MSG:
                 return LCMessageMapper.getInstance().fromProto(senderId, msg.getLcMsg());
             case CONSENSUS_MSG:
-                return ConsensusMessageMapper.getInstance().fromProto(senderId, msg.getConsensusMsg());
+                return ConsensusMessageMapper.getInstance()
+                        .fromProto(senderId, msg.getConsensusMsg());
             case PAYLOAD_NOT_SET:
                 break;
             default:
@@ -37,7 +38,8 @@ class ProtoMessageMapper {
         } else if (msg instanceof LCMessageWire) {
             builder.setLcMsg(LCMessageMapper.getInstance().toProto((LCMessageWire) msg));
         } else if (msg instanceof ConsensusMessage) {
-            builder.setConsensusMsg(ConsensusMessageMapper.getInstance().toProto((ConsensusMessage) msg));
+            builder.setConsensusMsg(
+                    ConsensusMessageMapper.getInstance().toProto((ConsensusMessage) msg));
         }
         return builder.build();
     }

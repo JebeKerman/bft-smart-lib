@@ -3,13 +3,12 @@ package bftsmart.serialization.java;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.io.IOException;
-
 import bftsmart.consensus.messages.ConsensusMessage;
 import bftsmart.consensus.messages.MessageFactory;
 import bftsmart.messages.test.TestHelper;
 import bftsmart.messages.test.arbitraries.ConsensusMessageArbitrary;
 import bftsmart.serialization.MessageSerializer;
+import java.io.IOException;
 import net.jqwik.api.ForAll;
 import net.jqwik.api.Property;
 import net.jqwik.api.ShrinkingMode;
@@ -19,7 +18,8 @@ public class TestJavaSerializer_ConsensusMessage {
 
     @org.junit.jupiter.api.Test
     public void testSerializeSimpleConsensusMessage() throws IOException, ClassNotFoundException {
-        ConsensusMessage expected = new ConsensusMessage(MessageFactory.PROPOSE, 1, 1, 1, new byte[] {1, 2, 3});
+        ConsensusMessage expected =
+                new ConsensusMessage(MessageFactory.PROPOSE, 1, 1, 1, new byte[] {1, 2, 3});
 
         byte[] bytes = TestHelper.toBytes(serializer, expected);
         assertTrue(bytes.length > 0);

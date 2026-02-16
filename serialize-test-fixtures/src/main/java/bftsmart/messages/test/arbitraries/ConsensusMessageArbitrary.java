@@ -9,14 +9,17 @@ import net.jqwik.api.Combinators;
 
 public final class ConsensusMessageArbitrary implements ArbitrarySupplier<ConsensusMessage> {
 
-        @Override
+    @Override
     public Arbitrary<ConsensusMessage> get() {
         return Combinators.combine(
-                Arbitraries.of(MessageFactory.PROPOSE, MessageFactory.WRITE, MessageFactory.ACCEPT),
-                Arbitraries.integers(), 
-                Arbitraries.integers(), 
-                Arbitraries.integers(), 
-                Arbitraries.bytes().array(byte[].class).ofMinSize(1).ofMaxSize(2^14)
-        ).as(ConsensusMessage::new);
+                        Arbitraries.of(
+                                MessageFactory.PROPOSE,
+                                MessageFactory.WRITE,
+                                MessageFactory.ACCEPT),
+                        Arbitraries.integers(),
+                        Arbitraries.integers(),
+                        Arbitraries.integers(),
+                        Arbitraries.bytes().array(byte[].class).ofMinSize(1).ofMaxSize(2 ^ 14))
+                .as(ConsensusMessage::new);
     }
 }

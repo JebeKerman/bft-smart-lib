@@ -4,7 +4,8 @@ import bftsmart.consensus.messages.ConsensusMessage;
 import bftsmart.consensus.messages.MessageFactory;
 import com.google.protobuf.ByteString;
 
-class ConsensusMessageMapper implements MessageMapper<ConsensusMessage, ProtoMessages.ConsensusMessage> {
+class ConsensusMessageMapper
+        implements MessageMapper<ConsensusMessage, ProtoMessages.ConsensusMessage> {
     private static final ConsensusMessageMapper instance = new ConsensusMessageMapper();
 
     static ConsensusMessageMapper getInstance() {
@@ -18,7 +19,8 @@ class ConsensusMessageMapper implements MessageMapper<ConsensusMessage, ProtoMes
             value = msg.getValue().toByteArray();
         }
         int type = convertPaxosTypeToInternRepresentation(msg.getType());
-        ConsensusMessage message = new ConsensusMessage(type, msg.getNumber(), msg.getEpoch(), senderId, value);
+        ConsensusMessage message =
+                new ConsensusMessage(type, msg.getNumber(), msg.getEpoch(), senderId, value);
         return message;
     }
 
@@ -41,11 +43,11 @@ class ConsensusMessageMapper implements MessageMapper<ConsensusMessage, ProtoMes
                 return MessageFactory.PROPOSE;
             case WRITE:
                 return MessageFactory.WRITE;
-            case ACCEPT:        
+            case ACCEPT:
                 return MessageFactory.ACCEPT;
-            case REQ_DECISION:        
+            case REQ_DECISION:
                 return MessageFactory.REQ_DECISION;
-            case FWD_DECISION:        
+            case FWD_DECISION:
                 return MessageFactory.FWD_DECISION;
             default:
                 throw new IllegalArgumentException("Unknown type: " + type);
@@ -58,11 +60,11 @@ class ConsensusMessageMapper implements MessageMapper<ConsensusMessage, ProtoMes
                 return ProtoMessages.PaxosType.PROPOSE;
             case MessageFactory.WRITE:
                 return ProtoMessages.PaxosType.WRITE;
-            case MessageFactory.ACCEPT:        
+            case MessageFactory.ACCEPT:
                 return ProtoMessages.PaxosType.ACCEPT;
-            case MessageFactory.REQ_DECISION:        
+            case MessageFactory.REQ_DECISION:
                 return ProtoMessages.PaxosType.REQ_DECISION;
-            case MessageFactory.FWD_DECISION:        
+            case MessageFactory.FWD_DECISION:
                 return ProtoMessages.PaxosType.FWD_DECISION;
             default:
                 throw new IllegalArgumentException("Unknown type: " + type);
