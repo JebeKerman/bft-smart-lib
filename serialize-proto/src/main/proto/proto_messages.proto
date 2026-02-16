@@ -34,6 +34,14 @@ message LCMessage {
   bool  trigger_lc_locally = 4;
 }
 
+message ConsensusMessage {
+  int32     number = 1;
+  int32     epoch  = 2;
+  PaxosType type   = 3;
+  bytes     value  = 4; // Value used when PROPOSE
+  bytes     proof  = 5; // Proof, when COLLECT TODO: How to handle 'Object?'
+}
+
 message ReconfigureReply {
   View            view              = 1;
   repeated string join_set          = 2;
@@ -51,14 +59,6 @@ message View {
 message SocketAddress {
   string host = 1; // hostname or IP literal
   uint32 port = 2; // 0-65535
-}
-
-message ConsensusMessage {
-  int32     number = 1;
-  int32     epoch  = 2;
-  PaxosType type   = 3;
-  bytes     value  = 4; // Value used when PROPOSE
-  bytes     proof  = 5; // Proof, when COLLECT TODO: How to handle 'Object?'
 }
 
 enum PaxosType {
