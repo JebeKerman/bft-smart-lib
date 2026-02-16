@@ -1,4 +1,4 @@
-package bftsmart.messages.test;
+package bftsmart.messages.test.arbitraries;
 
 import bftsmart.reconfiguration.ReconfigureReply;
 import bftsmart.reconfiguration.VMMessage;

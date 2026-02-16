@@ -1,4 +1,4 @@
-package bftsmart.messages.test;
+package bftsmart.messages.test.arbitraries;
 
 import bftsmart.serialization.messages.TOMMessagePlain;
 import bftsmart.tom.core.messages.TOMMessageType;

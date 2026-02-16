@@ -3,8 +3,8 @@ package bftsmart.serialization.java;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-import bftsmart.messages.test.LCMessageArbitrary;
 import bftsmart.messages.test.TestHelper;
+import bftsmart.messages.test.arbitraries.LCMessageArbitrary;
 import bftsmart.serialization.MessageSerializer;
 import bftsmart.tom.leaderchange.LCMessageWire;
 import java.io.IOException;

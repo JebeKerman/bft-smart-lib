@@ -3,8 +3,8 @@ package bftsmart.serialization.java;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-import bftsmart.messages.test.TOMMessageArbitary;
 import bftsmart.messages.test.TestHelper;
+import bftsmart.messages.test.arbitraries.TOMMessageArbitary;
 import bftsmart.serialization.MessageSerializer;
 import bftsmart.serialization.messages.TOMMessagePlain;
 import bftsmart.tom.core.messages.TOMMessageType;

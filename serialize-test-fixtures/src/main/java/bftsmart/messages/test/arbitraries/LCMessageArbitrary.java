@@ -1,4 +1,4 @@
-package bftsmart.messages.test;
+package bftsmart.messages.test.arbitraries;
 
 import bftsmart.tom.leaderchange.LCMessageWire;
 import net.jqwik.api.Arbitraries;

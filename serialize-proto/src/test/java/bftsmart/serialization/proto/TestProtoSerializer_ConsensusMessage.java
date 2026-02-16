@@ -7,8 +7,8 @@ import java.io.IOException;
 
 import bftsmart.consensus.messages.ConsensusMessage;
 import bftsmart.consensus.messages.MessageFactory;
-import bftsmart.messages.test.ConsensusMessageArbitrary;
 import bftsmart.messages.test.TestHelper;
+import bftsmart.messages.test.arbitraries.ConsensusMessageArbitrary;
 import bftsmart.serialization.MessageSerializer;
 import net.jqwik.api.ForAll;
 import net.jqwik.api.Property;

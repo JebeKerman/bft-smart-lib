@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 import bftsmart.messages.test.TestHelper;
-import bftsmart.messages.test.VMMessageArbitrary;
+import bftsmart.messages.test.arbitraries.VMMessageArbitrary;
 import bftsmart.reconfiguration.ReconfigureReply;
 import bftsmart.reconfiguration.VMMessage;
 import bftsmart.reconfiguration.views.View;
