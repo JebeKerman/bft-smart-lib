@@ -29,7 +29,10 @@ public abstract class AbstractMessageSerializerTest<T extends SystemMessage> {
 
         T actual = TestHelper.fromBytes(serializer, bytes, messageType());
 
-        assertThat(actual).usingRecursiveComparison().isEqualTo(expected);
+        assertThat(actual)
+                .usingRecursiveComparison()
+                .ignoringFields(ignoredFields())
+                .isEqualTo(expected);
     }
 
     @Property
@@ -41,7 +44,10 @@ public abstract class AbstractMessageSerializerTest<T extends SystemMessage> {
 
         T actual = TestHelper.fromBytes(serializer, bytes, messageType());
 
-        assertThat(actual).usingRecursiveComparison().isEqualTo(expected);
+        assertThat(actual)
+                .usingRecursiveComparison()
+                .ignoringFields(ignoredFields())
+                .isEqualTo(expected);
     }
 
     @Provide
@@ -52,5 +58,9 @@ public abstract class AbstractMessageSerializerTest<T extends SystemMessage> {
     @Provide
     Arbitrary<T> fixtures() {
         return arbitrarySupplier().getFixtures();
+    }
+
+    protected String[] ignoredFields() {
+        return new String[0];
     }
 }
