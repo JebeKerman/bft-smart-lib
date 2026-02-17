@@ -4,6 +4,7 @@ import bftsmart.communication.SystemMessage;
 import bftsmart.consensus.messages.ConsensusMessage;
 import bftsmart.reconfiguration.VMMessage;
 import bftsmart.serialization.messages.TOMMessageWire;
+import bftsmart.tom.core.messages.ForwardedMessage;
 import bftsmart.tom.leaderchange.LCMessageWire;
 
 class ProtoMessageMapper {
@@ -20,6 +21,9 @@ class ProtoMessageMapper {
             case CONSENSUS_MSG:
                 return ConsensusMessageMapper.getInstance()
                         .fromProto(senderId, msg.getConsensusMsg());
+            case FORWARDED_MESSAGE:
+                return ForwardedMessageMapper.getInstance()
+                        .fromProto(senderId, msg.getForwardedMessage());
             case PAYLOAD_NOT_SET:
                 break;
             default:
@@ -40,6 +44,9 @@ class ProtoMessageMapper {
         } else if (msg instanceof ConsensusMessage) {
             builder.setConsensusMsg(
                     ConsensusMessageMapper.getInstance().toProto((ConsensusMessage) msg));
+        } else if (msg instanceof ForwardedMessage) {
+            builder.setForwardedMessage(
+                    ForwardedMessageMapper.getInstance().toProto((ForwardedMessage) msg));
         }
         return builder.build();
     }

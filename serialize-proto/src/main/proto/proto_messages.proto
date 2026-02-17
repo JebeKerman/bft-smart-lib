@@ -6,10 +6,11 @@ package bftsmart.serialization.proto;
 message SystemMessage {
   int32 sender_id = 1;
   oneof payload {
-    TOMMessage       tom_msg       = 2;
-    VMMessage        vm_msg        = 3;
-    LCMessage        lc_msg        = 4;
-    ConsensusMessage consensus_msg = 5;
+    TOMMessage       tom_msg           = 2;
+    VMMessage        vm_msg            = 3;
+    LCMessage        lc_msg            = 4;
+    ConsensusMessage consensus_msg     = 5;
+    ForwardedMessage forwarded_message = 6;
   }
 }
 
@@ -40,6 +41,12 @@ message ConsensusMessage {
   PaxosType type   = 3;
   bytes     value  = 4; // Value used when PROPOSE
   bytes     proof  = 5; // Proof, when COLLECT TODO: How to handle 'Object?'
+}
+
+message ForwardedMessage {
+  int32      request_sender = 1;
+  TOMMessage request        = 2;
+  bytes      signature      = 3;
 }
 
 message ReconfigureReply {
@@ -85,10 +92,6 @@ message CSTSMMessage { // Extends SMMessage...
 message StandardSMMMessage {
   SMMessage parent  = 1;
   int32     replica = 2;
-}
-
-message ForwardedMessage {
-  TOMMessage request = 1;
 }
 
 enum TOMMessageType {
