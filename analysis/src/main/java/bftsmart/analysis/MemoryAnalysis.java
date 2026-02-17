@@ -23,6 +23,7 @@ public class MemoryAnalysis {
                 MessageProvider.getTOMMessage(),
                 MessageProvider.getVMMessage(),
                 MessageProvider.getLCMessage(),
+                MessageProvider.getConsensusMessage(),
             };
     private static MessageSerializer[] serializers =
             new MessageSerializer[] {

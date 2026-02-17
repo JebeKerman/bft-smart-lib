@@ -1,5 +1,7 @@
 package bftsmart.messages.bench;
 
+import bftsmart.consensus.messages.ConsensusMessage;
+import bftsmart.consensus.messages.MessageFactory;
 import bftsmart.reconfiguration.ReconfigureReply;
 import bftsmart.reconfiguration.VMMessage;
 import bftsmart.reconfiguration.views.View;
@@ -37,5 +39,9 @@ public class MessageProvider {
 
     public static LCMessageWire getLCMessage() {
         return new LCMessageWire(1, 2, 3, new byte[] {1, 2, 3}, true);
+    }
+
+    public static ConsensusMessage getConsensusMessage() {
+        return new ConsensusMessage(MessageFactory.PROPOSE, 0, 0, 0, new byte[] {0});
     }
 }
