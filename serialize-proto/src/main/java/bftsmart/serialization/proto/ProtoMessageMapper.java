@@ -3,7 +3,7 @@ package bftsmart.serialization.proto;
 import bftsmart.communication.SystemMessage;
 import bftsmart.consensus.messages.ConsensusMessage;
 import bftsmart.reconfiguration.VMMessage;
-import bftsmart.serialization.messages.TOMMessagePlain;
+import bftsmart.serialization.messages.TOMMessageWire;
 import bftsmart.tom.leaderchange.LCMessageWire;
 
 class ProtoMessageMapper {
@@ -31,8 +31,8 @@ class ProtoMessageMapper {
     static ProtoMessages.SystemMessage fromInternal(SystemMessage msg) {
         ProtoMessages.SystemMessage.Builder builder =
                 ProtoMessages.SystemMessage.newBuilder().setSenderId(msg.getSender());
-        if (msg instanceof TOMMessagePlain) {
-            builder.setTomMsg(TOMMessageMapper.getInstance().toProto((TOMMessagePlain) msg));
+        if (msg instanceof TOMMessageWire) {
+            builder.setTomMsg(TOMMessageMapper.getInstance().toProto((TOMMessageWire) msg));
         } else if (msg instanceof VMMessage) {
             builder.setVmMsg(VMMessageMapper.getInstance().toProto((VMMessage) msg));
         } else if (msg instanceof LCMessageWire) {

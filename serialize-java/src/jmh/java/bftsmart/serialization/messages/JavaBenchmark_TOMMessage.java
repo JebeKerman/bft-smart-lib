@@ -18,7 +18,7 @@ public class JavaBenchmark_TOMMessage {
 
     private ByteArrayOutputStream os;
 
-    private TOMMessagePlain message;
+    private TOMMessageWire message;
     private byte[] serializedMessage;
 
     @Setup(Level.Trial)
@@ -43,6 +43,6 @@ public class JavaBenchmark_TOMMessage {
     public void deserialize() throws Exception {
         ByteArrayInputStream is = new ByteArrayInputStream(serializedMessage);
         @SuppressWarnings("unused")
-        TOMMessagePlain plain = (TOMMessagePlain) serializer.deserialize(is);
+        TOMMessageWire plain = (TOMMessageWire) serializer.deserialize(is);
     }
 }

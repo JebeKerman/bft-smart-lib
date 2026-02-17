@@ -18,7 +18,7 @@ package bftsmart.communication.server;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import bftsmart.serialization.MessageSerializerFactory;
-import bftsmart.serialization.messages.TOMMessagePlain;
+import bftsmart.serialization.messages.TOMMessageWire;
 import bftsmart.tom.core.messages.TOMMessage;
 import bftsmart.tom.core.messages.TOMMessageType;
 
@@ -39,7 +39,7 @@ public class TestSerialization {
         System.out.println(message.length);
 
         ByteArrayInputStream bais = new ByteArrayInputStream(message);
-        TOMMessagePlain tmPLain = (TOMMessagePlain) MessageSerializerFactory.getSerializer().deserialize(bais);
+        TOMMessageWire tmPLain = (TOMMessageWire) MessageSerializerFactory.getSerializer().deserialize(bais);
         TOMMessage tm2 = new TOMMessage(tmPLain);
 
         System.out.println(new String(tm2.getContent()));

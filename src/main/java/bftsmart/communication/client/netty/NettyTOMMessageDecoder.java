@@ -25,7 +25,7 @@ import org.slf4j.LoggerFactory;
 
 import bftsmart.reconfiguration.ViewController;
 import bftsmart.serialization.MessageSerializerFactory;
-import bftsmart.serialization.messages.TOMMessagePlain;
+import bftsmart.serialization.messages.TOMMessageWire;
 import bftsmart.tom.core.messages.TOMMessage;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -142,7 +142,7 @@ public class NettyTOMMessageDecoder extends ByteToMessageDecoder {
 
         try {
             ByteArrayInputStream bais = new ByteArrayInputStream(data);
-            TOMMessagePlain smPlain = (TOMMessagePlain) MessageSerializerFactory.getSerializer().deserialize(bais);
+            TOMMessageWire smPlain = (TOMMessageWire) MessageSerializerFactory.getSerializer().deserialize(bais);
             TOMMessage sm = new TOMMessage(smPlain);
             sm.serializedMessage = data;
 

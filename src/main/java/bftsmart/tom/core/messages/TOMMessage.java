@@ -20,14 +20,14 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInput;
 import bftsmart.serialization.MessageSerializerFactory;
-import bftsmart.serialization.messages.TOMMessagePlain;
+import bftsmart.serialization.messages.TOMMessageWire;
 import bftsmart.tom.util.DebugInfo;
 import org.slf4j.LoggerFactory;
 
 /**
  * This class represents a total ordered message
  */
-public class TOMMessage extends TOMMessagePlain implements Comparable<TOMMessage> {
+public class TOMMessage extends TOMMessageWire implements Comparable<TOMMessage> {
 
 	//the fields bellow are not serialized!!!
 	private transient int id; // ID for this message. It should be unique
@@ -86,7 +86,7 @@ public class TOMMessage extends TOMMessagePlain implements Comparable<TOMMessage
 	//}
 
 	
-	public TOMMessage(TOMMessagePlain plain) {
+	public TOMMessage(TOMMessageWire plain) {
 		this(plain.getSender(), plain.getSession(), plain.getSequence(), plain.getOperationId(), plain.getContent(), plain.getViewID(), plain.getType());
 	}
 
@@ -240,7 +240,7 @@ public class TOMMessage extends TOMMessagePlain implements Comparable<TOMMessage
 		 ByteArrayInputStream bais = new ByteArrayInputStream(b);
 		 
 		 try {
-			TOMMessagePlain plain = (TOMMessagePlain) MessageSerializerFactory.getSerializer().deserialize(bais);
+			TOMMessageWire plain = (TOMMessageWire) MessageSerializerFactory.getSerializer().deserialize(bais);
 			return new TOMMessage(plain);
 		 }catch(Exception e) {
 			 LoggerFactory.getLogger(TOMMessage.class).error("Failed to deserialize TOMMessage",e);

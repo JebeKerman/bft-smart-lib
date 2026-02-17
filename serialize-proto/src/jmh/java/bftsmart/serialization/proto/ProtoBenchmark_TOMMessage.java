@@ -2,7 +2,7 @@ package bftsmart.serialization.proto;
 
 import bftsmart.messages.bench.MessageProvider;
 import bftsmart.serialization.MessageSerializer;
-import bftsmart.serialization.messages.TOMMessagePlain;
+import bftsmart.serialization.messages.TOMMessageWire;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import org.openjdk.jmh.annotations.Benchmark;
@@ -17,7 +17,7 @@ public class ProtoBenchmark_TOMMessage {
     private MessageSerializer serializer;
     private ByteArrayOutputStream os;
 
-    private TOMMessagePlain message;
+    private TOMMessageWire message;
     private byte[] serializedMessage;
 
     @Setup(Level.Trial)
@@ -42,6 +42,6 @@ public class ProtoBenchmark_TOMMessage {
     public void deserialize() throws Exception {
         ByteArrayInputStream is = new ByteArrayInputStream(serializedMessage);
         @SuppressWarnings("unused")
-        TOMMessagePlain plain = (TOMMessagePlain) serializer.deserialize(is);
+        TOMMessageWire plain = (TOMMessageWire) serializer.deserialize(is);
     }
 }

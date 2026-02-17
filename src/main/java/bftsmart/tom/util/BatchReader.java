@@ -21,7 +21,7 @@ import java.util.Random;
 
 import bftsmart.reconfiguration.ServerViewController;
 import bftsmart.serialization.MessageSerializerFactory;
-import bftsmart.serialization.messages.TOMMessagePlain;
+import bftsmart.serialization.messages.TOMMessageWire;
 import bftsmart.tom.core.messages.TOMMessage;
 import org.slf4j.LoggerFactory;
 
@@ -87,7 +87,7 @@ public final class BatchReader {
             }
             try {
                 ByteArrayInputStream ois = new ByteArrayInputStream(message);
-                TOMMessagePlain tmPlain = (TOMMessagePlain) MessageSerializerFactory.getSerializer().deserialize(ois);
+                TOMMessageWire tmPlain = (TOMMessageWire) MessageSerializerFactory.getSerializer().deserialize(ois);
                 TOMMessage tm = new TOMMessage(tmPlain);
 
                 tm.serializedMessage = message;

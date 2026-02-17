@@ -1,15 +1,15 @@
 package bftsmart.messages.test.arbitraries;
 
-import bftsmart.serialization.messages.TOMMessagePlain;
+import bftsmart.serialization.messages.TOMMessageWire;
 import bftsmart.tom.core.messages.TOMMessageType;
 import net.jqwik.api.Arbitraries;
 import net.jqwik.api.Arbitrary;
 import net.jqwik.api.Combinators;
 
-public final class TOMMessageArbitary implements ArbitraryMessageSupplier<TOMMessagePlain> {
+public final class TOMMessageArbitary implements ArbitraryMessageSupplier<TOMMessageWire> {
 
     @Override
-    public Arbitrary<TOMMessagePlain> getArbitraries() {
+    public Arbitrary<TOMMessageWire> getArbitraries() {
         return Combinators.combine(
                         Arbitraries.integers(),
                         Arbitraries.integers(),
@@ -22,12 +22,12 @@ public final class TOMMessageArbitary implements ArbitraryMessageSupplier<TOMMes
                                 .injectNull(0.05),
                         Arbitraries.integers(),
                         Arbitraries.of(TOMMessageType.values()))
-                .as(TOMMessagePlain::new);
+                .as(TOMMessageWire::new);
     }
 
     @Override
-    public Arbitrary<TOMMessagePlain> getFixtures() {
-        TOMMessagePlain message = new TOMMessagePlain(1);
+    public Arbitrary<TOMMessageWire> getFixtures() {
+        TOMMessageWire message = new TOMMessageWire(1);
         message.setSession(2);
         message.setSequence(3);
         message.setOperationId(4);

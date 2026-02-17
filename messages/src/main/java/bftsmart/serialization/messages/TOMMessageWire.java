@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
 
-public class TOMMessagePlain extends SystemMessage {
+public class TOMMessageWire extends SystemMessage {
     protected int viewID; // current sender view
     protected TOMMessageType type; // request type: application or reconfiguration request
 
@@ -20,15 +20,15 @@ public class TOMMessagePlain extends SystemMessage {
 
     protected int replyServer = -1;
 
-    public TOMMessagePlain() {
+    public TOMMessageWire() {
         super();
     }
 
-    public TOMMessagePlain(int sender) {
+    public TOMMessageWire(int sender) {
         super(sender);
     }
 
-    public TOMMessagePlain(
+    public TOMMessageWire(
             int sender,
             int session,
             int sequence,

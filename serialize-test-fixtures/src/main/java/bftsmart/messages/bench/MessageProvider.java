@@ -5,14 +5,14 @@ import bftsmart.consensus.messages.MessageFactory;
 import bftsmart.reconfiguration.ReconfigureReply;
 import bftsmart.reconfiguration.VMMessage;
 import bftsmart.reconfiguration.views.View;
-import bftsmart.serialization.messages.TOMMessagePlain;
+import bftsmart.serialization.messages.TOMMessageWire;
 import bftsmart.tom.core.messages.TOMMessageType;
 import bftsmart.tom.leaderchange.LCMessageWire;
 import java.net.InetSocketAddress;
 
 public class MessageProvider {
-    public static TOMMessagePlain getTOMMessage() {
-        TOMMessagePlain message = new TOMMessagePlain(1);
+    public static TOMMessageWire getTOMMessage() {
+        TOMMessageWire message = new TOMMessageWire(1);
         message.setSession(2);
         message.setSequence(3);
         message.setOperationId(4);

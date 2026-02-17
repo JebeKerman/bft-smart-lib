@@ -1,10 +1,10 @@
 package bftsmart.serialization.proto;
 
-import bftsmart.serialization.messages.TOMMessagePlain;
+import bftsmart.serialization.messages.TOMMessageWire;
 import bftsmart.tom.core.messages.TOMMessageType;
 import com.google.protobuf.ByteString;
 
-class TOMMessageMapper implements MessageMapper<TOMMessagePlain, ProtoMessages.TOMMessage> {
+class TOMMessageMapper implements MessageMapper<TOMMessageWire, ProtoMessages.TOMMessage> {
     private static final TOMMessageMapper instance = new TOMMessageMapper();
 
     static TOMMessageMapper getInstance() {
@@ -12,7 +12,7 @@ class TOMMessageMapper implements MessageMapper<TOMMessagePlain, ProtoMessages.T
     }
 
     @Override
-    public TOMMessagePlain fromProto(int senderId, ProtoMessages.TOMMessage msg) {
+    public TOMMessageWire fromProto(int senderId, ProtoMessages.TOMMessage msg) {
         TOMMessageType type = TOMMessageType.getMessageType(msg.getTypeValue());
 
         byte[] content = null;
@@ -20,8 +20,8 @@ class TOMMessageMapper implements MessageMapper<TOMMessagePlain, ProtoMessages.T
             content = msg.getContent().toByteArray();
         }
 
-        TOMMessagePlain plain =
-                new TOMMessagePlain(
+        TOMMessageWire plain =
+                new TOMMessageWire(
                         senderId,
                         msg.getSession(),
                         msg.getSequence(),
@@ -35,7 +35,7 @@ class TOMMessageMapper implements MessageMapper<TOMMessagePlain, ProtoMessages.T
     }
 
     @Override
-    public ProtoMessages.TOMMessage toProto(TOMMessagePlain msg) {
+    public ProtoMessages.TOMMessage toProto(TOMMessageWire msg) {
         ProtoMessages.TOMMessage.Builder tomMessage =
                 ProtoMessages.TOMMessage.newBuilder()
                         .setViewId(msg.getViewID())

@@ -4,21 +4,21 @@ import bftsmart.messages.test.AbstractMessageSerializerTest;
 import bftsmart.messages.test.arbitraries.ArbitraryMessageSupplier;
 import bftsmart.messages.test.arbitraries.TOMMessageArbitary;
 import bftsmart.serialization.MessageSerializer;
-import bftsmart.serialization.messages.TOMMessagePlain;
+import bftsmart.serialization.messages.TOMMessageWire;
 
-public class TestJavaSerializer_TOMMessage extends AbstractMessageSerializerTest<TOMMessagePlain> {
+public class TestJavaSerializer_TOMMessage extends AbstractMessageSerializerTest<TOMMessageWire> {
     @Override
     protected MessageSerializer serializer() {
         return JavaSerializer.getInstance();
     }
 
     @Override
-    protected Class<TOMMessagePlain> messageType() {
-        return TOMMessagePlain.class;
+    protected Class<TOMMessageWire> messageType() {
+        return TOMMessageWire.class;
     }
 
     @Override
-    protected ArbitraryMessageSupplier<TOMMessagePlain> arbitrarySupplier() {
+    protected ArbitraryMessageSupplier<TOMMessageWire> arbitrarySupplier() {
         return new TOMMessageArbitary();
     }
 }
