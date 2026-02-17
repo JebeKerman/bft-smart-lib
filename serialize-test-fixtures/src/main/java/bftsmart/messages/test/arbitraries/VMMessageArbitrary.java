@@ -8,15 +8,31 @@ import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
 import net.jqwik.api.Arbitraries;
 import net.jqwik.api.Arbitrary;
-import net.jqwik.api.ArbitrarySupplier;
 import net.jqwik.api.Combinators;
 import net.jqwik.api.Provide;
 
-public final class VMMessageArbitrary implements ArbitrarySupplier<VMMessage> {
+public final class VMMessageArbitrary implements ArbitraryMessageSupplier<VMMessage> {
 
     @Override
-    public Arbitrary<VMMessage> get() {
+    public Arbitrary<VMMessage> getArbitraries() {
         return Combinators.combine(Arbitraries.integers(), replies()).as(VMMessage::new);
+    }
+
+    @Override
+    public Arbitrary<VMMessage> getFixtures() {
+        View view =
+                new View(
+                        1,
+                        new int[] {1, 2, 3},
+                        1,
+                        new InetSocketAddress[] {
+                            new InetSocketAddress("localhost", 8080),
+                            new InetSocketAddress("localhost", 8081),
+                            new InetSocketAddress("localhost", 8082)
+                        });
+        ReconfigureReply reply = new ReconfigureReply(view, new String[] {"node1", "node2"}, 1, 2);
+        VMMessage message = new VMMessage(1, reply);
+        return Arbitraries.of(message);
     }
 
     @Provide
