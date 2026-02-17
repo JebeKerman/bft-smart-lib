@@ -1,11 +1,11 @@
 package bftsmart.messages.test;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import bftsmart.communication.SystemMessage;
+import bftsmart.messages.test.arbitraries.ArbitraryMessageSupplier;
 import bftsmart.serialization.MessageSerializer;
-import java.util.function.Supplier;
 import net.jqwik.api.Arbitrary;
 import net.jqwik.api.ForAll;
 import net.jqwik.api.Property;
@@ -18,12 +18,10 @@ public abstract class AbstractMessageSerializerTest<T extends SystemMessage> {
 
     protected abstract Class<T> messageType();
 
-    protected abstract Supplier<? extends Arbitrary<T>> arbitrarySupplier();
-
-    protected abstract Supplier<? extends Arbitrary<T>> fixturesSupplier();
+    protected abstract ArbitraryMessageSupplier<T> arbitrarySupplier();
 
     @Property(tries = 50, shrinking = ShrinkingMode.OFF)
-    void testSerializeArbitrary(@ForAll("messages") T expected) throws Exception {
+    void testSerializeArbitrary(@ForAll("arbitraries") T expected) throws Exception {
         MessageSerializer serializer = serializer();
 
         byte[] bytes = TestHelper.toBytes(serializer, expected);
@@ -47,12 +45,12 @@ public abstract class AbstractMessageSerializerTest<T extends SystemMessage> {
     }
 
     @Provide
-    Arbitrary<T> messages() {
-        return arbitrarySupplier().get();
+    Arbitrary<T> arbitraries() {
+        return arbitrarySupplier().getArbitraries();
     }
 
     @Provide
     Arbitrary<T> fixtures() {
-        return fixturesSupplier().get();
+        return arbitrarySupplier().getFixtures();
     }
 }
