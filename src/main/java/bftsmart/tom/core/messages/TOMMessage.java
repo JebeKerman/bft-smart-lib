@@ -29,38 +29,7 @@ import org.slf4j.LoggerFactory;
  */
 public class TOMMessage extends TOMMessageWire implements Comparable<TOMMessage> {
 
-	//the fields bellow are not serialized!!!
 	private transient int id; // ID for this message. It should be unique
-
-	public transient long timestamp = 0; // timestamp to be used by the application
-
-	public transient long seed = 0; // seed for the nonces
-	public transient int numOfNonces = 0; // number of nonces
-        
-	public transient int destination = -1; // message destination
-	public transient boolean signed = false; // is this message signed?
-
-	public transient long receptionTime;//the reception time of this message (nanoseconds)
-	public transient long receptionTimestamp;//the reception timestamp of this message (miliseconds)
-
-	public transient boolean timeout = false;//this message was timed out?
-	
-	public transient boolean recvFromClient = false; // Did the client already sent this message to me, or did it arrived in the batch?
-	public transient boolean isValid = false; // Was this request already validated by the replica?
-        
-	//the bytes received from the client and its MAC and signature
-	public transient byte[] serializedMessage = null;
-	public transient byte[] serializedMessageSignature = null;
-	public transient byte[] serializedMessageMAC = null;
-
-	//for benchmarking purposes
-	public transient long consensusStartTime = 0; //time the consensus is created
-	public transient long proposeReceivedTime = 0; //time the propose is received
-	public transient long writeSentTime = 0; //time the replica' write message is sent
-	public transient long acceptSentTime = 0; //time the replica' accept message is sent
-	public transient long decisionTime = 0; //time the decision is established
-	public transient long deliveryTime =0; //time the request is delivered
-	public transient long executedTime =0; //time the request is executed
 
 	//the reply associated with this message
 	public transient TOMMessage reply = null;
