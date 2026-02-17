@@ -6,7 +6,7 @@ import net.jqwik.api.Arbitraries;
 import net.jqwik.api.Arbitrary;
 import net.jqwik.api.Combinators;
 
-public final class TOMMessageArbitary implements ArbitraryMessageSupplier<TOMMessageWire> {
+public final class TOMMessageArbitrary implements ArbitraryMessageSupplier<TOMMessageWire> {
 
     @Override
     public Arbitrary<TOMMessageWire> getArbitraries() {
@@ -18,7 +18,7 @@ public final class TOMMessageArbitary implements ArbitraryMessageSupplier<TOMMes
                         Arbitraries.bytes()
                                 .array(byte[].class)
                                 .ofMinSize(1)
-                                .ofMaxSize(2 ^ 14)
+                                .ofMaxSize(1024)
                                 .injectNull(0.05),
                         Arbitraries.integers(),
                         Arbitraries.of(TOMMessageType.values()))

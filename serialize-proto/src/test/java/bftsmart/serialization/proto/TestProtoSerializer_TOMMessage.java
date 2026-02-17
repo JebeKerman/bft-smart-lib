@@ -2,7 +2,7 @@ package bftsmart.serialization.proto;
 
 import bftsmart.messages.test.AbstractMessageSerializerTest;
 import bftsmart.messages.test.arbitraries.ArbitraryMessageSupplier;
-import bftsmart.messages.test.arbitraries.TOMMessageArbitary;
+import bftsmart.messages.test.arbitraries.TOMMessageArbitrary;
 import bftsmart.serialization.MessageSerializer;
 import bftsmart.serialization.messages.TOMMessageWire;
 
@@ -19,6 +19,6 @@ public class TestProtoSerializer_TOMMessage extends AbstractMessageSerializerTes
 
     @Override
     protected ArbitraryMessageSupplier<TOMMessageWire> arbitrarySupplier() {
-        return new TOMMessageArbitary();
+        return new TOMMessageArbitrary();
     }
 }

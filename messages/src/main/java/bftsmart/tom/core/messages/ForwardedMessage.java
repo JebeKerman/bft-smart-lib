@@ -17,10 +17,12 @@ package bftsmart.tom.core.messages;
 import bftsmart.communication.SystemMessage;
 import bftsmart.serialization.messages.TOMMessageWire;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
 
 /**
  * Message used to forward a client request to the current leader when the first timeout for this
@@ -45,10 +47,18 @@ public final class ForwardedMessage extends SystemMessage {
     public void writeExternal(ObjectOutput out) throws IOException {
         super.writeExternal(out);
 
+        if (request.serializedMessage == null) {
+            try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+                request.writeExternal(oos);
+                oos.flush();
+                request.serializedMessage = baos.toByteArray();
+            }
+        }
         out.writeInt(request.serializedMessage.length);
         out.write(request.serializedMessage);
-        out.writeBoolean(request.signed);
 
+        out.writeBoolean(request.signed);
         if (request.signed) {
             out.writeInt(request.serializedMessageSignature.length);
             out.write(request.serializedMessageSignature);
@@ -61,8 +71,13 @@ public final class ForwardedMessage extends SystemMessage {
 
         byte[] serReq = new byte[in.readInt()];
         in.readFully(serReq);
-        ByteArrayInputStream bais = new ByteArrayInputStream(serReq);
-        request.readExternal(new ObjectInputStream(bais));
+
+        try (ByteArrayInputStream bais = new ByteArrayInputStream(serReq)) {
+            if (request == null) {
+                request = new TOMMessageWire();
+            }
+            request.readExternal(new ObjectInputStream(bais));
+        }
 
         request.serializedMessage = serReq;
 

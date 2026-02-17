@@ -2,7 +2,7 @@ package bftsmart.serialization.java;
 
 import bftsmart.messages.test.AbstractMessageSerializerTest;
 import bftsmart.messages.test.arbitraries.ArbitraryMessageSupplier;
-import bftsmart.messages.test.arbitraries.TOMMessageArbitary;
+import bftsmart.messages.test.arbitraries.TOMMessageArbitrary;
 import bftsmart.serialization.MessageSerializer;
 import bftsmart.serialization.messages.TOMMessageWire;
 
@@ -19,6 +19,6 @@ public class TestJavaSerializer_TOMMessage extends AbstractMessageSerializerTest
 
     @Override
     protected ArbitraryMessageSupplier<TOMMessageWire> arbitrarySupplier() {
-        return new TOMMessageArbitary();
+        return new TOMMessageArbitrary();
     }
 }
