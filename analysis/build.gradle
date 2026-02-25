@@ -28,8 +28,6 @@ tasks.register('analyzeMsgSizes', Exec) {
 }
 
 tasks.register('analyzeJmh', Exec) {
-    dependsOn ':serialize-java:jmh', ':serialize-proto:jmh'
-    commandLine 'python3', "$projectDir/plot_jmh.py",
-            "$rootDir/serialize-java/build/jmh/results.json",
-            "$rootDir/serialize-proto/build/jmh/results.json"
+    dependsOn ':analysis:jmh'
+    commandLine 'python3', "$projectDir/plot_jmh.py", "$projectDir/build/jmh/results.json"
 }

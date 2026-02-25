@@ -1,133 +1,100 @@
 #!/usr/bin/env python3
 
+from collections import defaultdict
 import json
 import pathlib
 import matplotlib.pyplot as plt
-from typing import TypedDict, Literal, Dict, List, Tuple
+from typing import Dict, List, Tuple
 import sys
 from pathlib import Path
+import numpy as np
 
 
-out_dir = pathlib.Path("out")
-out_dir.mkdir(parents=True, exist_ok=True)
+GroupedResult = Dict[Tuple[str, str], List[Dict]]
 
 
-class BenchmarkResult(TypedDict):
-    avg_time: int
-    raw_data: List[int]
-
-
-class MessageResult(TypedDict):
-    serialize: BenchmarkResult
-    deserialize: BenchmarkResult
-    pass
-
-
-class Result(TypedDict):
-    label: Literal['Java', 'Proto']
-    results: Dict[Literal['TOMMessage', 'VMMessage', 'LCMessage'], MessageResult]
-
-
-def load_results(path: str, label: Literal['Java', 'Proto']) -> Result:
-    print(f"Loading {label} results of file {path}")
+def load_json_results(path: str) -> Dict:
+    print(f"Loading results file {path}")
     with open(path) as f:
         benchmarks = json.load(f)
+        return benchmarks
 
-    result: Result = {
-        "label": label,
-        "results": {
-            'TOMMessage': {},
-            'VMMessage': {},
-            'LCMessage': {},
+
+def parse_results(results_raw: Dict) -> List[Dict]:
+    results = []
+    for bench in results_raw:
+        function_name = bench["benchmark"].split('.')[-1]
+        message: str = str(bench["params"]["messageType"])
+        serializerType: str = str(bench["params"]["serializerType"])
+        avg_time: int = bench["primaryMetric"]["score"]
+        raw_data = np.array(bench["primaryMetric"]["rawData"])
+        raw_data = raw_data.flatten().tolist()
+
+        result = {
+            "function": function_name,
+            "message": message,
+            "serializer": serializerType,
+            "avg_time": avg_time,
+            "raw_data": raw_data,
         }
-    }
-    for bench in benchmarks:
-        benchmark_fqn: str = str(bench["benchmark"])
-        [message, function_name] = getBenchmarkName(benchmark_fqn)
+        results.append(result)
 
-        metrics = bench["primaryMetric"]
-        function_result: Result = {
-            "avg_time": metrics["score"],
-            "raw_data": []
-        }
-        for raw_data in metrics["rawData"]:
-            for value in raw_data:
-                function_result['raw_data'].append(value)
-
-        result['results'][message][function_name] = function_result
-    return result
+    return results
 
 
-def getBenchmarkName(name: str) -> Tuple[str, str]:
-    names = name.split('.')
-    messageName = names[-2].split('_')[1]
+def group_by_function_and_message(data: List[Dict]) -> GroupedResult:
+    grouped = defaultdict(list)
 
-    return (messageName, names[-1])
+    for bench in data:
+        key = (bench['function'], bench['message'])
+        grouped[key].append(bench)
+
+    return dict(grouped)
 
 
-def plot_message(
-        java_res: Result,
-        proto_res: Result,
-        message_name: Literal['TOMMessage', 'VMMessage', 'LCMessage'],
-        operation: str
-        ):
-    msg_result_java = java_res["results"][message_name]
-    msg_result_proto = proto_res["results"][message_name]
+def plot_result(group_key: Tuple[str, str], data: List[Dict], out_dir: Path):
+    function = group_key[0]
+    message = group_key[1]
 
-    plt.plot(
-        msg_result_java[operation]['raw_data'],
-        marker="o",
-        linestyle="",
-        label="Java",
-        color="tab:orange",
-    )
-    plt.axhline(
-        msg_result_java[operation]["avg_time"],
-        linestyle="--",
-        alpha=0.7,
-        label="Java - Mean time",
-        color="tab:orange",
-    )
+    file_name = f"{out_dir}/{message}_{function}.png"
+    print(f"Generating plot {file_name}")
+    for result in data:
+        line = plt.plot(
+            result['raw_data'],
+            marker="o",
+            linestyle="",
+            label=result['serializer'],
+        )[0]
+        color = line.get_color()
+        plt.axhline(
+            result['avg_time'],
+            linestyle="--",
+            alpha=0.7,
+            color=color,
+            label=f"{result['serializer']} - Mean time",
+        )
 
-    plt.plot(
-        msg_result_proto[operation]['raw_data'],
-        marker="o",
-        linestyle="-",
-        label="Proto",
-        color="tab:blue",
-    )
-    plt.axhline(
-        msg_result_proto[operation]["avg_time"],
-        linestyle="--",
-        alpha=0.7,
-        label="Proto - Mean time",
-        color="tab:blue",
-    )
-
-    plt.title(f"Benchmark Comparison - {message_name} {operation}")
+    plt.title(f"{message} - {function}")
     plt.ylabel("Time [ns]")
     plt.xlabel("Run")
     plt.legend()
     plt.grid(True)
 
-    path = f"{out_dir}/{message_name}_{operation}.png"
-    plt.savefig(path)
+    plt.savefig(file_name)
     plt.close()
-    print(f"Generated plot at {path}")
 
 
 def main():
-    java_res: Result = load_results(
-        Path(sys.argv[1]), "java")
-    proto_res: Result = load_results(
-        Path(sys.argv[2]), "proto")
+    out_dir = pathlib.Path("out")
+    out_dir.mkdir(parents=True, exist_ok=True)
 
-    plot_message(java_res, proto_res, "TOMMessage", "serialize")
-    plot_message(java_res, proto_res, "TOMMessage", "deserialize")
-    plot_message(java_res, proto_res, "VMMessage", "serialize")
-    plot_message(java_res, proto_res, "VMMessage", "deserialize")
-    plot_message(java_res, proto_res, "LCMessage", "serialize")
-    plot_message(java_res, proto_res, "LCMessage", "deserialize")
+    results_raw = load_json_results(sys.argv[1])
+    result = parse_results(results_raw)
+    grouped = group_by_function_and_message(result)
+
+    for key, value in grouped.items():
+        plot_result(key, value, out_dir)
 
 
-main()
+if __name__ == "__main__":
+    main()
