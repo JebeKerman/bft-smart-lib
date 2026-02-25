@@ -15,42 +15,17 @@ limitations under the License.
 */
 package bftsmart.statemanagement.durability;
 
-import java.io.IOException;
-import java.io.ObjectInput;
-import java.io.ObjectOutput;
-
 import bftsmart.reconfiguration.views.View;
 import bftsmart.statemanagement.ApplicationState;
-import bftsmart.statemanagement.SMMessageWire;
 import bftsmart.tom.util.TOMUtil;
 
-public class CSTSMMessage extends SMMessageWire<ApplicationState> {
-
-	private CSTRequestF1 cstConfig;
+public class CSTSMMessage extends CSTSMMessageWire<ApplicationState> {
 	
     public CSTSMMessage(int sender, int cid, int type, CSTRequestF1 cstConfig, ApplicationState state, View view, int regency, int leader) {
-    	super(sender, cid, type, state, view, regency, leader, type == TOMUtil.TRIGGER_SM_LOCALLY && sender == -1);
-    	this.cstConfig = cstConfig;
+    	super(sender, cid, type, cstConfig, state, view, regency, leader, type == TOMUtil.TRIGGER_SM_LOCALLY && sender == -1);
     }
     
     public CSTSMMessage() {
     	super();
-    }
-
-    public CSTRequestF1 getCstConfig() {
-    	return cstConfig;
-    }
-    
-    @Override
-    public void writeExternal(ObjectOutput out) throws IOException{
-        super.writeExternal(out);
-        out.writeObject(cstConfig);
-    }
-
-    @Override
-    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException{
-        super.readExternal(in);
-        cstConfig = (CSTRequestF1)in.readObject();
-    }
-	
+    }	
 }
