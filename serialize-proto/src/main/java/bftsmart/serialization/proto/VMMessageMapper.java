@@ -3,8 +3,6 @@ package bftsmart.serialization.proto;
 import bftsmart.reconfiguration.ReconfigureReply;
 import bftsmart.reconfiguration.VMMessage;
 import bftsmart.reconfiguration.views.View;
-import java.net.InetSocketAddress;
-import java.util.Map;
 
 class VMMessageMapper implements MessageMapper<VMMessage, ProtoMessages.VMMessage> {
     private static final VMMessageMapper instance = new VMMessageMapper();
@@ -22,25 +20,7 @@ class VMMessageMapper implements MessageMapper<VMMessage, ProtoMessages.VMMessag
             joinSet = protoReply.getJoinSetList().toArray(new String[0]);
         }
 
-        Map<Integer, ProtoMessages.SocketAddress> addressesMap =
-                protoReply.getView().getAddressesMap();
-        int[] processes = new int[addressesMap.size()];
-        InetSocketAddress[] addresses = new InetSocketAddress[addressesMap.size()];
-
-        int index = 0;
-        for (Map.Entry<Integer, ProtoMessages.SocketAddress> el : addressesMap.entrySet()) {
-            processes[index] = el.getKey();
-            addresses[index] =
-                    new InetSocketAddress(el.getValue().getHost(), el.getValue().getPort());
-            index++;
-        }
-
-        View view =
-                new View(
-                        protoReply.getView().getId(),
-                        processes,
-                        protoReply.getView().getF(),
-                        addresses);
+        View view = MapperUtil.viewFromProto(protoReply.getView());
 
         ReconfigureReply reply =
                 new ReconfigureReply(
@@ -54,24 +34,11 @@ class VMMessageMapper implements MessageMapper<VMMessage, ProtoMessages.VMMessag
 
     @Override
     public ProtoMessages.VMMessage toProto(VMMessage internalMsg) {
-        ProtoMessages.View.Builder viewBuilder = ProtoMessages.View.newBuilder();
-        viewBuilder.setId(internalMsg.getReply().getView().getId());
-        viewBuilder.setF(internalMsg.getReply().getView().getF());
-        for (int process : internalMsg.getReply().getView().getProcesses()) {
-            viewBuilder.addProcesses(process);
-            InetSocketAddress address = internalMsg.getReply().getView().getAddress(process);
-
-            viewBuilder.putAddresses(
-                    process,
-                    ProtoMessages.SocketAddress.newBuilder()
-                            .setHost(address.getHostName())
-                            .setPort(address.getPort())
-                            .build());
-        }
+        ProtoMessages.View view = MapperUtil.viewToProto(internalMsg.getReply().getView());
 
         ProtoMessages.ReconfigureReply.Builder replyBuilder =
-                ProtoMessages.ReconfigureReply.newBuilder();
-        replyBuilder.setView(viewBuilder);
+                ProtoMessages.ReconfigureReply.newBuilder().setView(view);
+
         for (String join : internalMsg.getReply().getJoinSet()) {
             replyBuilder.addJoinSet(join);
         }

@@ -11,6 +11,7 @@ message SystemMessage {
     LCMessage        lc_msg            = 4;
     ConsensusMessage consensus_msg     = 5;
     ForwardedMessage forwarded_message = 6;
+    CSTSMMessage     cstsm_message     = 7;
   }
 }
 
@@ -77,16 +78,19 @@ enum PaxosType {
 }
 
 message SMMessage {
-  // Application state.. How?
   View  view               = 1;
   int32 cid                = 2;
   int32 type               = 3;
   int32 regency            = 4;
-  bool  trigger_sm_locally = 5;
+  int32 leader             = 5;
+  bool  trigger_sm_locally = 6;
+  bytes state              = 7;
+  // Application state.. Not as bytes? Move also to messages?
 }
 
-message CSTSMMessage { // Extends SMMessage...
-  CSTRequestF1 cst_config = 1;
+message CSTSMMessage {
+  SMMessage    parent     = 1;
+  CSTRequestF1 cst_config = 2;
 }
 
 message StandardSMMMessage {
