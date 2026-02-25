@@ -6,12 +6,13 @@ package bftsmart.serialization.proto;
 message SystemMessage {
   int32 sender_id = 1;
   oneof payload {
-    TOMMessage       tom_msg           = 2;
-    VMMessage        vm_msg            = 3;
-    LCMessage        lc_msg            = 4;
-    ConsensusMessage consensus_msg     = 5;
-    ForwardedMessage forwarded_message = 6;
-    CSTSMMessage     cstsm_message     = 7;
+    TOMMessage         tom_msg             = 2;
+    VMMessage          vm_msg              = 3;
+    LCMessage          lc_msg              = 4;
+    ConsensusMessage   consensus_msg       = 5;
+    ForwardedMessage   forwarded_message   = 6;
+    CSTSMMessage       cstsm_message       = 7;
+    StandardSMMMessage standard_sm_message = 8;
   }
 }
 

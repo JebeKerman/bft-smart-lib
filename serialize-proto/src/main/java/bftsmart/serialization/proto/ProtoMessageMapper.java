@@ -5,6 +5,7 @@ import bftsmart.consensus.messages.ConsensusMessage;
 import bftsmart.reconfiguration.VMMessage;
 import bftsmart.serialization.messages.TOMMessageWire;
 import bftsmart.statemanagement.durability.CSTSMMessageWire;
+import bftsmart.statemanagement.standard.StandardSMMessageWire;
 import bftsmart.tom.core.messages.ForwardedMessage;
 import bftsmart.tom.leaderchange.LCMessageWire;
 import java.io.Serializable;
@@ -29,6 +30,9 @@ class ProtoMessageMapper {
             case CSTSM_MESSAGE:
                 return CSTSMessageMessageMapper.getInstance()
                         .fromProto(senderId, msg.getCstsmMessage());
+            case STANDARD_SM_MESSAGE:
+                return StandardSMMessageMapper.getInstance()
+                        .fromProto(senderId, msg.getStandardSmMessage());
             case PAYLOAD_NOT_SET:
                 break;
             default:
@@ -56,6 +60,10 @@ class ProtoMessageMapper {
             builder.setCstsmMessage(
                     CSTSMessageMessageMapper.getInstance()
                             .toProto((CSTSMMessageWire<? extends Serializable>) msg));
+        } else if (msg instanceof StandardSMMessageWire) {
+            builder.setStandardSmMessage(
+                    StandardSMMessageMapper.getInstance()
+                            .toProto((StandardSMMessageWire<? extends Serializable>) msg));
         }
         return builder.build();
     }
