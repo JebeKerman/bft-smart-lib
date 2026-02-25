@@ -1,26 +1,25 @@
 package bftsmart.serialization.messages;
 
+import bftsmart.consensus.messages.ConsensusMessage;
 import bftsmart.messages.bench.AbstractMessageBenchmark;
 import bftsmart.messages.bench.MessageProvider;
 import bftsmart.serialization.MessageSerializer;
 import bftsmart.serialization.java.JavaSerializer;
-import org.openjdk.jmh.annotations.Scope;
-import org.openjdk.jmh.annotations.State;
 
-@State(Scope.Thread)
-public class JavaBenchmark_TOMMessage extends AbstractMessageBenchmark<TOMMessageWire> {
+public class JavaBenchmark_ConsensusMessage extends AbstractMessageBenchmark<ConsensusMessage> {
+
     @Override
     protected MessageSerializer createSerializer() {
         return JavaSerializer.getInstance();
     }
 
     @Override
-    protected TOMMessageWire createMessage() {
-        return MessageProvider.getTOMMessage();
+    protected ConsensusMessage createMessage() {
+        return MessageProvider.getConsensusMessage();
     }
 
     @Override
-    protected Class<TOMMessageWire> messageType() {
-        return TOMMessageWire.class;
+    protected Class<ConsensusMessage> messageType() {
+        return ConsensusMessage.class;
     }
 }
