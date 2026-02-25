@@ -24,7 +24,7 @@ import java.io.Serializable;
 /**
  * @author Marcel Santos
  */
-public abstract class StandardSMMessageWire<T extends Serializable> extends SMMessageWire<T> {
+public class StandardSMMessageWire<T extends Serializable> extends SMMessageWire<T> {
 
     private int replica;
 
