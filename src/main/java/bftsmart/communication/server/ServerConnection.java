@@ -386,8 +386,10 @@ public class ServerConnection {
 
 						logger.trace("Read: {}, HasMAC: {}", read, hasMAC);
 
-						SystemMessage sm = (SystemMessage) (new ObjectInputStream(new ByteArrayInputStream(data))
-								.readObject());
+						SystemMessage sm = null;
+						try (ByteArrayInputStream in = new ByteArrayInputStream(data)) {
+							sm = MessageSerializerFactory.getSerializer().deserialize(in);
+						}
 
 						//The verification it is done for the SSL/TLS protocol.
 						sm.authenticated = true;

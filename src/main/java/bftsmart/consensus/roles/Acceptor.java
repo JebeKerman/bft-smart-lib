@@ -36,6 +36,7 @@ import bftsmart.consensus.Epoch;
 import bftsmart.consensus.messages.ConsensusMessage;
 import bftsmart.consensus.messages.MessageFactory;
 import bftsmart.reconfiguration.ServerViewController;
+import bftsmart.serialization.MessageSerializerFactory;
 import bftsmart.tom.core.ExecutionManager;
 import bftsmart.tom.core.TOMLayer;
 import bftsmart.tom.core.messages.TOMMessage;
@@ -388,9 +389,7 @@ public final class Acceptor {
 	private void insertProof(ConsensusMessage cm, TOMMessage[] msgs) {
 		ByteArrayOutputStream bOut = new ByteArrayOutputStream(248);
 		try {
-			ObjectOutputStream obj = new ObjectOutputStream(bOut);
-			obj.writeObject(cm);
-			obj.flush();
+			MessageSerializerFactory.getSerializer().serialize(cm, bOut);
 			bOut.flush();
 		} catch (IOException ex) {
 			logger.error("Failed to serialize consensus message", ex);
@@ -623,7 +622,7 @@ public final class Acceptor {
 
 				ByteArrayOutputStream bOut = new ByteArrayOutputStream(248);
 				try {
-					new ObjectOutputStream(bOut).writeObject(cm);
+					MessageSerializerFactory.getSerializer().serialize(cm, bOut);
 				} catch (IOException ex) {
 					logger.error("ACCEPTOR.verifyDecision: Could not serialize message", ex);
 				}
