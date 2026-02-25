@@ -34,9 +34,10 @@ public abstract class SMMessageWire<T extends Serializable> extends SystemMessag
     private int type; // Message type
     private int regency; // Current regency
     private int leader; // Current leader
-    public final boolean TRIGGER_SM_LOCALLY; // indicates that the replica should
+    public final boolean
+            TRIGGER_SM_LOCALLY; // indicates that the replica should initiate the SM protocol
 
-    // initiate the SM protocol locally
+    // locally
 
     /**
      * Constructs a SMMessageWire
