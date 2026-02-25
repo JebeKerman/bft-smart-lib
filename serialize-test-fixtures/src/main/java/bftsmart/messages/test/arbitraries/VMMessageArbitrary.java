@@ -38,7 +38,7 @@ public final class VMMessageArbitrary implements ArbitraryMessageSupplier<VMMess
     @Provide
     Arbitrary<ReconfigureReply> replies() {
         return Combinators.combine(
-                        views(),
+                        getViews(),
                         Arbitraries.strings()
                                 .alpha()
                                 .ofMinLength(0)
@@ -52,7 +52,7 @@ public final class VMMessageArbitrary implements ArbitraryMessageSupplier<VMMess
     }
 
     @Provide
-    Arbitrary<View> views() {
+    static Arbitrary<View> getViews() {
         return Arbitraries.integers()
                 .between(0, 10) // shared size
                 .flatMap(
@@ -71,7 +71,7 @@ public final class VMMessageArbitrary implements ArbitraryMessageSupplier<VMMess
     }
 
     @Provide
-    Arbitrary<InetSocketAddress> socketAddresses() {
+    static Arbitrary<InetSocketAddress> socketAddresses() {
         return Arbitraries.integers()
                 .between(1, 254)
                 .flatMap(
