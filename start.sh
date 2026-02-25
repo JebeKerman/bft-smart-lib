@@ -4,14 +4,18 @@ set -euo pipefail
 
 ./gradlew installDist
 
+# CLASS="bftsmart.demo.counter.CounterServer"
+CLASS="bftsmart.demo.microbenchmarks.ThroughputLatencyServer"
+ARGS="10 100 1000 null default rw"
+
 WORKDIR="./build/install/library/"
 RUNDIR="$(pwd)"
 LOGDIR="$RUNDIR/logs"
 COMMANDS=(
-  "./smartrun.sh bftsmart.demo.counter.CounterServer 0"
-  "./smartrun.sh bftsmart.demo.counter.CounterServer 1"
-  "./smartrun.sh bftsmart.demo.counter.CounterServer 2"
-  "./smartrun.sh bftsmart.demo.counter.CounterServer 3"
+  "./smartrun.sh $CLASS 0 $ARGS"
+  "./smartrun.sh $CLASS 1 $ARGS"
+  "./smartrun.sh $CLASS 2 $ARGS"
+  "./smartrun.sh $CLASS 3 $ARGS"
 )
 
 mkdir -p "$LOGDIR"

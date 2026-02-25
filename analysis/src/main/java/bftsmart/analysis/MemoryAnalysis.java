@@ -20,10 +20,12 @@ public class MemoryAnalysis {
 
     private static SystemMessage[] messages =
             new SystemMessage[] {
+                MessageProvider.getConsensusMessage(),
+                MessageProvider.getCSTSMMessageMinimal(),
+                MessageProvider.getLCMessage(),
+                MessageProvider.getStandardSMMessageMinimal(),
                 MessageProvider.getTOMMessage(),
                 MessageProvider.getVMMessage(),
-                MessageProvider.getLCMessage(),
-                MessageProvider.getConsensusMessage(),
             };
     private static MessageSerializer[] serializers =
             new MessageSerializer[] {
