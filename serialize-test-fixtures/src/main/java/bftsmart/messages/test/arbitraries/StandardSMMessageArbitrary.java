@@ -22,7 +22,7 @@ public final class StandardSMMessageArbitrary
                         Arbitraries.integers(),
                         Arbitraries.integers(),
                         Arbitraries.integers(),
-                        VMMessageArbitrary.getViews(),
+                        VMMessageArbitrary.getViews().injectNull(0.1),
                         Arbitraries.integers(),
                         Arbitraries.integers())
                 .as(

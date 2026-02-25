@@ -21,6 +21,9 @@ class MapperUtil {
     }
 
     public static ProtoMessages.View viewToProto(View msg) {
+        if (msg == null) {
+            return null;
+        }
         ProtoMessages.View.Builder viewBuilder = ProtoMessages.View.newBuilder();
         viewBuilder.setId(msg.getId());
         viewBuilder.setF(msg.getF());
