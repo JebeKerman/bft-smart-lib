@@ -229,7 +229,7 @@ public abstract class StateManager {
         
         int me = SVController.getStaticConf().getProcessId();
         int[] target = SVController.getCurrentViewOtherAcceptors();
-        SMMessage currentCID;
+        SMMessageWire<ApplicationState> currentCID;
         
         while (isInitializing) {
             
@@ -257,13 +257,13 @@ public abstract class StateManager {
         
         DefaultApplicationState state = new DefaultApplicationState(null, -1, lastConsensusId, null, null, -1);
 
-        SMMessage currentCIDReply = new StandardSMMessage(me, id, TOMUtil.SM_REPLY_INITIAL, 0, state, null, 0, 0);
+        SMMessageWire<ApplicationState> currentCIDReply = new StandardSMMessage(me, id, TOMUtil.SM_REPLY_INITIAL, 0, state, null, 0, 0);
         tomLayer.getCommunication().send(new int[]{sender}, currentCIDReply);
 
         logger.debug("Sent CID reply to replica {} with ID {}",sender,id);
     }
 
-    public synchronized void currentConsensusIdReceived(SMMessage smsg) {
+    public synchronized void currentConsensusIdReceived(SMMessageWire<ApplicationState> smsg) {
         
         logger.debug("Received  CID reply from replica {} with ID {} (expecting ID {})",smsg.getSender(), smsg.getCID(), queryID);
         
@@ -348,7 +348,7 @@ public abstract class StateManager {
         appStateOnly = false;
     }
     
-    public void triggerTimeout(SMMessage msg) {
+    public void triggerTimeout(SMMessageWire<ApplicationState> msg) {
         
         int[] myself = new int[1];
         myself[0] = SVController.getStaticConf().getProcessId();
@@ -371,13 +371,13 @@ public abstract class StateManager {
      * @param msg The message sent by the replica, of type 'SM_REQUEST'.
      * @param isBFT true if the library is set for BFT, false if CFT
      */
-    public abstract void SMRequestDeliver(SMMessage msg, boolean isBFT);
+    public abstract void SMRequestDeliver(SMMessageWire<ApplicationState> msg, boolean isBFT);
 
     /**
      * Invoked when a replica receives a reply to its request to be sent the application state.
      * @param msg The message sent by the replica, of type 'SM_REPLY'.
      * @param isBFT true if the library is set for BFT, false if CFT
      */
-    public abstract void SMReplyDeliver(SMMessage msg, boolean isBFT);
+    public abstract void SMReplyDeliver(SMMessageWire<ApplicationState> msg, boolean isBFT);
 
 }

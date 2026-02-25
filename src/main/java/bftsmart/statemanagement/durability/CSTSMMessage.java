@@ -21,14 +21,15 @@ import java.io.ObjectOutput;
 
 import bftsmart.reconfiguration.views.View;
 import bftsmart.statemanagement.ApplicationState;
-import bftsmart.statemanagement.SMMessage;
+import bftsmart.statemanagement.SMMessageWire;
+import bftsmart.tom.util.TOMUtil;
 
-public class CSTSMMessage extends SMMessage {
+public class CSTSMMessage extends SMMessageWire<ApplicationState> {
 
 	private CSTRequestF1 cstConfig;
 	
     public CSTSMMessage(int sender, int cid, int type, CSTRequestF1 cstConfig, ApplicationState state, View view, int regency, int leader) {
-    	super(sender, cid, type, state, view, regency, leader);
+    	super(sender, cid, type, state, view, regency, leader, type == TOMUtil.TRIGGER_SM_LOCALLY && sender == -1);
     	this.cstConfig = cstConfig;
     }
     
