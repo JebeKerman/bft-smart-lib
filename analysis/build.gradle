@@ -6,6 +6,22 @@ dependencies {
 
     // Source: https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
     implementation("com.fasterxml.jackson.core:jackson-databind:2.21.0")
+
+    // JMH
+    testImplementation 'org.openjdk.jmh:jmh-core:1.37'
+    testImplementation 'org.openjdk.jmh:jmh-generator-annprocess:1.37'
+}
+
+jmh {
+    fork = 1
+    warmupIterations = 5
+    warmup = '1s'
+    iterations = 10
+    timeOnIteration = '1s'
+    benchmarkMode = ['avgt']
+    timeUnit = 'ns'
+    resultFormat = 'JSON'
+    resultsFile = file("$buildDir/jmh/results.json")
 }
 
 tasks.register('analyzeMsgSizesJava', JavaExec) {
@@ -30,4 +46,11 @@ tasks.register('analyzeMsgSizes', Exec) {
 tasks.register('analyzeJmh', Exec) {
     dependsOn ':analysis:jmh'
     commandLine 'python3', "$projectDir/plot_jmh.py", "$projectDir/build/jmh/results.json"
+}
+
+tasks.register('analyze') {
+    group = 'analysis'
+    description = 'Runs message size and JMH analysis'
+
+    dependsOn 'analyzeMsgSizes', 'analyzeJmh'
 }
