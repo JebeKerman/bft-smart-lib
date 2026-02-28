@@ -15,16 +15,15 @@
 package bftsmart.statemanagement.standard;
 
 import bftsmart.reconfiguration.views.View;
-import bftsmart.statemanagement.SMMessageWire;
+import bftsmart.statemanagement.SMMessage;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
-import java.io.Serializable;
 
 /**
  * @author Marcel Santos
  */
-public class StandardSMMessageWire<T extends Serializable> extends SMMessageWire<T> {
+public class StandardSMMessageWire<T> extends SMMessage<T> {
 
     private int replica;
 
@@ -33,7 +32,7 @@ public class StandardSMMessageWire<T extends Serializable> extends SMMessageWire
             int cid,
             int type,
             int replica,
-            T state,
+            byte[] state,
             View view,
             int regency,
             int leader,

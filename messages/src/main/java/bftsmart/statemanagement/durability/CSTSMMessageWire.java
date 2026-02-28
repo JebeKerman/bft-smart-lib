@@ -15,13 +15,12 @@
 package bftsmart.statemanagement.durability;
 
 import bftsmart.reconfiguration.views.View;
-import bftsmart.statemanagement.SMMessageWire;
+import bftsmart.statemanagement.SMMessage;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
-import java.io.Serializable;
 
-public class CSTSMMessageWire<T extends Serializable> extends SMMessageWire<T> {
+public class CSTSMMessageWire<T> extends SMMessage<T> {
 
     private CSTRequestF1 cstConfig;
 
@@ -30,7 +29,7 @@ public class CSTSMMessageWire<T extends Serializable> extends SMMessageWire<T> {
             int cid,
             int type,
             CSTRequestF1 cstConfig,
-            T state,
+            byte[] state,
             View view,
             int regency,
             int leader,

@@ -8,7 +8,6 @@ import bftsmart.statemanagement.durability.CSTSMMessageWire;
 import bftsmart.statemanagement.standard.StandardSMMessageWire;
 import bftsmart.tom.core.messages.ForwardedMessage;
 import bftsmart.tom.leaderchange.LCMessageWire;
-import java.io.Serializable;
 
 class ProtoMessageMapper {
     static SystemMessage toInternal(ProtoMessages.SystemMessage msg) {
@@ -58,12 +57,10 @@ class ProtoMessageMapper {
                     ForwardedMessageMapper.getInstance().toProto((ForwardedMessage) msg));
         } else if (msg instanceof CSTSMMessageWire) {
             builder.setCstsmMessage(
-                    CSTSMessageMessageMapper.getInstance()
-                            .toProto((CSTSMMessageWire<? extends Serializable>) msg));
+                    CSTSMessageMessageMapper.getInstance().toProto((CSTSMMessageWire<?>) msg));
         } else if (msg instanceof StandardSMMessageWire) {
             builder.setStandardSmMessage(
-                    StandardSMMessageMapper.getInstance()
-                            .toProto((StandardSMMessageWire<? extends Serializable>) msg));
+                    StandardSMMessageMapper.getInstance().toProto((StandardSMMessageWire<?>) msg));
         }
         return builder.build();
     }

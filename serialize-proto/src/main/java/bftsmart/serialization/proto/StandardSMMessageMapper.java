@@ -3,16 +3,9 @@ package bftsmart.serialization.proto;
 import bftsmart.reconfiguration.views.View;
 import bftsmart.statemanagement.standard.StandardSMMessageWire;
 import com.google.protobuf.ByteString;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
 
 class StandardSMMessageMapper
-        implements MessageMapper<
-                StandardSMMessageWire<? extends Serializable>, ProtoMessages.StandardSMMMessage> {
+        implements MessageMapper<StandardSMMessageWire<?>, ProtoMessages.StandardSMMMessage> {
     private static final StandardSMMessageMapper instance = new StandardSMMessageMapper();
 
     static StandardSMMessageMapper getInstance() {
@@ -20,30 +13,21 @@ class StandardSMMessageMapper
     }
 
     @Override
-    public StandardSMMessageWire<? extends Serializable> fromProto(
-            int senderId, ProtoMessages.StandardSMMMessage msg) {
+    public StandardSMMessageWire<?> fromProto(int senderId, ProtoMessages.StandardSMMMessage msg) {
         View view = null;
         if (msg.getParent().hasView()) {
             view = MapperUtil.viewFromProto(msg.getParent().getView());
         }
 
-        Serializable state = null;
         byte[] stateBytes = msg.getParent().getState().toByteArray();
-        // TODO: Better way to handle the state?
-        try (ByteArrayInputStream bis = new ByteArrayInputStream(stateBytes);
-                ObjectInputStream ois = new ObjectInputStream(bis); ) {
-            state = (Serializable) ois.readObject();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
-        StandardSMMessageWire<? extends Serializable> result =
+        StandardSMMessageWire<?> result =
                 new StandardSMMessageWire<>(
                         senderId,
                         msg.getParent().getCid(),
                         msg.getParent().getType(),
                         msg.getReplica(),
-                        state,
+                        stateBytes,
                         view,
                         msg.getParent().getRegency(),
                         msg.getParent().getLeader(),
@@ -52,19 +36,9 @@ class StandardSMMessageMapper
     }
 
     @Override
-    public ProtoMessages.StandardSMMMessage toProto(
-            StandardSMMessageWire<? extends Serializable> msg) {
+    public ProtoMessages.StandardSMMMessage toProto(StandardSMMessageWire<?> msg) {
 
-        // TODO: Better way to handle the state?
-        byte[] state = null;
-        try (ByteArrayOutputStream bos = new ByteArrayOutputStream();
-                ObjectOutputStream oos = new ObjectOutputStream(bos); ) {
-            oos.writeObject(msg.getState());
-            oos.flush();
-            state = bos.toByteArray();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        byte[] state = msg.getSerializedState();
 
         ProtoMessages.SMMessage.Builder parent =
                 ProtoMessages.SMMessage.newBuilder()

@@ -22,7 +22,8 @@ import bftsmart.tom.util.TOMUtil;
 public class CSTSMMessage extends CSTSMMessageWire<ApplicationState> {
 	
     public CSTSMMessage(int sender, int cid, int type, CSTRequestF1 cstConfig, ApplicationState state, View view, int regency, int leader) {
-    	super(sender, cid, type, cstConfig, state, view, regency, leader, type == TOMUtil.TRIGGER_SM_LOCALLY && sender == -1);
+    	super(sender, cid, type, cstConfig, state.getSerializedState(), view, regency, leader, type == TOMUtil.TRIGGER_SM_LOCALLY && sender == -1);
+        this.state = state;
     }
     
     public CSTSMMessage() {

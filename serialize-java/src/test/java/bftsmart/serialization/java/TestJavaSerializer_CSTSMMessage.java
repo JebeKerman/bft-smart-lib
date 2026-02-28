@@ -7,7 +7,7 @@ import bftsmart.serialization.MessageSerializer;
 import bftsmart.statemanagement.durability.CSTSMMessageWire;
 
 public class TestJavaSerializer_CSTSMMessage
-        extends AbstractMessageSerializerTest<CSTSMMessageWire<Integer>> {
+        extends AbstractMessageSerializerTest<CSTSMMessageWire<?>> {
     @Override
     protected MessageSerializer serializer() {
         return JavaSerializer.getInstance();
@@ -15,12 +15,12 @@ public class TestJavaSerializer_CSTSMMessage
 
     @Override
     @SuppressWarnings("unchecked")
-    protected Class<CSTSMMessageWire<Integer>> messageType() {
-        return (Class<CSTSMMessageWire<Integer>>) (Class<?>) CSTSMMessageWire.class;
+    protected Class<CSTSMMessageWire<?>> messageType() {
+        return (Class<CSTSMMessageWire<?>>) (Class<?>) CSTSMMessageWire.class;
     }
 
     @Override
-    protected ArbitraryMessageSupplier<CSTSMMessageWire<Integer>> arbitrarySupplier() {
+    protected ArbitraryMessageSupplier<CSTSMMessageWire<?>> arbitrarySupplier() {
         return new CSTSMMessageArbitrary();
     }
 

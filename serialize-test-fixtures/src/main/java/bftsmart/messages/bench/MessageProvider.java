@@ -11,7 +11,6 @@ import bftsmart.statemanagement.durability.CSTSMMessageWire;
 import bftsmart.statemanagement.standard.StandardSMMessageWire;
 import bftsmart.tom.core.messages.TOMMessageType;
 import bftsmart.tom.leaderchange.LCMessageWire;
-import java.io.Serializable;
 import java.net.InetSocketAddress;
 
 public class MessageProvider {
@@ -20,13 +19,14 @@ public class MessageProvider {
         return new ConsensusMessage(MessageFactory.PROPOSE, 0, 0, 0, new byte[] {0});
     }
 
-    public static CSTSMMessageWire<? extends Serializable> getCSTSMMessageMinimal() {
+    public static CSTSMMessageWire<?> getCSTSMMessageMinimal() {
+
         return new CSTSMMessageWire<>(
                 1,
                 2,
                 3,
                 new CSTRequestF1(4),
-                5,
+                new byte[] {11, 12, 13, 14},
                 new View(6, new int[0], 8, new InetSocketAddress[0]),
                 9,
                 10,
@@ -37,9 +37,17 @@ public class MessageProvider {
         return new LCMessageWire(1, 2, 3, new byte[] {1, 2, 3}, true);
     }
 
-    public static StandardSMMessageWire<? extends Serializable> getStandardSMMessageMinimal() {
+    public static StandardSMMessageWire<?> getStandardSMMessageMinimal() {
         return new StandardSMMessageWire<>(
-                1, 2, 3, 4, 5, new View(6, new int[0], 8, new InetSocketAddress[0]), 9, 10, false);
+                1,
+                2,
+                3,
+                4,
+                new byte[] {11, 12, 13, 14},
+                new View(6, new int[0], 8, new InetSocketAddress[0]),
+                9,
+                10,
+                false);
     }
 
     public static TOMMessageWire getTOMMessage() {

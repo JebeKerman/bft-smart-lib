@@ -4,16 +4,9 @@ import bftsmart.reconfiguration.views.View;
 import bftsmart.statemanagement.durability.CSTRequestF1;
 import bftsmart.statemanagement.durability.CSTSMMessageWire;
 import com.google.protobuf.ByteString;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
 
 class CSTSMessageMessageMapper
-        implements MessageMapper<
-                CSTSMMessageWire<? extends Serializable>, ProtoMessages.CSTSMMessage> {
+        implements MessageMapper<CSTSMMessageWire<?>, ProtoMessages.CSTSMMessage> {
     private static final CSTSMessageMessageMapper instance = new CSTSMessageMessageMapper();
 
     static CSTSMessageMessageMapper getInstance() {
@@ -21,28 +14,19 @@ class CSTSMessageMessageMapper
     }
 
     @Override
-    public CSTSMMessageWire<? extends Serializable> fromProto(
-            int senderId, ProtoMessages.CSTSMMessage msg) {
+    public CSTSMMessageWire<?> fromProto(int senderId, ProtoMessages.CSTSMMessage msg) {
         CSTRequestF1 config = new CSTRequestF1(msg.getCstConfig().getCid());
         View view = MapperUtil.viewFromProto(msg.getParent().getView());
 
-        Serializable state = null;
         byte[] stateBytes = msg.getParent().getState().toByteArray();
-        // TODO: Better way to handle the state?
-        try (ByteArrayInputStream bis = new ByteArrayInputStream(stateBytes);
-                ObjectInputStream ois = new ObjectInputStream(bis); ) {
-            state = (Serializable) ois.readObject();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
-        CSTSMMessageWire<? extends Serializable> result =
+        CSTSMMessageWire<?> result =
                 new CSTSMMessageWire<>(
                         senderId,
                         msg.getParent().getCid(),
                         msg.getParent().getType(),
                         config,
-                        state,
+                        stateBytes,
                         view,
                         msg.getParent().getRegency(),
                         msg.getParent().getLeader(),
@@ -51,22 +35,13 @@ class CSTSMessageMessageMapper
     }
 
     @Override
-    public ProtoMessages.CSTSMMessage toProto(CSTSMMessageWire<? extends Serializable> msg) {
+    public ProtoMessages.CSTSMMessage toProto(CSTSMMessageWire<?> msg) {
         ProtoMessages.CSTRequestF1 config =
                 ProtoMessages.CSTRequestF1.newBuilder().setCid(msg.getCstConfig().getCID()).build();
 
         ProtoMessages.View view = MapperUtil.viewToProto(msg.getView());
 
-        // TODO: Better way to handle the state?
-        byte[] state = null;
-        try (ByteArrayOutputStream bos = new ByteArrayOutputStream();
-                ObjectOutputStream oos = new ObjectOutputStream(bos); ) {
-            oos.writeObject(msg.getState());
-            oos.flush();
-            state = bos.toByteArray();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        byte[] state = msg.getSerializedState();
 
         ProtoMessages.SMMessage parent =
                 ProtoMessages.SMMessage.newBuilder()

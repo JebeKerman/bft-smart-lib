@@ -11,17 +11,16 @@ import net.jqwik.api.Arbitrary;
 import net.jqwik.api.Combinators;
 import net.jqwik.api.Provide;
 
-public final class CSTSMMessageArbitrary
-        implements ArbitraryMessageSupplier<CSTSMMessageWire<Integer>> {
+public final class CSTSMMessageArbitrary implements ArbitraryMessageSupplier<CSTSMMessageWire<?>> {
 
     @Override
-    public Arbitrary<CSTSMMessageWire<Integer>> getArbitraries() {
+    public Arbitrary<CSTSMMessageWire<?>> getArbitraries() {
         return Combinators.combine(
                         Arbitraries.integers(),
                         Arbitraries.integers(),
                         Arbitraries.integers(),
                         getConfigs(),
-                        Arbitraries.integers(),
+                        Arbitraries.bytes().array(byte[].class).ofMinSize(1).ofMaxSize(16384),
                         VMMessageArbitrary.getViews(),
                         Arbitraries.integers(),
                         Arbitraries.integers())
@@ -31,7 +30,7 @@ public final class CSTSMMessageArbitrary
     }
 
     @Override
-    public Arbitrary<CSTSMMessageWire<Integer>> getFixtures() {
+    public Arbitrary<CSTSMMessageWire<?>> getFixtures() {
         CSTRequestF1 config = new CSTRequestF1(4);
         InetSocketAddress[] addr;
         try {
@@ -51,7 +50,9 @@ public final class CSTSMMessageArbitrary
             throw new RuntimeException(e);
         }
         View view = new View(10, new int[] {11, 12, 13, 14}, 15, addr);
-        return Arbitraries.of(new CSTSMMessageWire<>(1, 2, 3, config, 5, view, 6, 7, true));
+        return Arbitraries.of(
+                new CSTSMMessageWire<>(
+                        1, 2, 3, config, new byte[] {11, 12, 13, 14}, view, 6, 7, true));
     }
 
     @Provide

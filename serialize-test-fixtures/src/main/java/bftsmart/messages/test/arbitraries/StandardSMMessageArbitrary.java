@@ -12,16 +12,16 @@ import net.jqwik.api.Combinators;
 import net.jqwik.api.Provide;
 
 public final class StandardSMMessageArbitrary
-        implements ArbitraryMessageSupplier<StandardSMMessageWire<Integer>> {
+        implements ArbitraryMessageSupplier<StandardSMMessageWire<?>> {
 
     @Override
-    public Arbitrary<StandardSMMessageWire<Integer>> getArbitraries() {
+    public Arbitrary<StandardSMMessageWire<?>> getArbitraries() {
         return Combinators.combine(
                         Arbitraries.integers(),
                         Arbitraries.integers(),
                         Arbitraries.integers(),
                         Arbitraries.integers(),
-                        Arbitraries.integers(),
+                        Arbitraries.bytes().array(byte[].class).ofMinSize(1).ofMaxSize(16384),
                         VMMessageArbitrary.getViews().injectNull(0.1),
                         Arbitraries.integers(),
                         Arbitraries.integers())
@@ -31,7 +31,7 @@ public final class StandardSMMessageArbitrary
     }
 
     @Override
-    public Arbitrary<StandardSMMessageWire<Integer>> getFixtures() {
+    public Arbitrary<StandardSMMessageWire<?>> getFixtures() {
         InetSocketAddress[] addr;
         try {
             addr =
@@ -50,7 +50,9 @@ public final class StandardSMMessageArbitrary
             throw new RuntimeException(e);
         }
         View view = new View(10, new int[] {11, 12, 13, 14}, 15, addr);
-        return Arbitraries.of(new StandardSMMessageWire<>(1, 2, 3, 4, 5, view, 6, 7, false));
+        return Arbitraries.of(
+                new StandardSMMessageWire<>(
+                        1, 2, 3, 4, new byte[] {11, 12, 13, 14}, view, 6, 7, false));
     }
 
     @Provide

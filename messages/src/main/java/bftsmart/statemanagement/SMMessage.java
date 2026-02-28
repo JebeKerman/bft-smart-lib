@@ -19,16 +19,16 @@ import bftsmart.reconfiguration.views.View;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
-import java.io.Serializable;
 
 /**
  * This class represents a message used in the state transfer protocol
  *
  * @author Joao Sousa
  */
-public abstract class SMMessageWire<T extends Serializable> extends SystemMessage {
+public abstract class SMMessage<T> extends SystemMessage {
 
-    private T state; // State log
+    protected transient T state;
+    private byte[] serializedState; // State log
     private View view;
     private int cid; // Consensus ID up to which the sender needs to be updated
     private int type; // Message type
@@ -48,17 +48,17 @@ public abstract class SMMessageWire<T extends Serializable> extends SystemMessag
      * @param replica Replica that should send the state
      * @param state State log
      */
-    protected SMMessageWire(
+    protected SMMessage(
             int sender,
             int cid,
             int type,
-            T state,
+            byte[] state,
             View view,
             int regency,
             int leader,
             boolean triggerSMLocally) {
         super(sender);
-        this.state = state;
+        this.serializedState = state;
         this.view = view;
         this.cid = cid;
         this.type = type;
@@ -68,7 +68,7 @@ public abstract class SMMessageWire<T extends Serializable> extends SystemMessag
         this.TRIGGER_SM_LOCALLY = triggerSMLocally;
     }
 
-    protected SMMessageWire() {
+    protected SMMessage() {
         this.TRIGGER_SM_LOCALLY = false;
     }
 
@@ -77,8 +77,8 @@ public abstract class SMMessageWire<T extends Serializable> extends SystemMessag
      *
      * @return The state Log
      */
-    public T getState() {
-        return state;
+    public byte[] getSerializedState() {
+        return serializedState;
     }
 
     /**
@@ -126,6 +126,10 @@ public abstract class SMMessageWire<T extends Serializable> extends SystemMessag
         return leader;
     }
 
+    public T getState() {
+        return state;
+    }
+
     @Override
     public void writeExternal(ObjectOutput out) throws IOException {
         super.writeExternal(out);
@@ -134,12 +138,11 @@ public abstract class SMMessageWire<T extends Serializable> extends SystemMessag
         out.writeInt(type);
         out.writeInt(regency);
         out.writeInt(leader);
-        out.writeObject(state);
         out.writeObject(view);
+        out.writeObject(serializedState);
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
         super.readExternal(in);
         sender = in.readInt();
@@ -147,7 +150,7 @@ public abstract class SMMessageWire<T extends Serializable> extends SystemMessag
         type = in.readInt();
         regency = in.readInt();
         leader = in.readInt();
-        state = (T) in.readObject();
         view = (View) in.readObject();
+        serializedState = (byte[]) in.readObject();
     }
 }

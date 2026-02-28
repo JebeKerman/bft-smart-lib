@@ -29,7 +29,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import bftsmart.consensus.messages.ConsensusMessage;
 import bftsmart.reconfiguration.views.View;
 import bftsmart.statemanagement.ApplicationState;
-import bftsmart.statemanagement.SMMessageWire;
+import bftsmart.statemanagement.SMMessage;
 import bftsmart.statemanagement.StateManager;
 import bftsmart.tom.server.defaultservices.CommandsInfo;
 import bftsmart.tom.server.durability.DurabilityCoordinator;
@@ -106,7 +106,7 @@ public class DurableStateManager extends StateManager {
     }
 
     @Override
-    public void SMRequestDeliver(SMMessageWire<ApplicationState> msg, boolean isBFT) {
+    public void SMRequestDeliver(SMMessage<ApplicationState> msg, boolean isBFT) {
         logger.debug("Invoked method");
         if (SVController.getStaticConf().isStateTransferEnabled()
                 && dt.getRecoverer() != null) {
@@ -150,7 +150,7 @@ public class DurableStateManager extends StateManager {
     }
 
     @Override
-    public void SMReplyDeliver(SMMessageWire<ApplicationState> msg, boolean isBFT) {
+    public void SMReplyDeliver(SMMessage<ApplicationState> msg, boolean isBFT) {
         lockTimer.lock();
         CSTSMMessage reply = (CSTSMMessage) msg;
         if (SVController.getStaticConf().isStateTransferEnabled()) {
