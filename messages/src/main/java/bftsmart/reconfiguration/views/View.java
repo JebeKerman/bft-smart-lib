@@ -43,6 +43,8 @@ public class View implements Serializable {
         this.f = f;
     }
 
+    public View() {}
+
     public boolean isMember(int id) {
         for (int i = 0; i < this.processes.length; i++) {
             if (this.processes[i] == id) {

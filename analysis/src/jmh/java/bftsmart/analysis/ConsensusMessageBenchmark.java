@@ -6,6 +6,7 @@ import bftsmart.messages.bench.MessageProvider;
 import bftsmart.reconfiguration.VMMessage;
 import bftsmart.serialization.MessageSerializer;
 import bftsmart.serialization.java.JavaSerializer;
+import bftsmart.serialization.kryo.KryoSerializer;
 import bftsmart.serialization.messages.TOMMessageWire;
 import bftsmart.serialization.proto.ProtoSerializer;
 import bftsmart.statemanagement.durability.CSTSMMessageWire;
@@ -61,7 +62,8 @@ public class ConsensusMessageBenchmark {
 
     public enum SerializerType {
         Java(JavaSerializer.getInstance()),
-        Proto(ProtoSerializer.getInstance());
+        Proto(ProtoSerializer.getInstance()),
+        Kryo(KryoSerializer.getInstance());
 
         private MessageSerializer serializer;
 

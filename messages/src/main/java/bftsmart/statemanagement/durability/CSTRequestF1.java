@@ -43,6 +43,10 @@ public class CSTRequestF1 extends CSTRequest {
         super(cid);
     }
 
+    public CSTRequestF1() {
+        super(0);
+    }
+
     //	public int getCkpPeriod() {
     //		return this.ckpPeriod;
     //	}

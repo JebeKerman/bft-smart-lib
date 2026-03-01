@@ -4,6 +4,7 @@ import bftsmart.communication.SystemMessage;
 import bftsmart.messages.bench.MessageProvider;
 import bftsmart.serialization.MessageSerializer;
 import bftsmart.serialization.java.JavaSerializer;
+import bftsmart.serialization.kryo.KryoSerializer;
 import bftsmart.serialization.proto.ProtoSerializer;
 import com.fasterxml.jackson.core.util.DefaultIndenter;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
@@ -29,7 +30,9 @@ public class MemoryAnalysis {
             };
     private static MessageSerializer[] serializers =
             new MessageSerializer[] {
-                JavaSerializer.getInstance(), ProtoSerializer.getInstance(),
+                JavaSerializer.getInstance(),
+                ProtoSerializer.getInstance(),
+                KryoSerializer.getInstance()
             };
 
     public static void main(String[] args) throws IOException {

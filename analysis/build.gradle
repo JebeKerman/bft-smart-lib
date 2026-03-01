@@ -2,6 +2,7 @@ dependencies {
     implementation project(":messages")
     implementation project(":serialize-java")
     implementation project(":serialize-proto")
+    implementation project(":serialize-kryo")
     implementation project(":serialize-test-fixtures")
 
     // Source: https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
