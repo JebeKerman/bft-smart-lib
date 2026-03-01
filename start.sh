@@ -4,9 +4,10 @@ set -euo pipefail
 
 ./gradlew installDist
 
-# CLASS="bftsmart.demo.counter.CounterServer"
-CLASS="bftsmart.demo.microbenchmarks.ThroughputLatencyServer"
-ARGS="10 100 1000 null default rw"
+CLASS="bftsmart.demo.counter.CounterServer"
+# CLASS="bftsmart.demo.microbenchmarks.ThroughputLatencyServer"
+# ARGS="10 100 1000 null default rw"
+ARGS=""
 
 WORKDIR="./build/install/library/"
 RUNDIR="$(pwd)"

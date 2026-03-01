@@ -254,6 +254,7 @@ dependencies {
     implementation project(":messages")
     implementation project(":serialize-java")
     implementation project(":serialize-proto")
+    implementation project(":serialize-kryo")
 
     // https://mvnrepository.com/artifact/org.bouncycastle/bcpkix-jdk15on
     implementation 'org.bouncycastle:bcpkix-jdk15on:1.69'
