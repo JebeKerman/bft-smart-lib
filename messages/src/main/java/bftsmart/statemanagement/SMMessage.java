@@ -19,16 +19,16 @@ import bftsmart.reconfiguration.views.View;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
+import java.io.Serializable;
 
 /**
  * This class represents a message used in the state transfer protocol
  *
  * @author Joao Sousa
  */
-public abstract class SMMessage<T> extends SystemMessage {
+public abstract class SMMessage<T extends Serializable> extends SystemMessage {
 
-    protected transient T state;
-    private byte[] serializedState; // State log
+    protected T state;
     private View view;
     private int cid; // Consensus ID up to which the sender needs to be updated
     private int type; // Message type
@@ -52,19 +52,19 @@ public abstract class SMMessage<T> extends SystemMessage {
             int sender,
             int cid,
             int type,
-            byte[] state,
+            T state,
             View view,
             int regency,
             int leader,
             boolean triggerSMLocally) {
         super(sender);
-        this.serializedState = state;
         this.view = view;
         this.cid = cid;
         this.type = type;
         this.sender = sender;
         this.regency = regency;
         this.leader = leader;
+        this.state = state;
         this.TRIGGER_SM_LOCALLY = triggerSMLocally;
     }
 
@@ -77,8 +77,8 @@ public abstract class SMMessage<T> extends SystemMessage {
      *
      * @return The state Log
      */
-    public byte[] getSerializedState() {
-        return serializedState;
+    public T getState() {
+        return this.state;
     }
 
     /**
@@ -126,10 +126,6 @@ public abstract class SMMessage<T> extends SystemMessage {
         return leader;
     }
 
-    public T getState() {
-        return state;
-    }
-
     @Override
     public void writeExternal(ObjectOutput out) throws IOException {
         super.writeExternal(out);
@@ -139,7 +135,7 @@ public abstract class SMMessage<T> extends SystemMessage {
         out.writeInt(regency);
         out.writeInt(leader);
         out.writeObject(view);
-        out.writeObject(serializedState);
+        out.writeObject(state);
     }
 
     @Override
@@ -151,6 +147,6 @@ public abstract class SMMessage<T> extends SystemMessage {
         regency = in.readInt();
         leader = in.readInt();
         view = (View) in.readObject();
-        serializedState = (byte[]) in.readObject();
+        state = (T) in.readObject();
     }
 }

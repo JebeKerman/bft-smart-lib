@@ -19,11 +19,12 @@ import bftsmart.statemanagement.SMMessage;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
+import java.io.Serializable;
 
 /**
  * @author Marcel Santos
  */
-public class StandardSMMessageWire<T> extends SMMessage<T> {
+public class StandardSMMessageWire<T extends Serializable> extends SMMessage<T> {
 
     private int replica;
 
@@ -32,7 +33,7 @@ public class StandardSMMessageWire<T> extends SMMessage<T> {
             int cid,
             int type,
             int replica,
-            byte[] state,
+            T state,
             View view,
             int regency,
             int leader,

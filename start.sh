@@ -5,18 +5,21 @@ set -euo pipefail
 ./gradlew installDist
 
 CLASS="bftsmart.demo.counter.CounterServer"
+ARGS=""
 # CLASS="bftsmart.demo.microbenchmarks.ThroughputLatencyServer"
 # ARGS="10 100 1000 null default rw"
-ARGS=""
+
+FRAMEWORK="kryo"
 
 WORKDIR="./build/install/library/"
 RUNDIR="$(pwd)"
 LOGDIR="$RUNDIR/logs"
+
 COMMANDS=(
-  "./smartrun.sh $CLASS 0 $ARGS"
-  "./smartrun.sh $CLASS 1 $ARGS"
-  "./smartrun.sh $CLASS 2 $ARGS"
-  "./smartrun.sh $CLASS 3 $ARGS"
+  "./smartrun.sh -Dserialization.framework=$FRAMEWORK $CLASS 0 $ARGS"
+  "./smartrun.sh -Dserialization.framework=$FRAMEWORK $CLASS 1 $ARGS"
+  "./smartrun.sh -Dserialization.framework=$FRAMEWORK $CLASS 2 $ARGS"
+  "./smartrun.sh -Dserialization.framework=$FRAMEWORK $CLASS 3 $ARGS"
 )
 
 mkdir -p "$LOGDIR"

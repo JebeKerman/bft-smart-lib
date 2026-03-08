@@ -4,6 +4,12 @@ import bftsmart.reconfiguration.views.View;
 import bftsmart.statemanagement.durability.CSTRequestF1;
 import bftsmart.statemanagement.durability.CSTSMMessageWire;
 import com.google.protobuf.ByteString;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 class CSTSMessageMessageMapper
         implements MessageMapper<CSTSMMessageWire<?>, ProtoMessages.CSTSMMessage> {
@@ -18,7 +24,14 @@ class CSTSMessageMessageMapper
         CSTRequestF1 config = new CSTRequestF1(msg.getCstConfig().getCid());
         View view = MapperUtil.viewFromProto(msg.getParent().getView());
 
+        Serializable state = null;
         byte[] stateBytes = msg.getParent().getState().toByteArray();
+        try (ByteArrayInputStream is = new ByteArrayInputStream(stateBytes);
+                ObjectInputStream ois = new ObjectInputStream(is); ) {
+            state = (Serializable) ois.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
         CSTSMMessageWire<?> result =
                 new CSTSMMessageWire<>(
@@ -26,7 +39,7 @@ class CSTSMessageMessageMapper
                         msg.getParent().getCid(),
                         msg.getParent().getType(),
                         config,
-                        stateBytes,
+                        state,
                         view,
                         msg.getParent().getRegency(),
                         msg.getParent().getLeader(),
@@ -41,7 +54,14 @@ class CSTSMessageMessageMapper
 
         ProtoMessages.View view = MapperUtil.viewToProto(msg.getView());
 
-        byte[] state = msg.getSerializedState();
+        byte[] state = null;
+        try (ByteArrayOutputStream os = new ByteArrayOutputStream();
+                ObjectOutputStream oos = new ObjectOutputStream(os); ) {
+            oos.writeObject(msg.getState());
+            state = os.toByteArray();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         ProtoMessages.SMMessage parent =
                 ProtoMessages.SMMessage.newBuilder()

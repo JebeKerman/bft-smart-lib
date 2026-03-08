@@ -34,15 +34,19 @@ public class KryoSerializer implements MessageSerializer {
     }
 
     @Override
-    public void serialize(SystemMessage msg, OutputStream out) throws IOException {
+    public synchronized void serialize(SystemMessage msg, OutputStream out) throws IOException {
         Output output = new Output(out);
         kryo.writeClassAndObject(output, msg);
         output.flush();
     }
 
     @Override
-    public SystemMessage deserialize(InputStream in) throws IOException, ClassNotFoundException {
+    public synchronized SystemMessage deserialize(InputStream in) throws IOException, ClassNotFoundException {
         return (SystemMessage) kryo.readClassAndObject(new Input(in));
+    }
+
+    public void register(Class<?> type) {
+        this.kryo.register(type);
     }
 
     private KryoSerializer() {

@@ -3,6 +3,12 @@ package bftsmart.serialization.proto;
 import bftsmart.reconfiguration.views.View;
 import bftsmart.statemanagement.standard.StandardSMMessageWire;
 import com.google.protobuf.ByteString;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 class StandardSMMessageMapper
         implements MessageMapper<StandardSMMessageWire<?>, ProtoMessages.StandardSMMMessage> {
@@ -19,7 +25,14 @@ class StandardSMMessageMapper
             view = MapperUtil.viewFromProto(msg.getParent().getView());
         }
 
+        Serializable state = null;
         byte[] stateBytes = msg.getParent().getState().toByteArray();
+        try (ByteArrayInputStream is = new ByteArrayInputStream(stateBytes);
+                ObjectInputStream ois = new ObjectInputStream(is); ) {
+            state = (Serializable) ois.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
         StandardSMMessageWire<?> result =
                 new StandardSMMessageWire<>(
@@ -27,7 +40,7 @@ class StandardSMMessageMapper
                         msg.getParent().getCid(),
                         msg.getParent().getType(),
                         msg.getReplica(),
-                        stateBytes,
+                        state,
                         view,
                         msg.getParent().getRegency(),
                         msg.getParent().getLeader(),
@@ -38,7 +51,14 @@ class StandardSMMessageMapper
     @Override
     public ProtoMessages.StandardSMMMessage toProto(StandardSMMessageWire<?> msg) {
 
-        byte[] state = msg.getSerializedState();
+        byte[] state = null;
+        try (ByteArrayOutputStream os = new ByteArrayOutputStream();
+                ObjectOutputStream oos = new ObjectOutputStream(os); ) {
+            oos.writeObject(msg.getState());
+            state = os.toByteArray();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         ProtoMessages.SMMessage.Builder parent =
                 ProtoMessages.SMMessage.newBuilder()
@@ -48,6 +68,7 @@ class StandardSMMessageMapper
                         .setLeader(msg.getLeader())
                         .setTriggerSmLocally(msg.TRIGGER_SM_LOCALLY)
                         .setState(ByteString.copyFrom(state));
+
         if (msg.getView() != null) {
             ProtoMessages.View view = MapperUtil.viewToProto(msg.getView());
             parent = parent.setView(view);

@@ -15,6 +15,9 @@ limitations under the License.
 */
 package bftsmart.statemanagement.standard;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import bftsmart.reconfiguration.views.View;
 import bftsmart.statemanagement.ApplicationState;
 import bftsmart.tom.util.TOMUtil;
@@ -27,7 +30,7 @@ import bftsmart.tom.util.TOMUtil;
 public class StandardSMMessage extends StandardSMMessageWire<ApplicationState> {
 
     public StandardSMMessage(int sender, int cid, int type, int replica, ApplicationState state, View view, int regency, int leader) {
-    	super(sender, cid, type, replica, state != null ? state.getSerializedState() : new byte[0], view, regency, leader, type == TOMUtil.TRIGGER_SM_LOCALLY && sender == -1);
+    	super(sender, cid, type, replica, state, view, regency, leader, type == TOMUtil.TRIGGER_SM_LOCALLY && sender == -1);
         this.state = state;
     }
 	

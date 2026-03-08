@@ -7,7 +7,7 @@ import bftsmart.serialization.MessageSerializer;
 import bftsmart.statemanagement.standard.StandardSMMessageWire;
 
 public class TestKryoSerializer_StandardSMMessage
-        extends AbstractMessageSerializerTest<StandardSMMessageWire<?>> {
+        extends AbstractMessageSerializerTest<StandardSMMessageWire<Integer>> {
     @Override
     protected MessageSerializer serializer() {
         return KryoSerializer.getInstance();
@@ -15,12 +15,12 @@ public class TestKryoSerializer_StandardSMMessage
 
     @Override
     @SuppressWarnings("unchecked")
-    protected Class<StandardSMMessageWire<?>> messageType() {
-        return (Class<StandardSMMessageWire<?>>) (Class<?>) StandardSMMessageWire.class;
+    protected Class<StandardSMMessageWire<Integer>> messageType() {
+        return (Class<StandardSMMessageWire<Integer>>) (Class<?>) StandardSMMessageWire.class;
     }
 
     @Override
-    protected ArbitraryMessageSupplier<StandardSMMessageWire<?>> arbitrarySupplier() {
+    protected ArbitraryMessageSupplier<StandardSMMessageWire<Integer>> arbitrarySupplier() {
         return new StandardSMMessageArbitrary();
     }
 

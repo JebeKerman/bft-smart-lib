@@ -1,7 +1,13 @@
 package bftsmart.serialization;
 
+import java.util.TreeMap;
 import bftsmart.serialization.java.JavaSerializer;
 import bftsmart.serialization.proto.ProtoSerializer;
+import bftsmart.statemanagement.durability.CSTSMMessage;
+import bftsmart.statemanagement.standard.StandardSMMessage;
+import bftsmart.tom.core.messages.TOMMessage;
+import bftsmart.tom.leaderchange.LCMessage;
+import bftsmart.tom.server.defaultservices.DefaultApplicationState;
 import bftsmart.serialization.kryo.KryoSerializer;
 
 public class MessageSerializerFactory {
@@ -11,7 +17,16 @@ public class MessageSerializerFactory {
     private static MessageSerializer serializer;
     static {
         String type = System.getProperty(PROPERTY, DEFAULT_SERIALIZER);
-        serializer = Serializer.fromName(type).serializer;
+        Serializer serializerType = Serializer.fromName(type);
+        serializer = serializerType.serializer;
+        if (serializerType == Serializer.Kryo) {
+            KryoSerializer.getInstance().register(StandardSMMessage.class);
+            KryoSerializer.getInstance().register(CSTSMMessage.class);
+            KryoSerializer.getInstance().register(TOMMessage.class);
+            KryoSerializer.getInstance().register(LCMessage.class);
+            KryoSerializer.getInstance().register(DefaultApplicationState.class);
+            KryoSerializer.getInstance().register(TreeMap.class);
+        }
     }
 
     public static MessageSerializer getSerializer() {
