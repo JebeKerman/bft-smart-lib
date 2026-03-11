@@ -41,7 +41,8 @@ public class KryoSerializer implements MessageSerializer {
     }
 
     @Override
-    public synchronized SystemMessage deserialize(InputStream in) throws IOException, ClassNotFoundException {
+    public synchronized SystemMessage deserialize(InputStream in)
+            throws IOException, ClassNotFoundException {
         return (SystemMessage) kryo.readClassAndObject(new Input(in));
     }
 
