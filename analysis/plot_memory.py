@@ -45,8 +45,8 @@ def main(json_path: Path):
     plt.legend()
 
     plt.tight_layout()
-    path = "out/message_size_comparison.png"
-    plt.savefig(path)
+    path = "out/message_size_comparison.pdf"
+    plt.savefig(path, bbox_inches="tight")
     plt.close()
     print(f"Generated plot at {path}")
 
