@@ -43,9 +43,9 @@ def main(json_path: Path):
     plt.title("Serialized Message Size Comparison")
     plt.xticks(x, messages, rotation=20)
     plt.legend()
-    
+
     plt.tight_layout()
-    path = f"out/message_size_comparison.png"
+    path = "out/message_size_comparison.png"
     plt.savefig(path)
     plt.close()
     print(f"Generated plot at {path}")
