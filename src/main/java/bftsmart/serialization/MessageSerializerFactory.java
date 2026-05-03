@@ -14,7 +14,10 @@ public class MessageSerializerFactory {
     private static final String PROPERTY = "serialization.framework";
     private static final String DEFAULT_SERIALIZER = "java";
 
+    private static final String MEASURE_PROPERTY = "serialization.measure.bytes";
+
     private static MessageSerializer serializer;
+    private static ByteCountMessageSerializer byteCountSerializer = null;
     static {
         String type = System.getProperty(PROPERTY, DEFAULT_SERIALIZER);
         Serializer serializerType = Serializer.fromName(type);
@@ -27,10 +30,19 @@ public class MessageSerializerFactory {
             KryoSerializer.getInstance().register(DefaultApplicationState.class);
             KryoSerializer.getInstance().register(TreeMap.class);
         }
+
+        if (Boolean.getBoolean(MEASURE_PROPERTY)) {
+            byteCountSerializer = new ByteCountMessageSerializer(serializer);
+            serializer = byteCountSerializer;
+        }
     }
 
     public static MessageSerializer getSerializer() {
         return serializer;
+    }
+
+    public static ByteCountMessageSerializer getByteCountSerializer() {
+        return byteCountSerializer;
     }
 
     private MessageSerializerFactory() { }

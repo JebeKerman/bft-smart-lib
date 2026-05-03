@@ -15,6 +15,9 @@ limitations under the License.
 */
 package bftsmart.demo.microbenchmarks;
 
+import bftsmart.communication.SystemMessage;
+import bftsmart.serialization.ByteCountMessageSerializer;
+import bftsmart.serialization.MessageSerializerFactory;
 import bftsmart.tom.MessageContext;
 import bftsmart.tom.ServiceReplica;
 import bftsmart.tom.server.defaultservices.CommandsInfo;
@@ -39,6 +42,8 @@ import java.security.SignatureException;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.util.Base64;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -301,6 +306,13 @@ public final class ThroughputLatencyServer extends DefaultRecoverable{
             
             System.out.println("Batch average size = " + batchSize.getAverage(false) + " (+/- "+ (long)batchSize.getDP(false) +") requests");
             batchSize.reset();
+            
+            ByteCountMessageSerializer byteCountSerializer = MessageSerializerFactory.getByteCountSerializer();
+            if (byteCountSerializer != null) {
+                for (Map.Entry<Class<? extends SystemMessage>, AtomicLong> e : byteCountSerializer.getStats().entrySet()) {
+                    System.out.println(e.getKey().getSimpleName()  + " ByteCount = " + e.getValue().get());        
+                }
+            }
             
             throughputMeasurementStartTime = System.currentTimeMillis();
         }

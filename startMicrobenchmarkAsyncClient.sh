@@ -16,12 +16,11 @@ case "$FRAMEWORK" in
     ;;
 esac
 
-CLASS="bftsmart.demo.microbenchmarks.ThroughputLatencyClient"
+CLASS="bftsmart.demo.microbenchmarks.AsyncLatencyClient"
 
 INITIAL_CLIENT_ID=1000
-NUM_CLIENTS=200
-#NUM_OPERATIONS=100000
-NUM_OPERATIONS=1000
+NUM_CLIENTS=10
+NUM_OPERATIONS=100000
 REQUEST_SIZE=1024
 MAX_INTERVAL=10
 READ_ONLY=false

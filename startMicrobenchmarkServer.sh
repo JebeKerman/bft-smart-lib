@@ -18,7 +18,8 @@ esac
 
 CLASS="bftsmart.demo.microbenchmarks.ThroughputLatencyServer"
 
-MEASUREMENT_INTERVAL=10000
+#MEASUREMENT_INTERVAL=10000
+MEASUREMENT_INTERVAL=1000
 REPLY_SIZE=1024
 STATE_SIZE=64 
 CONTEXT=false # true|false
@@ -32,10 +33,10 @@ RUNDIR="$(pwd)"
 LOGDIR="$RUNDIR/logs"
 
 COMMANDS=(
-  "./smartrun.sh -Xms512m -Xmx4g -Dserialization.framework=$FRAMEWORK $CLASS 0 $ARGS"
-  "./smartrun.sh -Xms512m -Xmx4g -Dserialization.framework=$FRAMEWORK $CLASS 1 $ARGS"
-  "./smartrun.sh -Xms512m -Xmx4g -Dserialization.framework=$FRAMEWORK $CLASS 2 $ARGS"
-  "./smartrun.sh -Xms512m -Xmx4g -Dserialization.framework=$FRAMEWORK $CLASS 3 $ARGS"
+  "./smartrun.sh -Xms512m -Xmx4g -Dserialization.measure.bytes=true -Dserialization.framework=$FRAMEWORK $CLASS 0 $ARGS"
+  "./smartrun.sh -Xms512m -Xmx4g -Dserialization.measure.bytes=true -Dserialization.framework=$FRAMEWORK $CLASS 1 $ARGS"
+  "./smartrun.sh -Xms512m -Xmx4g -Dserialization.measure.bytes=true -Dserialization.framework=$FRAMEWORK $CLASS 2 $ARGS"
+  "./smartrun.sh -Xms512m -Xmx4g -Dserialization.measure.bytes=true -Dserialization.framework=$FRAMEWORK $CLASS 3 $ARGS"
 )
 
 mkdir -p "$LOGDIR/$FRAMEWORK"
