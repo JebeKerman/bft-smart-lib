@@ -17,6 +17,7 @@ package bftsmart.demo.microbenchmarks;
 
 import bftsmart.communication.SystemMessage;
 import bftsmart.serialization.ByteCountMessageSerializer;
+import bftsmart.serialization.ByteCountStats;
 import bftsmart.serialization.MessageSerializerFactory;
 import bftsmart.tom.MessageContext;
 import bftsmart.tom.ServiceReplica;
@@ -309,8 +310,10 @@ public final class ThroughputLatencyServer extends DefaultRecoverable{
             
             ByteCountMessageSerializer byteCountSerializer = MessageSerializerFactory.getByteCountSerializer();
             if (byteCountSerializer != null) {
-                for (Map.Entry<Class<? extends SystemMessage>, AtomicLong> e : byteCountSerializer.getStats().entrySet()) {
-                    System.out.println(e.getKey().getSimpleName()  + " ByteCount = " + e.getValue().get());        
+                for (Map.Entry<Class<? extends SystemMessage>, ByteCountStats> e : byteCountSerializer.getStats().entrySet()) {
+                    long bytes = e.getValue().getByteCount();
+                    long messages = e.getValue().getMessageCount();
+                    System.out.println(e.getKey().getSimpleName()  + " ByteCount = " + bytes + ":" + messages);        
                 }
             }
             

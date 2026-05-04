@@ -12,14 +12,14 @@ import bftsmart.communication.SystemMessage;
 public final class ByteCountMessageSerializer implements MessageSerializer {
     private final MessageSerializer delegate;
 
-    private final Map<Class<? extends SystemMessage>, AtomicLong> stats =
+    private final Map<Class<? extends SystemMessage>, ByteCountStats> stats =
             new ConcurrentHashMap<>();
 
     public ByteCountMessageSerializer(MessageSerializer delegate) {
         this.delegate = delegate;
     }
 
-    public Map<Class<? extends SystemMessage>, AtomicLong> getStats() {
+    public Map<Class<? extends SystemMessage>, ByteCountStats> getStats() {
         return stats;
     }
 
@@ -31,8 +31,8 @@ public final class ByteCountMessageSerializer implements MessageSerializer {
 
         long bytes = countingOut.getByteCount();
 
-        AtomicLong counter = stats.computeIfAbsent(msg.getClass(), c -> new AtomicLong(0));
-        counter.addAndGet(bytes);
+        ByteCountStats counter = stats.computeIfAbsent(msg.getClass(), c -> new ByteCountStats());
+        counter.addMessage(bytes);
     }
 
     @Override
