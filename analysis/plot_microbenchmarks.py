@@ -23,7 +23,7 @@ def load_log_files(log_dir: str) -> List[LogResult]:
         result: LogResult = {
             "serializer": dir.name,
             "server_logs": filter_server_logs(log_files),
-            "client_log": [p for p in log_files if p.name == "client.log"][0],
+            "client_log": [p for p in log_files if p.name.startswith("client")][0],
         }
 
         results.append(result)
@@ -32,11 +32,11 @@ def load_log_files(log_dir: str) -> List[LogResult]:
 
 def filter_server_logs(log_files: List[Path]):
     logs = [{
-                "id": int(p.name.split('.')[0].lstrip('p')),
+                "id": int(p.name.split('.')[0].removeprefix('server_200_p')),
                 "path": p,
                 "content": p.read_text(),
                 "data_blocks": process_server_log(p.read_text()),
-            } for p in log_files if p.name != "client.log"]
+            } for p in log_files if p.name.startswith("server_")]
     return sorted(logs, key=lambda x: x["id"])
 
 
