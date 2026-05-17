@@ -1,0 +1,13 @@
+serializer,message_type
+java,StandardSMMessage
+java,TOMMessage
+java,LCMessage
+java,ConsensusMessage
+proto,TOMMessage
+proto,LCMessage
+proto,StandardSMMessage
+proto,ConsensusMessage
+kryo,TOMMessage
+kryo,LCMessage
+kryo,StandardSMMessage
+kryo,ConsensusMessage
