@@ -1,0 +1,4 @@
+serializer,byte_count,msg_count,avg_size,avg_msg_size_diff_pct
+java,59555997,11824,5036.87,0.0
+kryo,20490244,12480,1641.85,-67.4
+proto,23756980,12480,1903.6,-62.21
