@@ -5,6 +5,7 @@ set -euo pipefail
 ./gradlew installDist
 
 FRAMEWORK="$1"
+RUN_ID="$2"
 
 case "$FRAMEWORK" in
   java|proto|kryo)
@@ -19,10 +20,10 @@ esac
 CLASS="bftsmart.demo.microbenchmarks.ThroughputLatencyClient"
 
 INITIAL_CLIENT_ID=1000
-NUM_CLIENTS=200
+NUM_CLIENTS=10
 #NUM_OPERATIONS=100000
 NUM_OPERATIONS=1000
-REQUEST_SIZE=1024
+REQUEST_SIZE=0
 MAX_INTERVAL=10
 READ_ONLY=false
 VERBOSE=false
@@ -32,7 +33,7 @@ ARGS="$INITIAL_CLIENT_ID $NUM_CLIENTS $NUM_OPERATIONS $REQUEST_SIZE $MAX_INTERVA
 
 WORKDIR="./build/install/library/"
 RUNDIR="$(pwd)"
-LOGDIR="$RUNDIR/logs"
+LOGDIR="$RUNDIR/logs/$RUN_ID"
 
 mkdir -p "$LOGDIR/$FRAMEWORK"
 

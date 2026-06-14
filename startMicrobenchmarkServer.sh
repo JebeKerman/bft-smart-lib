@@ -5,6 +5,7 @@ set -euo pipefail
 ./gradlew installDist
 
 FRAMEWORK="$1"
+RUN_ID="$2"
 
 case "$FRAMEWORK" in
   java|proto|kryo)
@@ -20,23 +21,24 @@ CLASS="bftsmart.demo.microbenchmarks.ThroughputLatencyServer"
 
 #MEASUREMENT_INTERVAL=10000
 MEASUREMENT_INTERVAL=1000
-REPLY_SIZE=1024
+REPLY_SIZE=0
 STATE_SIZE=64 
 CONTEXT=false # true|false
 MODE=default # nosig|default|ecdsa
 OPERATION=rwd # rwd|rw
 
-ARGS="$MEASUREMENT_INTERVAL $REPLY_SIZE $STATE_SIZE $CONTEXT $MODE $OPERATION"
+ARGS="$MEASUREMENT_INTERVAL $REPLY_SIZE $STATE_SIZE $CONTEXT $MODE"
+# ARGS="$MEASUREMENT_INTERVAL $REPLY_SIZE $STATE_SIZE $CONTEXT $MODE $OPERATION"
 
 WORKDIR="./build/install/library/"
 RUNDIR="$(pwd)"
-LOGDIR="$RUNDIR/logs"
+LOGDIR="$RUNDIR/logs/$RUN_ID"
 
 COMMANDS=(
-  "./smartrun.sh -Xms512m -Xmx4g -Dserialization.measure.bytes=true -Dserialization.framework=$FRAMEWORK $CLASS 0 $ARGS"
-  "./smartrun.sh -Xms512m -Xmx4g -Dserialization.measure.bytes=true -Dserialization.framework=$FRAMEWORK $CLASS 1 $ARGS"
-  "./smartrun.sh -Xms512m -Xmx4g -Dserialization.measure.bytes=true -Dserialization.framework=$FRAMEWORK $CLASS 2 $ARGS"
-  "./smartrun.sh -Xms512m -Xmx4g -Dserialization.measure.bytes=true -Dserialization.framework=$FRAMEWORK $CLASS 3 $ARGS"
+  "./smartrun.sh -Xms512m -Xmx4g -Dmetrics.file=$LOGDIR/$FRAMEWORK/s01.json -Dserialization.measure.bytes=true -Dserialization.framework=$FRAMEWORK $CLASS 0 $ARGS"
+  "./smartrun.sh -Xms512m -Xmx4g -Dmetrics.file=$LOGDIR/$FRAMEWORK/s02.json -Dserialization.measure.bytes=true -Dserialization.framework=$FRAMEWORK $CLASS 1 $ARGS"
+  "./smartrun.sh -Xms512m -Xmx4g -Dmetrics.file=$LOGDIR/$FRAMEWORK/s03.json -Dserialization.measure.bytes=true -Dserialization.framework=$FRAMEWORK $CLASS 2 $ARGS"
+  "./smartrun.sh -Xms512m -Xmx4g -Dmetrics.file=$LOGDIR/$FRAMEWORK/s04.json -Dserialization.measure.bytes=true -Dserialization.framework=$FRAMEWORK $CLASS 3 $ARGS"
 )
 
 mkdir -p "$LOGDIR/$FRAMEWORK"

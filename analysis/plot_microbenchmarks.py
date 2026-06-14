@@ -6,6 +6,10 @@ from typing import List, TypedDict
 import re
 import matplotlib.pyplot as plt
 import csv
+import json
+from benchmark_types import ServerLog, ServerLogs
+from messages_sizes import json_plot_msg_sizes
+from analyze_throughput import json_analyze_throughput
 
 
 class LogResult(TypedDict):
@@ -172,12 +176,36 @@ def plot_msg_sizes(results: List[LogResult], plot_dir: Path):
     plt.close()
 
 
+def load_server_logs(log_dir: Path) -> list[ServerLog]:
+    server_logs: list[ServerLog] = []
+
+    for p in log_dir.iterdir():
+        if p.is_file() and p.suffix == ".json":
+            with p.open("r", encoding="utf-8") as f:
+                server_logs.append(json.load(f))
+
+    return server_logs
+
+
 def main(log_dir: Path, log_id: str):
-    log_files = load_log_files(log_dir / log_id)
+    log_dir = log_dir / log_id
     out_dir = Path("analysis/out/", log_id)
-    plot_throughput(log_files, out_dir)
-    plot_latency(log_files, out_dir)
-    plot_msg_sizes(log_files, out_dir)
+    print(f"Analyzing logs in {log_dir}. Writing results to {out_dir}")
+
+    # log_files = load_log_files(log_dir / log_id)
+    # plot_throughput(log_files, out_dir)
+    # plot_latency(log_files, out_dir)
+    # plot_msg_sizes(log_files, out_dir)
+
+    server_logs: ServerLogs = {
+        "java": load_server_logs(log_dir / "java"),
+        "kryo": load_server_logs(log_dir / "kryo"),
+        "proto": load_server_logs(log_dir / "proto"),
+    }
+    dir_msg_stats = out_dir / "message_stats"
+    dir_msg_stats.mkdir(parents=True, exist_ok=True)
+    json_plot_msg_sizes(server_logs, dir_msg_stats)
+    json_analyze_throughput(server_logs, dir_msg_stats)
 
 
 if __name__ == "__main__":
