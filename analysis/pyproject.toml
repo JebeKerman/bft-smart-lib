@@ -1,0 +1,21 @@
+[build-system]
+requires = ["uv_build>=0.11.21,<0.12"]
+build-backend = "uv_build"
+
+[project]
+name = "analysis"
+version = "0.1.0"
+description = "Python project to analyze benchmarks of bft-smart"
+requires-python = ">=3.8"
+dependencies = [
+    "matplotlib>=3.7.5",
+    "pandas>=2.0.3",
+]
+
+[project.scripts]
+plot-jmh = "analysis.plot_jmh:main"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.17",
+]
