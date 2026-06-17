@@ -9,7 +9,7 @@ import pandas as pd
 
 def main():
     if len(sys.argv) != 3:
-        print("Usage: uv run plot-jmh <jmg-result-file> <output_directory>")
+        print(f"Usage: uv run {sys.argv[0]} <jmg-result-file> <output_directory>")
         sys.exit(1)
 
     input_file = Path(sys.argv[1])
