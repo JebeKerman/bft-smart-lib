@@ -6,13 +6,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -71,13 +65,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -136,13 +124,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -201,13 +183,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -266,13 +242,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -331,13 +301,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -396,13 +360,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -461,13 +419,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -526,13 +478,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -591,13 +537,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -656,13 +596,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -721,13 +655,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -786,13 +714,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -851,13 +773,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -916,13 +832,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -981,13 +891,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -1046,13 +950,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -1111,13 +1009,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -1176,13 +1068,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -1241,13 +1127,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -1306,13 +1186,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -1371,13 +1245,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -1436,13 +1304,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -1501,13 +1363,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -1566,13 +1422,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -1631,13 +1481,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -1696,13 +1540,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -1761,13 +1599,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -1826,13 +1658,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -1891,13 +1717,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -1956,13 +1776,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -2021,13 +1835,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -2086,13 +1894,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -2151,13 +1953,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -2216,13 +2012,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
@@ -2281,13 +2071,7 @@
         "threads" : 1,
         "forks" : 1,
         "jvm" : "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
-        "jvmArgs" : [
-            "-Dfile.encoding=UTF-8",
-            "-Djava.io.tmpdir=/home/pfister/bft-smart-lib/analysis/build/tmp/jmh",
-            "-Duser.country",
-            "-Duser.language=en",
-            "-Duser.variant"
-        ],
+
         "jdkVersion" : "21.0.10",
         "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "21.0.10+7-Ubuntu-124.04",
