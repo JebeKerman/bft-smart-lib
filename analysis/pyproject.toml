@@ -14,6 +14,7 @@ dependencies = [
 
 [project.scripts]
 plot-jmh = "analysis.plot_jmh:main"
+plot-msg-sizes = "analysis.plot_msg_sizes:main"
 
 [dependency-groups]
 dev = [

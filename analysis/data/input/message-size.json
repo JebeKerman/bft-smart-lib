@@ -1,0 +1,106 @@
+{
+  "results": [
+    {
+      "message": "ConsensusMessage",
+      "sizes": [
+        {
+          "serializer": "JavaSerializer",
+          "size": 141
+        },
+        {
+          "serializer": "ProtoSerializer",
+          "size": 6
+        },
+        {
+          "serializer": "KryoSerializer",
+          "size": 10
+        }
+      ]
+    },
+    {
+      "message": "CSTSMMessageWire",
+      "sizes": [
+        {
+          "serializer": "JavaSerializer",
+          "size": 780
+        },
+        {
+          "serializer": "ProtoSerializer",
+          "size": 108
+        },
+        {
+          "serializer": "KryoSerializer",
+          "size": 24
+        }
+      ]
+    },
+    {
+      "message": "LCMessageWire",
+      "sizes": [
+        {
+          "serializer": "JavaSerializer",
+          "size": 152
+        },
+        {
+          "serializer": "ProtoSerializer",
+          "size": 14
+        },
+        {
+          "serializer": "KryoSerializer",
+          "size": 8
+        }
+      ]
+    },
+    {
+      "message": "StandardSMMessageWire",
+      "sizes": [
+        {
+          "serializer": "JavaSerializer",
+          "size": 503
+        },
+        {
+          "serializer": "ProtoSerializer",
+          "size": 106
+        },
+        {
+          "serializer": "KryoSerializer",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "message": "TOMMessageWire",
+      "sizes": [
+        {
+          "serializer": "JavaSerializer",
+          "size": 153
+        },
+        {
+          "serializer": "ProtoSerializer",
+          "size": 22
+        },
+        {
+          "serializer": "KryoSerializer",
+          "size": 12
+        }
+      ]
+    },
+    {
+      "message": "VMMessage",
+      "sizes": [
+        {
+          "serializer": "JavaSerializer",
+          "size": 868
+        },
+        {
+          "serializer": "ProtoSerializer",
+          "size": 122
+        },
+        {
+          "serializer": "KryoSerializer",
+          "size": 95
+        }
+      ]
+    }
+  ]
+}
