@@ -1,0 +1,10 @@
+{
+    "01": {
+        "num_clients": "100",
+        "mode": "synchronous" 
+    },
+    "02": {
+        "num_clients": "200",
+        "mode": "synchronous" 
+    }
+}

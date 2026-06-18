@@ -20,7 +20,11 @@ def main():
     output_dir = Path(sys.argv[2])
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    server_logs = read_server_logs(log_directory)
+    meta_info = read_json_file(log_directory / "log_meta_info.json")
+    for run_id, _ in meta_info.items():
+        (output_dir / run_id).mkdir(parents=True, exist_ok=True)
+
+    server_logs = read_server_logs(log_directory, meta_info)
     df_measurements = convert_measurements_to_df(server_logs)
     df_message_sizes = convert_message_sizes_to_df(server_logs)
 
@@ -28,21 +32,29 @@ def main():
     plot_msg_sizes(df_message_sizes, output_dir)
 
 
-def read_server_logs(root_dir: Path) -> list[Dict]:
+def read_server_logs(root_dir: Path, meta_info: Dict) -> list[Dict]:
     return [
         {
-            "serializer": subdir.name,
+            "serializer": serializer_dir.name,
+            "run_id": run_dir.name,
+            "num_clients": meta_info[run_dir.name]["num_clients"],
+            "client_mode": meta_info[run_dir.name]["mode"],
             "content": read_json_file(log_file),
         }
-        for subdir in sorted(root_dir.iterdir())
-        if subdir.is_dir()
-        for log_file in sorted(subdir.glob("*.json"))
+        for run_dir in sorted(root_dir.iterdir())
+        if run_dir.is_dir()
+        for serializer_dir in sorted(run_dir.iterdir())
+        if serializer_dir.is_dir()
+        for log_file in sorted(serializer_dir.glob("*.json"))
     ]
 
 
 def convert_measurements_to_df(server_logs: list[Dict]) -> pd.DataFrame:
     data = [
         {
+            "run_id": log["run_id"],
+            "num_clients": log["num_clients"],
+            "client_mode": log["client_mode"],
             "server_id": log["content"]["id"],
             "serializer": log["serializer"],
             "interval": log["content"]["interval"],
@@ -56,12 +68,22 @@ def convert_measurements_to_df(server_logs: list[Dict]) -> pd.DataFrame:
         for measurements in log["content"]["measurements"]
     ]
     df = pd.DataFrame(data)
+    df["serializer"] = df["serializer"].replace(
+        {
+            "java": "Java",
+            "kryo": "Kryo",
+            "proto": "Proto",
+        }
+    )
     return df
 
 
 def convert_message_sizes_to_df(server_logs: list[Dict]) -> pd.DataFrame:
     data = [
         {
+            "run_id": log["run_id"],
+            "num_clients": log["num_clients"],
+            "client_mode": log["client_mode"],
             "server_id": log["content"]["id"],
             "serializer": log["serializer"],
             "interval": log["content"]["interval"],
@@ -75,6 +97,13 @@ def convert_message_sizes_to_df(server_logs: list[Dict]) -> pd.DataFrame:
         for message_size in measurements["message_sizes"]
     ]
     df = pd.DataFrame(data)
+    df["serializer"] = df["serializer"].replace(
+        {
+            "java": "Java",
+            "kryo": "Kryo",
+            "proto": "Proto",
+        }
+    )
     return df
 
 

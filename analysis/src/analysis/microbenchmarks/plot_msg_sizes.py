@@ -5,9 +5,10 @@ import pandas as pd
 
 
 def plot_msg_sizes(df: pd.DataFrame, out_dir: Path):
-    plot_msg_sizes_absolute(df, out_dir)
-    plot_msg_sizes_mean(df, out_dir)
-    csv_table(df, out_dir)
+    for run_id, df in df.groupby("run_id"):
+        plot_msg_sizes_absolute(df, out_dir / run_id)
+        plot_msg_sizes_mean(df, out_dir / run_id)
+        csv_table(df, out_dir / run_id)
 
 
 def plot_msg_sizes_absolute(df: pd.DataFrame, out_dir: Path):
@@ -81,21 +82,3 @@ def csv_table(df: pd.DataFrame, out_dir: Path):
     filename = out_dir / "msg_size_mean.csv"
     table_df.to_csv(filename, index=False)
     print(f"Generated csv {filename}")
-    # for msg_name, msg_df in df.groupby("name", observed=True):
-    #    columns = [
-    #        "serializer",
-    #        "byte_count",
-    #        "msg_count",
-    #        "avg_size",
-    #        "avg_msg_size_diff_pct",
-    #    ]
-
-
-#
-#    table_df = msg_df[columns].copy()
-#
-#    table_df["avg_size"] = table_df["avg_size"].round(2)
-#    table_df["avg_msg_size_diff_pct"] = table_df["avg_msg_size_diff_pct"].round(2)
-#    table_df.to_csv(out_dir / f"msg_size_{msg_name}.csv", index=False)
-#
-#    print(f"Generated csv file {out_dir / f"msg_size_{msg_name}.csv"}")
