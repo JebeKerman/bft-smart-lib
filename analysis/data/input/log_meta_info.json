@@ -6,5 +6,29 @@
     "02": {
         "num_clients": "200",
         "mode": "synchronous" 
+    },
+    "03": {
+        "num_clients": "300",
+        "mode": "synchronous" 
+    },
+    "04": {
+        "num_clients": "400",
+        "mode": "synchronous" 
+    },
+    "05": {
+        "num_clients": "500",
+        "mode": "synchronous" 
+    },
+    "06": {
+        "num_clients": "600",
+        "mode": "synchronous" 
+    },
+    "07": {
+        "num_clients": "700",
+        "mode": "synchronous" 
+    },
+    "08": {
+        "num_clients": "800",
+        "mode": "synchronous" 
     }
 }

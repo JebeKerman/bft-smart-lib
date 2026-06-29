@@ -1,0 +1,1655 @@
+-- Using view stored on disk
+-- SSL/TLS handshake complete!, Id:0  ## CipherSuite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256.
+-- SSL/TLS handshake complete!, Id:1  ## CipherSuite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256.
+-- ID = 2
+-- N = 4
+-- F = 1
+-- Port (client <-> server) = 11020
+-- Port (server <-> server) = 11021
+-- requestTimeout = 2000
+-- maxBatch = 1024
+-- Binded replica to IP address 134.60.242.13
+-- Optimizations:  Read-only Requests: disabled
+-- SSL/TLS enabled, protocol version: TLSv1.2
+-- In current view: ID:0; F:1; Processes:0(/134.60.242.11:11000),1(/134.60.242.12:11010),2(/134.60.242.13:11020),3(/134.60.242.14:11030),
+-- Retrieving State
+-- Replica state is up to date
+-- 
+		###################################
+		    Ready to process operations    
+		###################################
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+-- Session Created, active clients=0
+--- Measurements after 1000 ops (1000 samples) ---
+--- Measurements after 2000 ops (1000 samples) ---
+--- Measurements after 3000 ops (1000 samples) ---
+--- Measurements after 4000 ops (1000 samples) ---
+--- Measurements after 5000 ops (1000 samples) ---
+--- Measurements after 6000 ops (1000 samples) ---
+--- Measurements after 7000 ops (1000 samples) ---
+--- Measurements after 8000 ops (1000 samples) ---
+--- Measurements after 9000 ops (1000 samples) ---
+--- Measurements after 10000 ops (1000 samples) ---
+--- Measurements after 11000 ops (1000 samples) ---
+--- Measurements after 12000 ops (1000 samples) ---
+--- Measurements after 13000 ops (1000 samples) ---
+--- Measurements after 14000 ops (1000 samples) ---
+--- Measurements after 15000 ops (1000 samples) ---
+--- Measurements after 16000 ops (1000 samples) ---
+--- Measurements after 17000 ops (1000 samples) ---
+--- Measurements after 18000 ops (1000 samples) ---
+--- Measurements after 19000 ops (1000 samples) ---
+--- Measurements after 20000 ops (1000 samples) ---
+--- Measurements after 21000 ops (1000 samples) ---
+--- Measurements after 22000 ops (1000 samples) ---
+--- Measurements after 23000 ops (1000 samples) ---
+--- Measurements after 24000 ops (1000 samples) ---
+--- Measurements after 25000 ops (1000 samples) ---
+--- Measurements after 26000 ops (1000 samples) ---
+--- Measurements after 27000 ops (1000 samples) ---
+--- Measurements after 28000 ops (1000 samples) ---
+--- Measurements after 29000 ops (1000 samples) ---
+--- Measurements after 30000 ops (1000 samples) ---
+--- Measurements after 31000 ops (1000 samples) ---
+--- Measurements after 32000 ops (1000 samples) ---
+--- Measurements after 33000 ops (1000 samples) ---
+--- Measurements after 34000 ops (1000 samples) ---
+--- Measurements after 35000 ops (1000 samples) ---
+--- Measurements after 36000 ops (1000 samples) ---
+--- Measurements after 37000 ops (1000 samples) ---
+--- Measurements after 38000 ops (1000 samples) ---
+--- Measurements after 39000 ops (1000 samples) ---
+--- Measurements after 40000 ops (1000 samples) ---
+--- Measurements after 41000 ops (1000 samples) ---
+--- Measurements after 42000 ops (1000 samples) ---
+--- Measurements after 43000 ops (1000 samples) ---
+--- Measurements after 44000 ops (1000 samples) ---
+--- Measurements after 45000 ops (1000 samples) ---
+--- Measurements after 46000 ops (1000 samples) ---
+--- Measurements after 47000 ops (1000 samples) ---
+--- Measurements after 48000 ops (1000 samples) ---
+--- Measurements after 49000 ops (1000 samples) ---
+--- Measurements after 50000 ops (1000 samples) ---
+--- Measurements after 51000 ops (1000 samples) ---
+--- Measurements after 52000 ops (1000 samples) ---
+--- Measurements after 53000 ops (1000 samples) ---
+--- Measurements after 54000 ops (1000 samples) ---
+--- Measurements after 55000 ops (1000 samples) ---
+--- Measurements after 56000 ops (1000 samples) ---
+--- Measurements after 57000 ops (1000 samples) ---
+--- Measurements after 58000 ops (1000 samples) ---
+--- Measurements after 59000 ops (1000 samples) ---
+--- Measurements after 60000 ops (1000 samples) ---
+--- Measurements after 61000 ops (1000 samples) ---
+--- Measurements after 62000 ops (1000 samples) ---
+--- Measurements after 63000 ops (1000 samples) ---
+--- Measurements after 64000 ops (1000 samples) ---
+--- Measurements after 65000 ops (1000 samples) ---
+--- Measurements after 66000 ops (1000 samples) ---
+--- Measurements after 67000 ops (1000 samples) ---
+--- Measurements after 68000 ops (1000 samples) ---
+--- Measurements after 69000 ops (1000 samples) ---
+--- Measurements after 70000 ops (1000 samples) ---
+--- Measurements after 71000 ops (1000 samples) ---
+--- Measurements after 72000 ops (1000 samples) ---
+--- Measurements after 73000 ops (1000 samples) ---
+--- Measurements after 74000 ops (1000 samples) ---
+--- Measurements after 75000 ops (1000 samples) ---
+--- Measurements after 76000 ops (1000 samples) ---
+--- Measurements after 77000 ops (1000 samples) ---
+--- Measurements after 78000 ops (1000 samples) ---
+--- Measurements after 79000 ops (1000 samples) ---
+--- Measurements after 80000 ops (1000 samples) ---
+--- Measurements after 81000 ops (1000 samples) ---
+--- Measurements after 82000 ops (1000 samples) ---
+--- Measurements after 83000 ops (1000 samples) ---
+--- Measurements after 84000 ops (1000 samples) ---
+--- Measurements after 85000 ops (1000 samples) ---
+--- Measurements after 86000 ops (1000 samples) ---
+--- Measurements after 87000 ops (1000 samples) ---
+--- Measurements after 88000 ops (1000 samples) ---
+--- Measurements after 89000 ops (1000 samples) ---
+--- Measurements after 90000 ops (1000 samples) ---
+--- Measurements after 91000 ops (1000 samples) ---
+--- Measurements after 92000 ops (1000 samples) ---
+--- Measurements after 93000 ops (1000 samples) ---
+--- Measurements after 94000 ops (1000 samples) ---
+--- Measurements after 95000 ops (1000 samples) ---
+--- Measurements after 96000 ops (1000 samples) ---
+--- Measurements after 97000 ops (1000 samples) ---
+--- Measurements after 98000 ops (1000 samples) ---
+--- Measurements after 99000 ops (1000 samples) ---
+--- Measurements after 100000 ops (1000 samples) ---
+--- Measurements after 101000 ops (1000 samples) ---
+--- Measurements after 102000 ops (1000 samples) ---
+--- Measurements after 103000 ops (1000 samples) ---
+--- Measurements after 104000 ops (1000 samples) ---
+--- Measurements after 105000 ops (1000 samples) ---
+--- Measurements after 106000 ops (1000 samples) ---
+--- Measurements after 107000 ops (1000 samples) ---
+--- Measurements after 108000 ops (1000 samples) ---
+--- Measurements after 109000 ops (1000 samples) ---
+--- Measurements after 110000 ops (1000 samples) ---
+--- Measurements after 111000 ops (1000 samples) ---
+--- Measurements after 112000 ops (1000 samples) ---
+--- Measurements after 113000 ops (1000 samples) ---
+--- Measurements after 114000 ops (1000 samples) ---
+--- Measurements after 115000 ops (1000 samples) ---
+--- Measurements after 116000 ops (1000 samples) ---
+--- Measurements after 117000 ops (1000 samples) ---
+--- Measurements after 118000 ops (1000 samples) ---
+--- Measurements after 119000 ops (1000 samples) ---
+--- Measurements after 120000 ops (1000 samples) ---
+--- Measurements after 121000 ops (1000 samples) ---
+--- Measurements after 122000 ops (1000 samples) ---
+--- Measurements after 123000 ops (1000 samples) ---
+--- Measurements after 124000 ops (1000 samples) ---
+--- Measurements after 125000 ops (1000 samples) ---
+--- Measurements after 126000 ops (1000 samples) ---
+--- Measurements after 127000 ops (1000 samples) ---
+--- Measurements after 128000 ops (1000 samples) ---
+--- Measurements after 129000 ops (1000 samples) ---
+--- Measurements after 130000 ops (1000 samples) ---
+--- Measurements after 131000 ops (1000 samples) ---
+--- Measurements after 132000 ops (1000 samples) ---
+--- Measurements after 133000 ops (1000 samples) ---
+--- Measurements after 134000 ops (1000 samples) ---
+--- Measurements after 135000 ops (1000 samples) ---
+--- Measurements after 136000 ops (1000 samples) ---
+--- Measurements after 137000 ops (1000 samples) ---
+--- Measurements after 138000 ops (1000 samples) ---
+-- Checkpoint is in position 3404
+--- Measurements after 139000 ops (1000 samples) ---
+--- Measurements after 140000 ops (1000 samples) ---
+--- Measurements after 141000 ops (1000 samples) ---
+-- Performing checkpoint for consensus 1023
+--- Measurements after 142000 ops (1000 samples) ---
+--- Measurements after 143000 ops (1000 samples) ---
+--- Measurements after 144000 ops (1000 samples) ---
+--- Measurements after 145000 ops (1000 samples) ---
+--- Measurements after 146000 ops (1000 samples) ---
+--- Measurements after 147000 ops (1000 samples) ---
+--- Measurements after 148000 ops (1000 samples) ---
+--- Measurements after 149000 ops (1000 samples) ---
+--- Measurements after 150000 ops (1000 samples) ---
+--- Measurements after 151000 ops (1000 samples) ---
+--- Measurements after 152000 ops (1000 samples) ---
+--- Measurements after 153000 ops (1000 samples) ---
+--- Measurements after 154000 ops (1000 samples) ---
+--- Measurements after 155000 ops (1000 samples) ---
+--- Measurements after 156000 ops (1000 samples) ---
+--- Measurements after 157000 ops (1000 samples) ---
+--- Measurements after 158000 ops (1000 samples) ---
+--- Measurements after 159000 ops (1000 samples) ---
+--- Measurements after 160000 ops (1000 samples) ---
+--- Measurements after 161000 ops (1000 samples) ---
+--- Measurements after 162000 ops (1000 samples) ---
+--- Measurements after 163000 ops (1000 samples) ---
+--- Measurements after 164000 ops (1000 samples) ---
+--- Measurements after 165000 ops (1000 samples) ---
+--- Measurements after 166000 ops (1000 samples) ---
+--- Measurements after 167000 ops (1000 samples) ---
+--- Measurements after 168000 ops (1000 samples) ---
+--- Measurements after 169000 ops (1000 samples) ---
+--- Measurements after 170000 ops (1000 samples) ---
+--- Measurements after 171000 ops (1000 samples) ---
+--- Measurements after 172000 ops (1000 samples) ---
+--- Measurements after 173000 ops (1000 samples) ---
+--- Measurements after 174000 ops (1000 samples) ---
+--- Measurements after 175000 ops (1000 samples) ---
+--- Measurements after 176000 ops (1000 samples) ---
+--- Measurements after 177000 ops (1000 samples) ---
+--- Measurements after 178000 ops (1000 samples) ---
+--- Measurements after 179000 ops (1000 samples) ---
+--- Measurements after 180000 ops (1000 samples) ---
+--- Measurements after 181000 ops (1000 samples) ---
+--- Measurements after 182000 ops (1000 samples) ---
+--- Measurements after 183000 ops (1000 samples) ---
+--- Measurements after 184000 ops (1000 samples) ---
+--- Measurements after 185000 ops (1000 samples) ---
+--- Measurements after 186000 ops (1000 samples) ---
+--- Measurements after 187000 ops (1000 samples) ---
+--- Measurements after 188000 ops (1000 samples) ---
+--- Measurements after 189000 ops (1000 samples) ---
+--- Measurements after 190000 ops (1000 samples) ---
+--- Measurements after 191000 ops (1000 samples) ---
+--- Measurements after 192000 ops (1000 samples) ---
+--- Measurements after 193000 ops (1000 samples) ---
+--- Measurements after 194000 ops (1000 samples) ---
+--- Measurements after 195000 ops (1000 samples) ---
+--- Measurements after 196000 ops (1000 samples) ---
+--- Measurements after 197000 ops (1000 samples) ---
+--- Measurements after 198000 ops (1000 samples) ---
+--- Measurements after 199000 ops (1000 samples) ---
+--- Measurements after 200000 ops (1000 samples) ---
+--- Measurements after 201000 ops (1000 samples) ---
+--- Measurements after 202000 ops (1000 samples) ---
+--- Measurements after 203000 ops (1000 samples) ---
+--- Measurements after 204000 ops (1000 samples) ---
+--- Measurements after 205000 ops (1000 samples) ---
+--- Measurements after 206000 ops (1000 samples) ---
+--- Measurements after 207000 ops (1000 samples) ---
+--- Measurements after 208000 ops (1000 samples) ---
+--- Measurements after 209000 ops (1000 samples) ---
+--- Measurements after 210000 ops (1000 samples) ---
+--- Measurements after 211000 ops (1000 samples) ---
+--- Measurements after 212000 ops (1000 samples) ---
+--- Measurements after 213000 ops (1000 samples) ---
+--- Measurements after 214000 ops (1000 samples) ---
+--- Measurements after 215000 ops (1000 samples) ---
+--- Measurements after 216000 ops (1000 samples) ---
+--- Measurements after 217000 ops (1000 samples) ---
+--- Measurements after 218000 ops (1000 samples) ---
+--- Measurements after 219000 ops (1000 samples) ---
+--- Measurements after 220000 ops (1000 samples) ---
+--- Measurements after 221000 ops (1000 samples) ---
+--- Measurements after 222000 ops (1000 samples) ---
+--- Measurements after 223000 ops (1000 samples) ---
+--- Measurements after 224000 ops (1000 samples) ---
+--- Measurements after 225000 ops (1000 samples) ---
+--- Measurements after 226000 ops (1000 samples) ---
+--- Measurements after 227000 ops (1000 samples) ---
+--- Measurements after 228000 ops (1000 samples) ---
+--- Measurements after 229000 ops (1000 samples) ---
+--- Measurements after 230000 ops (1000 samples) ---
+--- Measurements after 231000 ops (1000 samples) ---
+--- Measurements after 232000 ops (1000 samples) ---
+--- Measurements after 233000 ops (1000 samples) ---
+--- Measurements after 234000 ops (1000 samples) ---
+--- Measurements after 235000 ops (1000 samples) ---
+--- Measurements after 236000 ops (1000 samples) ---
+--- Measurements after 237000 ops (1000 samples) ---
+--- Measurements after 238000 ops (1000 samples) ---
+--- Measurements after 239000 ops (1000 samples) ---
+--- Measurements after 240000 ops (1000 samples) ---
+--- Measurements after 241000 ops (1000 samples) ---
+--- Measurements after 242000 ops (1000 samples) ---
+--- Measurements after 243000 ops (1000 samples) ---
+--- Measurements after 244000 ops (1000 samples) ---
+--- Measurements after 245000 ops (1000 samples) ---
+--- Measurements after 246000 ops (1000 samples) ---
+--- Measurements after 247000 ops (1000 samples) ---
+--- Measurements after 248000 ops (1000 samples) ---
+--- Measurements after 249000 ops (1000 samples) ---
+--- Measurements after 250000 ops (1000 samples) ---
+--- Measurements after 251000 ops (1000 samples) ---
+--- Measurements after 252000 ops (1000 samples) ---
+--- Measurements after 253000 ops (1000 samples) ---
+--- Measurements after 254000 ops (1000 samples) ---
+--- Measurements after 255000 ops (1000 samples) ---
+--- Measurements after 256000 ops (1000 samples) ---
+--- Measurements after 257000 ops (1000 samples) ---
+--- Measurements after 258000 ops (1000 samples) ---
+--- Measurements after 259000 ops (1000 samples) ---
+--- Measurements after 260000 ops (1000 samples) ---
+--- Measurements after 261000 ops (1000 samples) ---
+--- Measurements after 262000 ops (1000 samples) ---
+--- Measurements after 263000 ops (1000 samples) ---
+--- Measurements after 264000 ops (1000 samples) ---
+--- Measurements after 265000 ops (1000 samples) ---
+--- Measurements after 266000 ops (1000 samples) ---
+--- Measurements after 267000 ops (1000 samples) ---
+--- Measurements after 268000 ops (1000 samples) ---
+--- Measurements after 269000 ops (1000 samples) ---
+--- Measurements after 270000 ops (1000 samples) ---
+--- Measurements after 271000 ops (1000 samples) ---
+--- Measurements after 272000 ops (1000 samples) ---
+--- Measurements after 273000 ops (1000 samples) ---
+--- Measurements after 274000 ops (1000 samples) ---
+--- Measurements after 275000 ops (1000 samples) ---
+--- Measurements after 276000 ops (1000 samples) ---
+--- Measurements after 277000 ops (1000 samples) ---
+-- Performing checkpoint for consensus 2047
+--- Measurements after 278000 ops (1000 samples) ---
+--- Measurements after 279000 ops (1000 samples) ---
+--- Measurements after 280000 ops (1000 samples) ---
+--- Measurements after 281000 ops (1000 samples) ---
+--- Measurements after 282000 ops (1000 samples) ---
+--- Measurements after 283000 ops (1000 samples) ---
+--- Measurements after 284000 ops (1000 samples) ---
+--- Measurements after 285000 ops (1000 samples) ---
+--- Measurements after 286000 ops (1000 samples) ---
+--- Measurements after 287000 ops (1000 samples) ---
+--- Measurements after 288000 ops (1000 samples) ---
+--- Measurements after 289000 ops (1000 samples) ---
+--- Measurements after 290000 ops (1000 samples) ---
+--- Measurements after 291000 ops (1000 samples) ---
+--- Measurements after 292000 ops (1000 samples) ---
+--- Measurements after 293000 ops (1000 samples) ---
+--- Measurements after 294000 ops (1000 samples) ---
+--- Measurements after 295000 ops (1000 samples) ---
+--- Measurements after 296000 ops (1000 samples) ---
+--- Measurements after 297000 ops (1000 samples) ---
+--- Measurements after 298000 ops (1000 samples) ---
+--- Measurements after 299000 ops (1000 samples) ---
+--- Measurements after 300000 ops (1000 samples) ---
+--- Measurements after 301000 ops (1000 samples) ---
+--- Measurements after 302000 ops (1000 samples) ---
+--- Measurements after 303000 ops (1000 samples) ---
+--- Measurements after 304000 ops (1000 samples) ---
+--- Measurements after 305000 ops (1000 samples) ---
+--- Measurements after 306000 ops (1000 samples) ---
+--- Measurements after 307000 ops (1000 samples) ---
+--- Measurements after 308000 ops (1000 samples) ---
+--- Measurements after 309000 ops (1000 samples) ---
+--- Measurements after 310000 ops (1000 samples) ---
+--- Measurements after 311000 ops (1000 samples) ---
+--- Measurements after 312000 ops (1000 samples) ---
+--- Measurements after 313000 ops (1000 samples) ---
+--- Measurements after 314000 ops (1000 samples) ---
+--- Measurements after 315000 ops (1000 samples) ---
+--- Measurements after 316000 ops (1000 samples) ---
+--- Measurements after 317000 ops (1000 samples) ---
+--- Measurements after 318000 ops (1000 samples) ---
+--- Measurements after 319000 ops (1000 samples) ---
+--- Measurements after 320000 ops (1000 samples) ---
+--- Measurements after 321000 ops (1000 samples) ---
+--- Measurements after 322000 ops (1000 samples) ---
+--- Measurements after 323000 ops (1000 samples) ---
+--- Measurements after 324000 ops (1000 samples) ---
+--- Measurements after 325000 ops (1000 samples) ---
+--- Measurements after 326000 ops (1000 samples) ---
+--- Measurements after 327000 ops (1000 samples) ---
+--- Measurements after 328000 ops (1000 samples) ---
+--- Measurements after 329000 ops (1000 samples) ---
+--- Measurements after 330000 ops (1000 samples) ---
+--- Measurements after 331000 ops (1000 samples) ---
+--- Measurements after 332000 ops (1000 samples) ---
+--- Measurements after 333000 ops (1000 samples) ---
+--- Measurements after 334000 ops (1000 samples) ---
+--- Measurements after 335000 ops (1000 samples) ---
+--- Measurements after 336000 ops (1000 samples) ---
+--- Measurements after 337000 ops (1000 samples) ---
+--- Measurements after 338000 ops (1000 samples) ---
+--- Measurements after 339000 ops (1000 samples) ---
+--- Measurements after 340000 ops (1000 samples) ---
+--- Measurements after 341000 ops (1000 samples) ---
+--- Measurements after 342000 ops (1000 samples) ---
+--- Measurements after 343000 ops (1000 samples) ---
+--- Measurements after 344000 ops (1000 samples) ---
+--- Measurements after 345000 ops (1000 samples) ---
+--- Measurements after 346000 ops (1000 samples) ---
+--- Measurements after 347000 ops (1000 samples) ---
+--- Measurements after 348000 ops (1000 samples) ---
+--- Measurements after 349000 ops (1000 samples) ---
+--- Measurements after 350000 ops (1000 samples) ---
+--- Measurements after 351000 ops (1000 samples) ---
+--- Measurements after 352000 ops (1000 samples) ---
+--- Measurements after 353000 ops (1000 samples) ---
+--- Measurements after 354000 ops (1000 samples) ---
+--- Measurements after 355000 ops (1000 samples) ---
+--- Measurements after 356000 ops (1000 samples) ---
+--- Measurements after 357000 ops (1000 samples) ---
+--- Measurements after 358000 ops (1000 samples) ---
+--- Measurements after 359000 ops (1000 samples) ---
+--- Measurements after 360000 ops (1000 samples) ---
+--- Measurements after 361000 ops (1000 samples) ---
+--- Measurements after 362000 ops (1000 samples) ---
+--- Measurements after 363000 ops (1000 samples) ---
+--- Measurements after 364000 ops (1000 samples) ---
+--- Measurements after 365000 ops (1000 samples) ---
+--- Measurements after 366000 ops (1000 samples) ---
+--- Measurements after 367000 ops (1000 samples) ---
+--- Measurements after 368000 ops (1000 samples) ---
+--- Measurements after 369000 ops (1000 samples) ---
+--- Measurements after 370000 ops (1000 samples) ---
+--- Measurements after 371000 ops (1000 samples) ---
+--- Measurements after 372000 ops (1000 samples) ---
+--- Measurements after 373000 ops (1000 samples) ---
+--- Measurements after 374000 ops (1000 samples) ---
+--- Measurements after 375000 ops (1000 samples) ---
+--- Measurements after 376000 ops (1000 samples) ---
+--- Measurements after 377000 ops (1000 samples) ---
+--- Measurements after 378000 ops (1000 samples) ---
+--- Measurements after 379000 ops (1000 samples) ---
+--- Measurements after 380000 ops (1000 samples) ---
+--- Measurements after 381000 ops (1000 samples) ---
+--- Measurements after 382000 ops (1000 samples) ---
+--- Measurements after 383000 ops (1000 samples) ---
+--- Measurements after 384000 ops (1000 samples) ---
+--- Measurements after 385000 ops (1000 samples) ---
+--- Measurements after 386000 ops (1000 samples) ---
+--- Measurements after 387000 ops (1000 samples) ---
+--- Measurements after 388000 ops (1000 samples) ---
+--- Measurements after 389000 ops (1000 samples) ---
+--- Measurements after 390000 ops (1000 samples) ---
+--- Measurements after 391000 ops (1000 samples) ---
+--- Measurements after 392000 ops (1000 samples) ---
+--- Measurements after 393000 ops (1000 samples) ---
+--- Measurements after 394000 ops (1000 samples) ---
+--- Measurements after 395000 ops (1000 samples) ---
+--- Measurements after 396000 ops (1000 samples) ---
+--- Measurements after 397000 ops (1000 samples) ---
+--- Measurements after 398000 ops (1000 samples) ---
+--- Measurements after 399000 ops (1000 samples) ---
+--- Measurements after 400000 ops (1000 samples) ---
+--- Measurements after 401000 ops (1000 samples) ---
+--- Measurements after 402000 ops (1000 samples) ---
+--- Measurements after 403000 ops (1000 samples) ---
+--- Measurements after 404000 ops (1000 samples) ---
+--- Measurements after 405000 ops (1000 samples) ---
+--- Measurements after 406000 ops (1000 samples) ---
+--- Measurements after 407000 ops (1000 samples) ---
+--- Measurements after 408000 ops (1000 samples) ---
+--- Measurements after 409000 ops (1000 samples) ---
+--- Measurements after 410000 ops (1000 samples) ---
+--- Measurements after 411000 ops (1000 samples) ---
+--- Measurements after 412000 ops (1000 samples) ---
+--- Measurements after 413000 ops (1000 samples) ---
+--- Measurements after 414000 ops (1000 samples) ---
+-- Performing checkpoint for consensus 3071
+--- Measurements after 415000 ops (1000 samples) ---
+--- Measurements after 416000 ops (1000 samples) ---
+--- Measurements after 417000 ops (1000 samples) ---
+--- Measurements after 418000 ops (1000 samples) ---
+--- Measurements after 419000 ops (1000 samples) ---
+--- Measurements after 420000 ops (1000 samples) ---
+--- Measurements after 421000 ops (1000 samples) ---
+--- Measurements after 422000 ops (1000 samples) ---
+--- Measurements after 423000 ops (1000 samples) ---
+--- Measurements after 424000 ops (1000 samples) ---
+--- Measurements after 425000 ops (1000 samples) ---
+--- Measurements after 426000 ops (1000 samples) ---
+--- Measurements after 427000 ops (1000 samples) ---
+--- Measurements after 428000 ops (1000 samples) ---
+--- Measurements after 429000 ops (1000 samples) ---
+--- Measurements after 430000 ops (1000 samples) ---
+--- Measurements after 431000 ops (1000 samples) ---
+--- Measurements after 432000 ops (1000 samples) ---
+--- Measurements after 433000 ops (1000 samples) ---
+--- Measurements after 434000 ops (1000 samples) ---
+--- Measurements after 435000 ops (1000 samples) ---
+--- Measurements after 436000 ops (1000 samples) ---
+--- Measurements after 437000 ops (1000 samples) ---
+--- Measurements after 438000 ops (1000 samples) ---
+--- Measurements after 439000 ops (1000 samples) ---
+--- Measurements after 440000 ops (1000 samples) ---
+--- Measurements after 441000 ops (1000 samples) ---
+--- Measurements after 442000 ops (1000 samples) ---
+--- Measurements after 443000 ops (1000 samples) ---
+--- Measurements after 444000 ops (1000 samples) ---
+--- Measurements after 445000 ops (1000 samples) ---
+--- Measurements after 446000 ops (1000 samples) ---
+--- Measurements after 447000 ops (1000 samples) ---
+--- Measurements after 448000 ops (1000 samples) ---
+--- Measurements after 449000 ops (1000 samples) ---
+--- Measurements after 450000 ops (1000 samples) ---
+--- Measurements after 451000 ops (1000 samples) ---
+--- Measurements after 452000 ops (1000 samples) ---
+--- Measurements after 453000 ops (1000 samples) ---
+--- Measurements after 454000 ops (1000 samples) ---
+--- Measurements after 455000 ops (1000 samples) ---
+--- Measurements after 456000 ops (1000 samples) ---
+--- Measurements after 457000 ops (1000 samples) ---
+--- Measurements after 458000 ops (1000 samples) ---
+--- Measurements after 459000 ops (1000 samples) ---
+--- Measurements after 460000 ops (1000 samples) ---
+--- Measurements after 461000 ops (1000 samples) ---
+--- Measurements after 462000 ops (1000 samples) ---
+--- Measurements after 463000 ops (1000 samples) ---
+--- Measurements after 464000 ops (1000 samples) ---
+--- Measurements after 465000 ops (1000 samples) ---
+--- Measurements after 466000 ops (1000 samples) ---
+--- Measurements after 467000 ops (1000 samples) ---
+--- Measurements after 468000 ops (1000 samples) ---
+--- Measurements after 469000 ops (1000 samples) ---
+--- Measurements after 470000 ops (1000 samples) ---
+--- Measurements after 471000 ops (1000 samples) ---
+--- Measurements after 472000 ops (1000 samples) ---
+--- Measurements after 473000 ops (1000 samples) ---
+--- Measurements after 474000 ops (1000 samples) ---
+--- Measurements after 475000 ops (1000 samples) ---
+--- Measurements after 476000 ops (1000 samples) ---
+--- Measurements after 477000 ops (1000 samples) ---
+--- Measurements after 478000 ops (1000 samples) ---
+--- Measurements after 479000 ops (1000 samples) ---
+--- Measurements after 480000 ops (1000 samples) ---
+--- Measurements after 481000 ops (1000 samples) ---
+--- Measurements after 482000 ops (1000 samples) ---
+--- Measurements after 483000 ops (1000 samples) ---
+--- Measurements after 484000 ops (1000 samples) ---
+--- Measurements after 485000 ops (1000 samples) ---
+--- Measurements after 486000 ops (1000 samples) ---
+--- Measurements after 487000 ops (1000 samples) ---
+--- Measurements after 488000 ops (1000 samples) ---
+--- Measurements after 489000 ops (1000 samples) ---
+--- Measurements after 490000 ops (1000 samples) ---
+--- Measurements after 491000 ops (1000 samples) ---
+--- Measurements after 492000 ops (1000 samples) ---
+--- Measurements after 493000 ops (1000 samples) ---
+--- Measurements after 494000 ops (1000 samples) ---
+--- Measurements after 495000 ops (1000 samples) ---
+--- Measurements after 496000 ops (1000 samples) ---
+--- Measurements after 497000 ops (1000 samples) ---
+--- Measurements after 498000 ops (1000 samples) ---
+--- Measurements after 499000 ops (1000 samples) ---
+--- Measurements after 500000 ops (1000 samples) ---
+--- Measurements after 501000 ops (1000 samples) ---
+--- Measurements after 502000 ops (1000 samples) ---
+--- Measurements after 503000 ops (1000 samples) ---
+--- Measurements after 504000 ops (1000 samples) ---
+--- Measurements after 505000 ops (1000 samples) ---
+--- Measurements after 506000 ops (1000 samples) ---
+--- Measurements after 507000 ops (1000 samples) ---
+--- Measurements after 508000 ops (1000 samples) ---
+--- Measurements after 509000 ops (1000 samples) ---
+--- Measurements after 510000 ops (1000 samples) ---
+--- Measurements after 511000 ops (1000 samples) ---
+--- Measurements after 512000 ops (1000 samples) ---
+--- Measurements after 513000 ops (1000 samples) ---
+--- Measurements after 514000 ops (1000 samples) ---
+--- Measurements after 515000 ops (1000 samples) ---
+--- Measurements after 516000 ops (1000 samples) ---
+--- Measurements after 517000 ops (1000 samples) ---
+--- Measurements after 518000 ops (1000 samples) ---
+--- Measurements after 519000 ops (1000 samples) ---
+--- Measurements after 520000 ops (1000 samples) ---
+--- Measurements after 521000 ops (1000 samples) ---
+--- Measurements after 522000 ops (1000 samples) ---
+--- Measurements after 523000 ops (1000 samples) ---
+--- Measurements after 524000 ops (1000 samples) ---
+--- Measurements after 525000 ops (1000 samples) ---
+--- Measurements after 526000 ops (1000 samples) ---
+--- Measurements after 527000 ops (1000 samples) ---
+--- Measurements after 528000 ops (1000 samples) ---
+--- Measurements after 529000 ops (1000 samples) ---
+--- Measurements after 530000 ops (1000 samples) ---
+--- Measurements after 531000 ops (1000 samples) ---
+--- Measurements after 532000 ops (1000 samples) ---
+--- Measurements after 533000 ops (1000 samples) ---
+--- Measurements after 534000 ops (1000 samples) ---
+--- Measurements after 535000 ops (1000 samples) ---
+--- Measurements after 536000 ops (1000 samples) ---
+--- Measurements after 537000 ops (1000 samples) ---
+--- Measurements after 538000 ops (1000 samples) ---
+--- Measurements after 539000 ops (1000 samples) ---
+--- Measurements after 540000 ops (1000 samples) ---
+--- Measurements after 541000 ops (1000 samples) ---
+--- Measurements after 542000 ops (1000 samples) ---
+--- Measurements after 543000 ops (1000 samples) ---
+--- Measurements after 544000 ops (1000 samples) ---
+--- Measurements after 545000 ops (1000 samples) ---
+--- Measurements after 546000 ops (1000 samples) ---
+--- Measurements after 547000 ops (1000 samples) ---
+--- Measurements after 548000 ops (1000 samples) ---
+--- Measurements after 549000 ops (1000 samples) ---
+--- Measurements after 550000 ops (1000 samples) ---
+--- Measurements after 551000 ops (1000 samples) ---
+--- Measurements after 552000 ops (1000 samples) ---
+--- Measurements after 553000 ops (1000 samples) ---
+--- Measurements after 554000 ops (1000 samples) ---
+--- Measurements after 555000 ops (1000 samples) ---
+--- Measurements after 556000 ops (1000 samples) ---
+--- Measurements after 557000 ops (1000 samples) ---
+--- Measurements after 558000 ops (1000 samples) ---
+--- Measurements after 559000 ops (1000 samples) ---
+--- Measurements after 560000 ops (1000 samples) ---
+-- Checkpoint is in position 1353
+--- Measurements after 561000 ops (1000 samples) ---
+-- Performing checkpoint for consensus 4095
+--- Measurements after 562000 ops (1000 samples) ---
+--- Measurements after 563000 ops (1000 samples) ---
+--- Measurements after 564000 ops (1000 samples) ---
+--- Measurements after 565000 ops (1000 samples) ---
+--- Measurements after 566000 ops (1000 samples) ---
+--- Measurements after 567000 ops (1000 samples) ---
+--- Measurements after 568000 ops (1000 samples) ---
+--- Measurements after 569000 ops (1000 samples) ---
+--- Measurements after 570000 ops (1000 samples) ---
+--- Measurements after 571000 ops (1000 samples) ---
+--- Measurements after 572000 ops (1000 samples) ---
+--- Measurements after 573000 ops (1000 samples) ---
+--- Measurements after 574000 ops (1000 samples) ---
+--- Measurements after 575000 ops (1000 samples) ---
+--- Measurements after 576000 ops (1000 samples) ---
+--- Measurements after 577000 ops (1000 samples) ---
+--- Measurements after 578000 ops (1000 samples) ---
+--- Measurements after 579000 ops (1000 samples) ---
+--- Measurements after 580000 ops (1000 samples) ---
+--- Measurements after 581000 ops (1000 samples) ---
+--- Measurements after 582000 ops (1000 samples) ---
+--- Measurements after 583000 ops (1000 samples) ---
+--- Measurements after 584000 ops (1000 samples) ---
+--- Measurements after 585000 ops (1000 samples) ---
+--- Measurements after 586000 ops (1000 samples) ---
+--- Measurements after 587000 ops (1000 samples) ---
+--- Measurements after 588000 ops (1000 samples) ---
+--- Measurements after 589000 ops (1000 samples) ---
+--- Measurements after 590000 ops (1000 samples) ---
+--- Measurements after 591000 ops (1000 samples) ---
+--- Measurements after 592000 ops (1000 samples) ---
+--- Measurements after 593000 ops (1000 samples) ---
+--- Measurements after 594000 ops (1000 samples) ---
+--- Measurements after 595000 ops (1000 samples) ---
+--- Measurements after 596000 ops (1000 samples) ---
+--- Measurements after 597000 ops (1000 samples) ---
+--- Measurements after 598000 ops (1000 samples) ---
+--- Measurements after 599000 ops (1000 samples) ---
+--- Measurements after 600000 ops (1000 samples) ---
+--- Measurements after 601000 ops (1000 samples) ---
+--- Measurements after 602000 ops (1000 samples) ---
+--- Measurements after 603000 ops (1000 samples) ---
+--- Measurements after 604000 ops (1000 samples) ---
+--- Measurements after 605000 ops (1000 samples) ---
+--- Measurements after 606000 ops (1000 samples) ---
+--- Measurements after 607000 ops (1000 samples) ---
+--- Measurements after 608000 ops (1000 samples) ---
+--- Measurements after 609000 ops (1000 samples) ---
+--- Measurements after 610000 ops (1000 samples) ---
+--- Measurements after 611000 ops (1000 samples) ---
+--- Measurements after 612000 ops (1000 samples) ---
+--- Measurements after 613000 ops (1000 samples) ---
+--- Measurements after 614000 ops (1000 samples) ---
+--- Measurements after 615000 ops (1000 samples) ---
+--- Measurements after 616000 ops (1000 samples) ---
+--- Measurements after 617000 ops (1000 samples) ---
+--- Measurements after 618000 ops (1000 samples) ---
+--- Measurements after 619000 ops (1000 samples) ---
+--- Measurements after 620000 ops (1000 samples) ---
+--- Measurements after 621000 ops (1000 samples) ---
+--- Measurements after 622000 ops (1000 samples) ---
+--- Measurements after 623000 ops (1000 samples) ---
+--- Measurements after 624000 ops (1000 samples) ---
+--- Measurements after 625000 ops (1000 samples) ---
+--- Measurements after 626000 ops (1000 samples) ---
+--- Measurements after 627000 ops (1000 samples) ---
+--- Measurements after 628000 ops (1000 samples) ---
+--- Measurements after 629000 ops (1000 samples) ---
+--- Measurements after 630000 ops (1000 samples) ---
+--- Measurements after 631000 ops (1000 samples) ---
+--- Measurements after 632000 ops (1000 samples) ---
+--- Measurements after 633000 ops (1000 samples) ---
+--- Measurements after 634000 ops (1000 samples) ---
+--- Measurements after 635000 ops (1000 samples) ---
+--- Measurements after 636000 ops (1000 samples) ---
+--- Measurements after 637000 ops (1000 samples) ---
+--- Measurements after 638000 ops (1000 samples) ---
+--- Measurements after 639000 ops (1000 samples) ---
+--- Measurements after 640000 ops (1000 samples) ---
+--- Measurements after 641000 ops (1000 samples) ---
+--- Measurements after 642000 ops (1000 samples) ---
+--- Measurements after 643000 ops (1000 samples) ---
+--- Measurements after 644000 ops (1000 samples) ---
+--- Measurements after 645000 ops (1000 samples) ---
+--- Measurements after 646000 ops (1000 samples) ---
+--- Measurements after 647000 ops (1000 samples) ---
+--- Measurements after 648000 ops (1000 samples) ---
+--- Measurements after 649000 ops (1000 samples) ---
+--- Measurements after 650000 ops (1000 samples) ---
+--- Measurements after 651000 ops (1000 samples) ---
+--- Measurements after 652000 ops (1000 samples) ---
+--- Measurements after 653000 ops (1000 samples) ---
+--- Measurements after 654000 ops (1000 samples) ---
+--- Measurements after 655000 ops (1000 samples) ---
+--- Measurements after 656000 ops (1000 samples) ---
+--- Measurements after 657000 ops (1000 samples) ---
+--- Measurements after 658000 ops (1000 samples) ---
+--- Measurements after 659000 ops (1000 samples) ---
+--- Measurements after 660000 ops (1000 samples) ---
+--- Measurements after 661000 ops (1000 samples) ---
+--- Measurements after 662000 ops (1000 samples) ---
+--- Measurements after 663000 ops (1000 samples) ---
+--- Measurements after 664000 ops (1000 samples) ---
+--- Measurements after 665000 ops (1000 samples) ---
+--- Measurements after 666000 ops (1000 samples) ---
+--- Measurements after 667000 ops (1000 samples) ---
+--- Measurements after 668000 ops (1000 samples) ---
+--- Measurements after 669000 ops (1000 samples) ---
+--- Measurements after 670000 ops (1000 samples) ---
+--- Measurements after 671000 ops (1000 samples) ---
+--- Measurements after 672000 ops (1000 samples) ---
+--- Measurements after 673000 ops (1000 samples) ---
+--- Measurements after 674000 ops (1000 samples) ---
+--- Measurements after 675000 ops (1000 samples) ---
+--- Measurements after 676000 ops (1000 samples) ---
+--- Measurements after 677000 ops (1000 samples) ---
+--- Measurements after 678000 ops (1000 samples) ---
+--- Measurements after 679000 ops (1000 samples) ---
+--- Measurements after 680000 ops (1000 samples) ---
+--- Measurements after 681000 ops (1000 samples) ---
+--- Measurements after 682000 ops (1000 samples) ---
+--- Measurements after 683000 ops (1000 samples) ---
+--- Measurements after 684000 ops (1000 samples) ---
+--- Measurements after 685000 ops (1000 samples) ---
+--- Measurements after 686000 ops (1000 samples) ---
+--- Measurements after 687000 ops (1000 samples) ---
+--- Measurements after 688000 ops (1000 samples) ---
+--- Measurements after 689000 ops (1000 samples) ---
+--- Measurements after 690000 ops (1000 samples) ---
+--- Measurements after 691000 ops (1000 samples) ---
+--- Measurements after 692000 ops (1000 samples) ---
+-- Checkpoint is in position 2341
+--- Measurements after 693000 ops (1000 samples) ---
+--- Measurements after 694000 ops (1000 samples) ---
+--- Measurements after 695000 ops (1000 samples) ---
+-- Performing checkpoint for consensus 5119
+--- Measurements after 696000 ops (1000 samples) ---
+--- Measurements after 697000 ops (1000 samples) ---
+--- Measurements after 698000 ops (1000 samples) ---
+--- Measurements after 699000 ops (1000 samples) ---
+--- Measurements after 700000 ops (1000 samples) ---
+--- Measurements after 701000 ops (1000 samples) ---
+--- Measurements after 702000 ops (1000 samples) ---
+--- Measurements after 703000 ops (1000 samples) ---
+--- Measurements after 704000 ops (1000 samples) ---
+--- Measurements after 705000 ops (1000 samples) ---
+--- Measurements after 706000 ops (1000 samples) ---
+--- Measurements after 707000 ops (1000 samples) ---
+--- Measurements after 708000 ops (1000 samples) ---
+--- Measurements after 709000 ops (1000 samples) ---
+--- Measurements after 710000 ops (1000 samples) ---
+--- Measurements after 711000 ops (1000 samples) ---
+--- Measurements after 712000 ops (1000 samples) ---
+--- Measurements after 713000 ops (1000 samples) ---
+--- Measurements after 714000 ops (1000 samples) ---
+--- Measurements after 715000 ops (1000 samples) ---
+--- Measurements after 716000 ops (1000 samples) ---
+--- Measurements after 717000 ops (1000 samples) ---
+--- Measurements after 718000 ops (1000 samples) ---
+--- Measurements after 719000 ops (1000 samples) ---
+--- Measurements after 720000 ops (1000 samples) ---
+--- Measurements after 721000 ops (1000 samples) ---
+--- Measurements after 722000 ops (1000 samples) ---
+--- Measurements after 723000 ops (1000 samples) ---
+--- Measurements after 724000 ops (1000 samples) ---
+--- Measurements after 725000 ops (1000 samples) ---
+--- Measurements after 726000 ops (1000 samples) ---
+--- Measurements after 727000 ops (1000 samples) ---
+--- Measurements after 728000 ops (1000 samples) ---
+--- Measurements after 729000 ops (1000 samples) ---
+--- Measurements after 730000 ops (1000 samples) ---
+--- Measurements after 731000 ops (1000 samples) ---
+--- Measurements after 732000 ops (1000 samples) ---
+--- Measurements after 733000 ops (1000 samples) ---
+--- Measurements after 734000 ops (1000 samples) ---
+--- Measurements after 735000 ops (1000 samples) ---
+--- Measurements after 736000 ops (1000 samples) ---
+--- Measurements after 737000 ops (1000 samples) ---
+--- Measurements after 738000 ops (1000 samples) ---
+--- Measurements after 739000 ops (1000 samples) ---
+--- Measurements after 740000 ops (1000 samples) ---
+--- Measurements after 741000 ops (1000 samples) ---
+--- Measurements after 742000 ops (1000 samples) ---
+--- Measurements after 743000 ops (1000 samples) ---
+--- Measurements after 744000 ops (1000 samples) ---
+--- Measurements after 745000 ops (1000 samples) ---
+--- Measurements after 746000 ops (1000 samples) ---
+--- Measurements after 747000 ops (1000 samples) ---
+--- Measurements after 748000 ops (1000 samples) ---
+--- Measurements after 749000 ops (1000 samples) ---
+--- Measurements after 750000 ops (1000 samples) ---
+--- Measurements after 751000 ops (1000 samples) ---
+--- Measurements after 752000 ops (1000 samples) ---
+--- Measurements after 753000 ops (1000 samples) ---
+--- Measurements after 754000 ops (1000 samples) ---
+--- Measurements after 755000 ops (1000 samples) ---
+--- Measurements after 756000 ops (1000 samples) ---
+--- Measurements after 757000 ops (1000 samples) ---
+--- Measurements after 758000 ops (1000 samples) ---
+--- Measurements after 759000 ops (1000 samples) ---
+--- Measurements after 760000 ops (1000 samples) ---
+--- Measurements after 761000 ops (1000 samples) ---
+--- Measurements after 762000 ops (1000 samples) ---
+--- Measurements after 763000 ops (1000 samples) ---
+--- Measurements after 764000 ops (1000 samples) ---
+--- Measurements after 765000 ops (1000 samples) ---
+--- Measurements after 766000 ops (1000 samples) ---
+--- Measurements after 767000 ops (1000 samples) ---
+--- Measurements after 768000 ops (1000 samples) ---
+--- Measurements after 769000 ops (1000 samples) ---
+--- Measurements after 770000 ops (1000 samples) ---
+--- Measurements after 771000 ops (1000 samples) ---
+--- Measurements after 772000 ops (1000 samples) ---
+--- Measurements after 773000 ops (1000 samples) ---
+--- Measurements after 774000 ops (1000 samples) ---
+--- Measurements after 775000 ops (1000 samples) ---
+--- Measurements after 776000 ops (1000 samples) ---
+--- Measurements after 777000 ops (1000 samples) ---
+--- Measurements after 778000 ops (1000 samples) ---
+--- Measurements after 779000 ops (1000 samples) ---
+--- Measurements after 780000 ops (1000 samples) ---
+--- Measurements after 781000 ops (1000 samples) ---
+--- Measurements after 782000 ops (1000 samples) ---
+--- Measurements after 783000 ops (1000 samples) ---
+--- Measurements after 784000 ops (1000 samples) ---
+--- Measurements after 785000 ops (1000 samples) ---
+--- Measurements after 786000 ops (1000 samples) ---
+--- Measurements after 787000 ops (1000 samples) ---
+--- Measurements after 788000 ops (1000 samples) ---
+--- Measurements after 789000 ops (1000 samples) ---
+--- Measurements after 790000 ops (1000 samples) ---
+--- Measurements after 791000 ops (1000 samples) ---
+--- Measurements after 792000 ops (1000 samples) ---
+--- Measurements after 793000 ops (1000 samples) ---
+--- Measurements after 794000 ops (1000 samples) ---
+--- Measurements after 795000 ops (1000 samples) ---
+--- Measurements after 796000 ops (1000 samples) ---
+--- Measurements after 797000 ops (1000 samples) ---
+--- Measurements after 798000 ops (1000 samples) ---
+--- Measurements after 799000 ops (1000 samples) ---
+--- Measurements after 800000 ops (1000 samples) ---
+-- 
+---------- DEBUG INFO ----------
+
+Current time: 12:17:49.618
+Current leader: 0
+Current regency: 0
+
+Last finished consensus: 5987
+
+	 -- Consensus state: 
+
+		ETS=0 
+		WriteSet=[[0 :: bWefUnb5wdSQGChUUOSG/rVYjRXwRjv5eCxo5vycmHk=]] 
+		(VAL,TS)=[0 :: bWefUnb5wdSQGChUUOSG/rVYjRXwRjv5eCxo5vycmHk=]
+
+	 -- Epoch state: 
+
+		CID=5987 
+		TS=0 
+		Propose=[bWefUnb5wdSQGChUUOSG/rVYjRXwRjv5eCxo5vycmHk=] 
+		Writes=([bWefUnb5wdSQGChUUOSG/rVYjRXwRjv5eCxo5vycmHk=], [null], [bWefUnb5wdSQGChUUOSG/rVYjRXwRjv5eCxo5vycmHk=], [bWefUnb5wdSQGChUUOSG/rVYjRXwRjv5eCxo5vycmHk=]) 
+		Accepts=([bWefUnb5wdSQGChUUOSG/rVYjRXwRjv5eCxo5vycmHk=], [null], [bWefUnb5wdSQGChUUOSG/rVYjRXwRjv5eCxo5vycmHk=], [bWefUnb5wdSQGChUUOSG/rVYjRXwRjv5eCxo5vycmHk=])
+
+Consensus in execution: None
+
+---------- ---------- ----------
+
