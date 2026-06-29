@@ -81,8 +81,8 @@ def plot_latency_mean(df: pd.DataFrame, out_dir: Path):
     )
 
     ax.set_xlabel("Serializer")
-    ax.set_ylabel("Latency [..]")
-    ax.set_title("Mean latency by serializer")
+    ax.set_ylabel("Mean latency [ms]")
+    ax.set_title("Latency by serializer")
     ax.grid(axis="y", alpha=0.3)
 
     out_file = out_dir / "latency_mean.pdf"

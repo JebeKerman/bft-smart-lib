@@ -75,6 +75,7 @@ def convert_measurements_to_df(server_logs: list[Dict]) -> pd.DataFrame:
             "proto": "Proto",
         }
     )
+    df["latency"] = df["latency"] / 1000
     return df
 
 
