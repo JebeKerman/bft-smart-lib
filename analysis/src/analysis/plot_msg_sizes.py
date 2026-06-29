@@ -6,6 +6,8 @@ from typing import Dict
 import matplotlib.pyplot as plt
 import pandas as pd
 
+from analysis.util import PLOT_COLORS
+
 
 def main():
     if len(sys.argv) != 3:
@@ -22,10 +24,9 @@ def main():
     df = convert_to_df(json_res)
     df = extend_df(df)
 
-    print(df)
-
     plot_message_sizes_absolute(df, output_dir)
     plot_message_sizes_relative(df, output_dir)
+    table_message_size(df, output_dir)
 
 
 def load_json_results(input_file: Path) -> Dict:
@@ -44,7 +45,20 @@ def convert_to_df(jmh_results: Dict) -> pd.DataFrame:
         for size in result["sizes"]
     ]
     df = pd.DataFrame(result)
-    df["message"] = df["message"].astype("category")
+    df["message"] = (
+        df["message"]
+        .replace(
+            {
+                "CSTSMMessageWire": "CSTSM",
+                "ConsensusMessage": "Consensus",
+                "LCMessageWire": "LC",
+                "StandardSMMessageWire": "StandardSM",
+                "TOMMessageWire": "TOM",
+                "VMMessage": "VM",
+            }
+        )
+        .astype("category")
+    )
 
     serializer_names = {
         "JavaSerializer": "Java",
@@ -89,12 +103,14 @@ def plot_message_sizes_absolute(df: pd.DataFrame, output_dir: Path):
     )
     ax = pivot.plot.bar(
         capsize=4,
-        figsize=(6, 5),
+        figsize=(8, 4),
+        color=PLOT_COLORS,
     )
 
-    ax.set_title("performance by message type")
+    ax.set_title("Total Serialized Message Size by Message Type")
     ax.set_xlabel("Message")
-    ax.set_ylabel("Average time [ns/op]")
+    ax.set_ylabel("Message Size [Byte]")
+    ax.grid(axis="y", alpha=0.3)
     ax.legend(title="Serializer")
 
     plt.xticks(rotation=30, ha="right")
@@ -114,13 +130,14 @@ def plot_message_sizes_relative(df: pd.DataFrame, output_dir: Path):
     )
     ax = pivot.plot.bar(
         capsize=4,
-        figsize=(6, 5),
+        figsize=(8, 4),
+        color=PLOT_COLORS,
     )
-    print(pivot)
 
-    ax.set_title("performance by message type")
+    ax.set_title("Relative Serialized Message Size by Message Type")
     ax.set_xlabel("Message")
-    ax.set_ylabel("Average time [ns/op]")
+    ax.set_ylabel("Message Size [Byte]")
+    ax.grid(axis="y", alpha=0.3)
     ax.legend(title="Serializer")
 
     plt.xticks(rotation=30, ha="right")
@@ -130,6 +147,37 @@ def plot_message_sizes_relative(df: pd.DataFrame, output_dir: Path):
     plt.savefig(output_file, dpi=200)
     plt.close()
     print(f"Generated plot {output_file}")
+
+
+def table_message_size(df: pd.DataFrame, output_dir: Path):
+    pivot = (
+        df.pivot(
+            index="message",
+            columns="serializer",
+            values="java_diff_relative",
+        )
+        .reset_index()
+        .drop("Java", axis=1)
+    )
+
+    pivot = pivot.rename(columns={"message": "Message"})
+
+    pivot.columns.name = None
+    pivot.columns = [rf"\textbf{{{c}}}" for c in pivot.columns]
+    print(pivot)
+
+    output_file = output_dir / "message_size.tex"
+    with open(output_file, "w") as f:
+        f.write(
+            pivot.to_latex(
+                index=False,
+                escape=False,
+                column_format="@{}lrrr@{}",
+                float_format=lambda x: f"{100 * x:.1f} \\%",
+            )
+        )
+
+    print(f"Generated tex {output_file}")
 
 
 if __name__ == "__main__":

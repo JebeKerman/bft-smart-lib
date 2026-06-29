@@ -24,6 +24,7 @@ def main():
 
     plot_bar_charts(df, output_dir)
     plot_relative_speedup(df, output_dir)
+    table_relative_speedup(df, output_dir)
 
 
 def load_json_results(input_file: Path) -> Dict:
@@ -57,7 +58,20 @@ def convert_to_df(jmh_results: Dict) -> pd.DataFrame:
         categories=["serialize", "deserialize"],
         ordered=True,
     )
-    df["message"] = df["message"].astype("category")
+    df["message"] = (
+        df["message"]
+        .replace(
+            {
+                "CSTSMMessageMinimal": "CSTSM",
+                "ConsensusMessage": "Consensus",
+                "LCMessage": "LC",
+                "StandardSMMessage": "StandardSM",
+                "TOMMessage": "TOM",
+                "VMMessage": "VM",
+            }
+        )
+        .astype("category")
+    )
 
     df = df.sort_values(["method", "message", "serializer"])
 
@@ -88,24 +102,20 @@ def plot_bar_charts(df: pd.DataFrame, output_dir: Path):
             columns="serializer",
             values="avg_time",
         )
-        error = group.pivot(
-            index="message",
-            columns="serializer",
-            values="avg_time_err",
-        )
+        pivot = pivot / 1000
 
         ax = pivot.plot.bar(
-            yerr=error,
             capsize=4,
-            figsize=(10, 5),
+            figsize=(8, 4),
         )
 
-        ax.set_title(f"{method} performance by message type")
+        ax.set_title(f"{method} time by message type")
         ax.set_xlabel("Message")
-        ax.set_ylabel("Average time [ns/op]")
+        ax.set_ylabel("Average time [μs/op]")
+        ax.grid(axis="y", alpha=0.3)
         ax.legend(title="Serializer")
 
-        plt.xticks(rotation=30, ha="right")
+        plt.xticks(rotation=45, ha="right")
         plt.tight_layout()
 
         output_file = output_dir / f"avg_time_by_message_{method}.pdf"
@@ -139,13 +149,48 @@ def plot_relative_speedup(df: pd.DataFrame, output_dir: Path):
         ax.set_ylabel("Speedup compared to java serialization")
         ax.legend(title="Serializer")
 
-        plt.xticks(rotation=30, ha="right")
+        plt.xticks(rotation=45, ha="right")
         plt.tight_layout()
 
         output_file = output_dir / f"relative_speedup_{method}.pdf"
         plt.savefig(output_file, dpi=200)
         plt.close()
         print(f"Generated plot {output_file}")
+
+
+def table_relative_speedup(df: pd.DataFrame, output_dir: Path):
+    pivot = df[df["serializer"] != "Java"]
+    pivot = (
+        pivot.pivot_table(
+            index="message",
+            columns=["method", "serializer"],
+            values="speedup_vs_java",
+        )
+        .reset_index()
+        .round(2)
+        .rename(
+            columns={
+                "message": r"\textbf{Message}",
+                "serialize": r"\textbf{Serialize}",
+                "deserialize": r"\textbf{Deserialize}",
+            }
+        )
+    )
+
+    output_file = output_dir / "relative_speedup.tex"
+    with open(output_file, "w") as f:
+        f.write(
+            pivot.to_latex(
+                index=False,
+                escape=False,
+                multicolumn=True,
+                multicolumn_format="c",
+                column_format="@{}lcc@{\hspace{1.4em}}cc@{}",
+                float_format=lambda x: f"{x:.2f}$\\times$",
+            )
+        )
+
+    print(f"Generated tex {output_file}")
 
 
 if __name__ == "__main__":
