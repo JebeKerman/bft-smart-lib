@@ -11,8 +11,10 @@ def plot_tp(df: pd.DataFrame, out_dir: Path):
         plot_tp_over_time(group_df, out_dir / run_id)
         plot_tp_mean(group_df, out_dir / run_id)
         plot_latency_mean(group_df, out_dir / run_id)
-
+    
     plot_runs(df, out_dir)
+    plot_runs_tp(df, out_dir)
+    plot_runs_latency(df, out_dir)
 
 
 def plot_tp_over_time(df: pd.DataFrame, out_dir: Path):
@@ -125,6 +127,62 @@ def plot_runs(df: pd.DataFrame, out_dir: Path):
     ax.legend()
 
     out_file = out_dir / "latency_vs_throughput.pdf"
+    plt.tight_layout()
+    plt.savefig(out_file)
+    plt.close()
+    print(f"Generated plot {out_file}")
+
+
+def plot_runs_tp(df: pd.DataFrame, out_dir: Path):
+    plot_df = df.groupby(["serializer", "run_id", "num_clients"], as_index=False).agg(
+        mean_throughput=("throughput", "mean")
+    ).pivot(
+        index="num_clients",
+        columns="serializer",
+        values="mean_throughput",
+    )
+
+    ax = plot_df.plot.bar(
+        capsize=4,
+        figsize=(6, 4),
+    )
+
+    ax.set_xlabel("Number of Clients")
+    ax.set_ylabel("Mean Throughput [ops/s]")
+    ax.set_title("Mean Throughput")
+    ax.grid(axis="y", alpha=0.3)
+    ax.legend()
+
+    out_file = out_dir / "throughput.pdf"
+    plt.xticks(rotation=0, ha="center")
+    plt.tight_layout()
+    plt.savefig(out_file)
+    plt.close()
+    print(f"Generated plot {out_file}")
+
+
+def plot_runs_latency(df: pd.DataFrame, out_dir: Path):
+    plot_df = df.groupby(["serializer", "run_id", "num_clients"], as_index=False).agg(
+        mean_latency=("latency", "mean")
+    ).pivot(
+        index="num_clients",
+        columns="serializer",
+        values="mean_latency",
+    )
+
+    ax = plot_df.plot.bar(
+        capsize=4,
+        figsize=(6, 4),
+    )
+
+    ax.set_xlabel("Number of Clients")
+    ax.set_ylabel("Mean Latency [ms]")
+    ax.set_title("Mean Latency")
+    ax.grid(axis="y", alpha=0.3)
+    ax.legend()
+
+    out_file = out_dir / "latency.pdf"
+    plt.xticks(rotation=0, ha="center")
     plt.tight_layout()
     plt.savefig(out_file)
     plt.close()
