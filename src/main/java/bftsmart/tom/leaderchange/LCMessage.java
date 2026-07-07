@@ -15,33 +15,20 @@ limitations under the License.
 */
 package bftsmart.tom.leaderchange;
 
-import java.io.IOException;
-import java.io.ObjectInput;
-import java.io.ObjectOutput;
-
-import bftsmart.communication.SystemMessage;
 import bftsmart.tom.util.TOMUtil;
 
 /**
  * Message used during leader change and synchronization
  * @author Joao Sousa
  */
-public class LCMessage extends SystemMessage {
-
-    private int type;
-    private int ts;
-    private byte[] payload;
-    public final boolean TRIGGER_LC_LOCALLY; // indicates that the replica should
-                                             // initiate the LC protocol locally
+public class LCMessage extends LCMessageWire {
 
     /**
      * Empty constructor
      */
     public LCMessage(){
-    
-        this.TRIGGER_LC_LOCALLY = false;
+        super();
     }
-
 
     /**
      * Constructor
@@ -51,53 +38,6 @@ public class LCMessage extends SystemMessage {
      * @param payload dada that comes with the message
      */
     public LCMessage(int from, int type, int ts, byte[] payload) {
-        super(from);
-        this.type = type;
-        this.ts = ts;
-        this.payload = payload == null ? new byte[0] : payload;
-        if (type == TOMUtil.TRIGGER_LC_LOCALLY && from == -1) this.TRIGGER_LC_LOCALLY = true;
-        else this.TRIGGER_LC_LOCALLY  = false;
-    }
-
-    /**
-     * Get type of message
-     * @return type of message
-     */
-    public int getType() {
-        return type;
-    }
-
-    /**
-     * Get timestamp of leader change and synchronization
-     * @return timestamp of leader change and synchronization
-     */
-    public int getReg() {
-        return ts;
-    }
-
-    /**
-     * Obter data of the message
-     * @return data of the message
-     */
-    public byte[] getPayload() {
-        return payload;
-    }
-
-    @Override
-    public void writeExternal(ObjectOutput out) throws IOException{
-        super.writeExternal(out);
-
-        out.writeInt(type);
-        out.writeInt(ts);
-        out.writeObject(payload);
-    }
-
-    @Override
-    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException{
-        super.readExternal(in);
-
-        type = in.readInt();
-        ts = in.readInt();
-        payload = (byte[]) in.readObject();
+        super(from, type, ts, payload, type == TOMUtil.TRIGGER_LC_LOCALLY && from == -1);
     }
 }

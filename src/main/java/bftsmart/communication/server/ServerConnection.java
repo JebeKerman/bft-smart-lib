@@ -18,6 +18,7 @@ package bftsmart.communication.server;
 import bftsmart.communication.SystemMessage;
 import bftsmart.reconfiguration.ServerViewController;
 import bftsmart.reconfiguration.VMMessage;
+import bftsmart.serialization.MessageSerializerFactory;
 import bftsmart.tom.ServiceReplica;
 import bftsmart.tom.util.TOMUtil;
 import org.slf4j.Logger;
@@ -385,8 +386,10 @@ public class ServerConnection {
 
 						logger.trace("Read: {}, HasMAC: {}", read, hasMAC);
 
-						SystemMessage sm = (SystemMessage) (new ObjectInputStream(new ByteArrayInputStream(data))
-								.readObject());
+						SystemMessage sm = null;
+						try (ByteArrayInputStream in = new ByteArrayInputStream(data)) {
+							sm = MessageSerializerFactory.getSerializer().deserialize(in);
+						}
 
 						//The verification it is done for the SSL/TLS protocol.
 						sm.authenticated = true;
@@ -450,11 +453,11 @@ public class ServerConnection {
 							read += socketInStream.read(data, read, dataLength - read);
 						} while (read < dataLength);
 
-						SystemMessage sm = (SystemMessage) (new ObjectInputStream(new ByteArrayInputStream(data))
-								.readObject());
+						ByteArrayInputStream bis = new ByteArrayInputStream(data);
+						VMMessage sm = (VMMessage) MessageSerializerFactory.getSerializer().deserialize(bis);
 
 						if (sm.getSender() == remoteId) {
-							this.replica.joinMsgReceived((VMMessage) sm);
+							this.replica.joinMsgReceived(sm);
 						}
 
 					} catch (ClassNotFoundException ex) {

@@ -17,78 +17,27 @@ package bftsmart.tom.core.messages;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.DataInput;
-import java.io.DataInputStream;
-import java.io.DataOutput;
-import java.io.DataOutputStream;
-import java.io.Externalizable;
 import java.io.IOException;
-import java.io.ObjectOutput;
 import java.io.ObjectInput;
-
-import bftsmart.communication.SystemMessage;
+import bftsmart.serialization.MessageSerializerFactory;
+import bftsmart.serialization.messages.TOMMessageWire;
 import bftsmart.tom.util.DebugInfo;
 import org.slf4j.LoggerFactory;
 
 /**
  * This class represents a total ordered message
  */
-public class TOMMessage extends SystemMessage implements Externalizable, Comparable, Cloneable {
+public class TOMMessage extends TOMMessageWire implements Comparable<TOMMessage> {
 
-	//******* EDUARDO BEGIN **************//
-	private int viewID; //current sender view
-	private TOMMessageType type; // request type: application or reconfiguration request
-	//******* EDUARDO END **************//
-
-	private int session; // Sequence number defined by the client
-	// Sequence number defined by the client.
-	// There is a sequence number for ordered and anothre for unordered messages
-	private int sequence;
-	private int operationId; // Sequence number defined by the client
-
-	private byte[] content = null; // Content of the message
-
-	//the fields bellow are not serialized!!!
 	private transient int id; // ID for this message. It should be unique
-
-	public transient long timestamp = 0; // timestamp to be used by the application
-
-        public transient long seed = 0; // seed for the nonces
-        public transient int numOfNonces = 0; // number of nonces
-        
-	public transient int destination = -1; // message destination
-	public transient boolean signed = false; // is this message signed?
-
-	public transient long receptionTime;//the reception time of this message (nanoseconds)
-	public transient long receptionTimestamp;//the reception timestamp of this message (miliseconds)
-
-        public transient boolean timeout = false;//this message was timed out?
-        
-        public transient boolean recvFromClient = false; // Did the client already sent this message to me, or did it arrived in the batch?
-        public transient boolean isValid = false; // Was this request already validated by the replica?
-        
-	//the bytes received from the client and its MAC and signature
-	public transient byte[] serializedMessage = null;
-	public transient byte[] serializedMessageSignature = null;
-	public transient byte[] serializedMessageMAC = null;
-
-	//for benchmarking purposes
-	public transient long consensusStartTime = 0; //time the consensus is created
-	public transient long proposeReceivedTime = 0; //time the propose is received
-	public transient long writeSentTime = 0; //time the replica' write message is sent
-	public transient long acceptSentTime = 0; //time the replica' accept message is sent
-	public transient long decisionTime = 0; //time the decision is established
-	public transient long deliveryTime =0; //time the request is delivered
-	public transient long executedTime =0; //time the request is executed
 
 	//the reply associated with this message
 	public transient TOMMessage reply = null;
 	public transient boolean alreadyProposed = false;
 	public transient int retry = 4;
 
-	private int replyServer = -1;
-
 	public TOMMessage() {
+		super();
 	}
 
 	/**
@@ -105,6 +54,11 @@ public class TOMMessage extends SystemMessage implements Externalizable, Compara
 	//	this(sender, session, sequence, -1, content, view, type);
 	//}
 
+	
+	public TOMMessage(TOMMessageWire plain) {
+		this(plain.getSender(), plain.getSession(), plain.getSequence(), plain.getOperationId(), plain.getContent(), plain.getViewID(), plain.getType());
+	}
+
 	/**
 	 * Creates a new instance of TOMMessage. This one has an operationId parameter
 	 * used for FIFO executions
@@ -117,16 +71,9 @@ public class TOMMessage extends SystemMessage implements Externalizable, Compara
 	 * @param type Ordered or Unordered request
 	 */
 	public TOMMessage(int sender, int session, int sequence, int operationId, byte[] content, int view, TOMMessageType type) {
-		super(sender);
-		this.session = session;
-		this.sequence = sequence;
-		this.operationId = operationId;
-		this.viewID = view;
+		super(sender, session, sequence, operationId, content, view, type);
 		buildId();
-		this.content = content;
-		this.type = type;
 	}
-
 
 	/** THIS IS JOAO'S CODE, FOR DEBUGGING */
 	private transient DebugInfo info = null; // Debug information
@@ -228,41 +175,6 @@ public class TOMMessage extends SystemMessage implements Externalizable, Compara
 		return "[" + sender + ":" + session + ":" + sequence + "]";
 	}
 
-	public void wExternal(DataOutput out) throws IOException {
-		out.writeInt(sender);
-		out.writeInt(viewID);
-		out.writeByte(type.ordinal());
-		out.writeInt(session);
-		out.writeInt(sequence);
-		out.writeInt(operationId);
-		out.writeInt(replyServer);
-		
-		if (content == null) {
-			out.writeInt(-1);
-		} else {
-			out.writeInt(content.length);
-			out.write(content);
-		}
-	}
-
-	public void rExternal(DataInput in) throws IOException, ClassNotFoundException {
-		sender = in.readInt();
-		viewID = in.readInt();
-		type = TOMMessageType.getMessageType(in.readByte());
-		session = in.readInt();
-		sequence = in.readInt();
-		operationId = in.readInt();
-		replyServer = in.readInt();
-		
-		int toRead = in.readInt();
-		if (toRead != -1) {
-			content = new byte[toRead];
-			in.readFully(content);
-		}
-
-		buildId();
-	}
-
 	/**
 	 * Used to build an unique id for the message
 	 */
@@ -285,38 +197,31 @@ public class TOMMessage extends SystemMessage implements Externalizable, Compara
 	 }
 
 	 public static byte[] messageToBytes(TOMMessage m) {
-		 ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		 DataOutputStream dos = new DataOutputStream(baos);
-		 try{
-			 m.wExternal(dos);
-			 dos.flush();
+		 try (ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
+			 MessageSerializerFactory.getSerializer().serialize(m, baos);
+			 return baos.toByteArray();
 		 }catch(Exception e) {
 		 }
-		 return baos.toByteArray();
+		 return new byte[0];
 	 }
 
 	 public static TOMMessage bytesToMessage(byte[] b) {
 		 ByteArrayInputStream bais = new ByteArrayInputStream(b);
-		 DataInputStream dis = new DataInputStream(bais);
-
-		 TOMMessage m = new TOMMessage();
-		 try{
-			 m.rExternal(dis);
+		 
+		 try {
+			TOMMessageWire plain = (TOMMessageWire) MessageSerializerFactory.getSerializer().deserialize(bais);
+			return new TOMMessage(plain);
 		 }catch(Exception e) {
 			 LoggerFactory.getLogger(TOMMessage.class).error("Failed to deserialize TOMMessage",e);
 			 return null;
 		 }
-
-		 return m;
 	 }
 
 	 @Override
-	 public int compareTo(Object o) {
+	 public int compareTo(TOMMessage tm) {
 		 final int BEFORE = -1;
 		 final int EQUAL = 0;
 		 final int AFTER = 1;
-
-		 TOMMessage tm = (TOMMessage)o;
 
 		 if (this.equals(tm))
 			 return EQUAL;
@@ -396,20 +301,11 @@ public class TOMMessage extends SystemMessage implements Externalizable, Compara
 		this.replyServer = replyServer;
 	}
 
-
-	/**
-	 * 	This two methods implement the Externalizable interface --- only used for serialization of forwarded requests/replies
-	 * 	when used for transferring ** replica application state ** that includes these.
-	 * 	Not used for the total order multicast protocol or the client-server communication.
- 	 */
-	@Override
-	public void writeExternal(ObjectOutput out) throws IOException {
-		this.wExternal(out);
-	}
-
 	@Override
 	public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
-		this.rExternal(in);
+		super.readExternal(in);
+
+		buildId();
 	}
 
 }

@@ -16,11 +16,12 @@ limitations under the License.
 package bftsmart.tom.util;
 
 import java.io.ByteArrayInputStream;
-import java.io.DataInputStream;
 import java.nio.ByteBuffer;
 import java.util.Random;
 
 import bftsmart.reconfiguration.ServerViewController;
+import bftsmart.serialization.MessageSerializerFactory;
+import bftsmart.serialization.messages.TOMMessageWire;
 import bftsmart.tom.core.messages.TOMMessage;
 import org.slf4j.LoggerFactory;
 
@@ -85,9 +86,9 @@ public final class BatchReader {
                 rnd.nextBytes(nonces);
             }
             try {
-                DataInputStream ois = new DataInputStream(new ByteArrayInputStream(message));
-                TOMMessage tm = new TOMMessage();
-                tm.rExternal(ois);
+                ByteArrayInputStream ois = new ByteArrayInputStream(message);
+                TOMMessageWire tmPlain = (TOMMessageWire) MessageSerializerFactory.getSerializer().deserialize(ois);
+                TOMMessage tm = new TOMMessage(tmPlain);
 
                 tm.serializedMessage = message;
                 tm.serializedMessageSignature = signature;

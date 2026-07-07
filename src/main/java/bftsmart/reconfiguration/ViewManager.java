@@ -29,6 +29,7 @@ import org.slf4j.LoggerFactory;
 
 import bftsmart.communication.server.ServerConnection;
 import bftsmart.reconfiguration.views.View;
+import bftsmart.serialization.MessageSerializerFactory;
 import bftsmart.tom.util.KeyLoader;
 
 /**
@@ -129,7 +130,7 @@ public class ViewManager {
         ByteArrayOutputStream bOut = new ByteArrayOutputStream();
 
         try {
-            new ObjectOutputStream(bOut).writeObject(sm);
+            MessageSerializerFactory.getSerializer().serialize(sm, bOut);
         } catch (IOException ex) {
             logger.error("Could not serialize message", ex);
         }

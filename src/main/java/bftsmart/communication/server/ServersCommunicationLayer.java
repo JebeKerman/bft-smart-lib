@@ -17,6 +17,7 @@ package bftsmart.communication.server;
 
 import bftsmart.communication.SystemMessage;
 import bftsmart.reconfiguration.ServerViewController;
+import bftsmart.serialization.MessageSerializerFactory;
 import bftsmart.tom.ServiceReplica;
 import bftsmart.tom.util.TOMUtil;
 import org.slf4j.Logger;
@@ -222,7 +223,7 @@ public class ServersCommunicationLayer extends Thread {
 	public final void send(int[] targets, SystemMessage sm, boolean useMAC) {
 		ByteArrayOutputStream bOut = new ByteArrayOutputStream(248);
 		try {
-			new ObjectOutputStream(bOut).writeObject(sm);
+			MessageSerializerFactory.getSerializer().serialize(sm, bOut);
 		} catch (IOException ex) {
 			logger.error("Failed to serialize message", ex);
 		}

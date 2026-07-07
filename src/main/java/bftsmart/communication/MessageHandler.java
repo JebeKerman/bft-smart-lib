@@ -20,6 +20,8 @@ import org.slf4j.LoggerFactory;
 
 import bftsmart.consensus.messages.ConsensusMessage;
 import bftsmart.consensus.roles.Acceptor;
+import bftsmart.serialization.messages.TOMMessageWire;
+import bftsmart.statemanagement.ApplicationState;
 import bftsmart.statemanagement.SMMessage;
 import bftsmart.tom.core.TOMLayer;
 import bftsmart.tom.core.messages.ForwardedMessage;
@@ -98,12 +100,13 @@ public class MessageHandler {
 					/**************************************************************/
 
 				} else if (sm instanceof ForwardedMessage) {
-					TOMMessage request = ((ForwardedMessage) sm).getRequest();
+					TOMMessageWire requestWire = ((ForwardedMessage) sm).getRequest();
+					TOMMessage request = new TOMMessage(requestWire);
 					tomLayer.requestReceived(request, false);//false -> message was received from a replica -> do not drop it
 
 					/** This is Joao's code, to handle state transfer */
-				} else if (sm instanceof SMMessage) {
-					SMMessage smsg = (SMMessage) sm;
+				} else if (sm instanceof SMMessage<?>) {
+					SMMessage<ApplicationState> smsg = (SMMessage<ApplicationState>) sm;
 					switch (smsg.getType()) {
 					case TOMUtil.SM_REQUEST:
 						tomLayer.getStateManager().SMRequestDeliver(smsg, tomLayer.controller.getStaticConf().isBFT());

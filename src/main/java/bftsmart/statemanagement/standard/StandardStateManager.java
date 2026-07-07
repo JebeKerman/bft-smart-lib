@@ -95,7 +95,7 @@ public class StandardStateManager extends StateManager {
 
         changeReplica(); // always ask the complete state to a different replica
 
-        SMMessage smsg = new StandardSMMessage(SVController.getStaticConf().getProcessId(),
+        SMMessage<ApplicationState> smsg = new StandardSMMessage(SVController.getStaticConf().getProcessId(),
                 waitingCID, TOMUtil.SM_REQUEST, replica, null, null, -1, -1);
         tomLayer.getCommunication().send(SVController.getCurrentViewOtherAcceptors(), smsg);
 
@@ -128,7 +128,7 @@ public class StandardStateManager extends StateManager {
     }
 
     @Override
-    public void SMRequestDeliver(SMMessage msg, boolean isBFT) {
+    public void SMRequestDeliver(SMMessage<ApplicationState> msg, boolean isBFT) {
         if (SVController.getStaticConf().isStateTransferEnabled() && dt.getRecoverer() != null) {
             StandardSMMessage stdMsg = (StandardSMMessage) msg;
             boolean sendState = stdMsg.getReplica() == SVController.getStaticConf().getProcessId();
@@ -141,7 +141,7 @@ public class StandardStateManager extends StateManager {
             }
 
             int[] targets = {msg.getSender()};
-            SMMessage smsg = new StandardSMMessage(SVController.getStaticConf().getProcessId(),
+            SMMessage<ApplicationState> smsg = new StandardSMMessage(SVController.getStaticConf().getProcessId(),
                     msg.getCID(), TOMUtil.SM_REPLY, -1, thisState, SVController.getCurrentView(),
                     tomLayer.getSynchronizer().getLCManager().getLastReg(), tomLayer.execManager.getCurrentLeader());
 
@@ -152,7 +152,7 @@ public class StandardStateManager extends StateManager {
     }
 
     @Override
-    public void SMReplyDeliver(SMMessage msg, boolean isBFT) {
+    public void SMReplyDeliver(SMMessage<ApplicationState> msg, boolean isBFT) {
         lockTimer.lock();
         if (SVController.getStaticConf().isStateTransferEnabled()) {
             if (waitingCID != -1 && msg.getCID() == waitingCID) {

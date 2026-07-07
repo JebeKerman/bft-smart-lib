@@ -1,0 +1,122 @@
+
+syntax = "proto3";
+
+package bftsmart.serialization.proto;
+
+message SystemMessage {
+  int32 sender_id = 1;
+  oneof payload {
+    TOMMessage         tom_msg             = 2;
+    VMMessage          vm_msg              = 3;
+    LCMessage          lc_msg              = 4;
+    ConsensusMessage   consensus_msg       = 5;
+    ForwardedMessage   forwarded_message   = 6;
+    CSTSMMessage       cstsm_message       = 7;
+    StandardSMMMessage standard_sm_message = 8;
+  }
+}
+
+message TOMMessage {
+  int32          view_id      = 1;
+  TOMMessageType type         = 2;
+  int32          session      = 3;
+  int32          sequence     = 4;
+  int32          operation_id = 5;
+  int32          reply_server = 6;
+  bytes          content      = 7;
+}
+
+message VMMessage {
+  ReconfigureReply reply = 1;
+}
+
+message LCMessage {
+  int32 type               = 1;
+  int32 ts                 = 2;
+  bytes payload            = 3;
+  bool  trigger_lc_locally = 4;
+}
+
+message ConsensusMessage {
+  int32     number = 1;
+  int32     epoch  = 2;
+  PaxosType type   = 3;
+  bytes     value  = 4; // Value used when PROPOSE
+  bytes     proof  = 5; // Proof, when COLLECT TODO: How to handle 'Object?'
+}
+
+message ForwardedMessage {
+  int32      request_sender = 1;
+  TOMMessage request        = 2;
+  bytes      signature      = 3;
+}
+
+message ReconfigureReply {
+  View            view              = 1;
+  repeated string join_set          = 2;
+  int32           last_exec_cons_id = 3;
+  int32           exec_leader       = 4;
+}
+
+message View {
+  int32                     id        = 1;
+  int32                     f         = 2;
+  repeated int32            processes = 3;
+  map<int32, SocketAddress> addresses = 4;
+}
+
+message SocketAddress {
+  string host = 1; // hostname or IP literal
+  uint32 port = 2; // 0-65535
+}
+
+enum PaxosType {
+  PROPOSE      = 0;
+  WRITE        = 1;
+  ACCEPT       = 2;
+  REQ_DECISION = 3;
+  FWD_DECISION = 4;
+}
+
+message SMMessage {
+  View  view               = 1;
+  int32 cid                = 2;
+  int32 type               = 3;
+  int32 regency            = 4;
+  int32 leader             = 5;
+  bool  trigger_sm_locally = 6;
+  bytes state              = 7;
+  // Application state.. Not as bytes? Move also to messages?
+}
+
+message CSTSMMessage {
+  SMMessage    parent     = 1;
+  CSTRequestF1 cst_config = 2;
+}
+
+message StandardSMMMessage {
+  SMMessage parent  = 1;
+  int32     replica = 2;
+}
+
+enum TOMMessageType {
+  ORDERED_REQUEST          = 0;
+  UNORDERED_REQUEST        = 1;
+  REPLY                    = 2;
+  RECONFIG                 = 3;
+  ASK_STATUS               = 4;
+  STATUS_REPLY             = 5;
+  UNORDERED_HASHED_REQUEST = 6;
+  ORDERED_HASHED_REQUEST   = 7;
+}
+
+message CSTRequestF1 {
+  int32  cid                = 1;
+  int32  checkpoint_replica = 2;
+  int32  log_upper          = 3;
+  int32  log_lower          = 4;
+  int32  ckp_period         = 5;
+  int32  log_upper_size     = 6;
+  int32  log_lower_size     = 7;
+  string address            = 8;
+}

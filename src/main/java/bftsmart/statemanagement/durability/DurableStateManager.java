@@ -106,7 +106,7 @@ public class DurableStateManager extends StateManager {
     }
 
     @Override
-    public void SMRequestDeliver(SMMessage msg, boolean isBFT) {
+    public void SMRequestDeliver(SMMessage<ApplicationState> msg, boolean isBFT) {
         logger.debug("Invoked method");
         if (SVController.getStaticConf().isStateTransferEnabled()
                 && dt.getRecoverer() != null) {
@@ -150,7 +150,7 @@ public class DurableStateManager extends StateManager {
     }
 
     @Override
-    public void SMReplyDeliver(SMMessage msg, boolean isBFT) {
+    public void SMReplyDeliver(SMMessage<ApplicationState> msg, boolean isBFT) {
         lockTimer.lock();
         CSTSMMessage reply = (CSTSMMessage) msg;
         if (SVController.getStaticConf().isStateTransferEnabled()) {
