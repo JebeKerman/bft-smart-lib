@@ -69,7 +69,7 @@ def convert_to_df(jmh_results: Dict) -> pd.DataFrame:
 
     df["serializer"] = pd.Categorical(
         df["serializer"],
-        categories=["Java", "Proto", "Kryo"],
+        categories=["Java", "Kryo", "Proto"],
         ordered=True,
     )
 

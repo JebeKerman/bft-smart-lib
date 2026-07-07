@@ -23,9 +23,9 @@ def plot_msg_sizes_absolute(df: pd.DataFrame, out_dir: Path):
         figsize=(6, 5),
     )
 
-    ax.set_title("performance by message type")
+    ax.set_title("Absolute Message Size")
     ax.set_xlabel("Message")
-    ax.set_ylabel("Average time [ns/op]")
+    ax.set_ylabel("Size [Byte]")
     ax.legend(title="Serializer")
 
     plt.xticks(rotation=30, ha="right")
@@ -50,9 +50,9 @@ def plot_msg_sizes_mean(df: pd.DataFrame, out_dir: Path):
         figsize=(6, 5),
     )
 
-    ax.set_title("performance by message type")
+    ax.set_title("Average Measured Message Size")
     ax.set_xlabel("Message")
-    ax.set_ylabel("Average time [ns/op]")
+    ax.set_ylabel("Average Size [Byte]")
     ax.legend(title="Serializer")
 
     plt.xticks(rotation=30, ha="right")

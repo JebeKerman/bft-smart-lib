@@ -50,7 +50,11 @@ def convert_to_df(jmh_results: Dict) -> pd.DataFrame:
     df = pd.DataFrame(result)
     df["serializer"] = pd.Categorical(
         df["serializer"],
-        categories=["Java", "Proto", "Kryo"],
+        categories=[
+            "Java",
+            "Kryo",
+            "Proto",
+        ],
         ordered=True,
     )
     df["method"] = pd.Categorical(
@@ -109,7 +113,12 @@ def plot_bar_charts(df: pd.DataFrame, output_dir: Path):
             figsize=(8, 4),
         )
 
-        ax.set_title(f"{method} time by message type")
+        if method == "serialize":
+            methodStr = "Serialize"
+        else:
+            methodStr = "Deserialize"
+
+        ax.set_title(f"Average {methodStr} Time by Message")
         ax.set_xlabel("Message")
         ax.set_ylabel("Average time [μs/op]")
         ax.grid(axis="y", alpha=0.3)
