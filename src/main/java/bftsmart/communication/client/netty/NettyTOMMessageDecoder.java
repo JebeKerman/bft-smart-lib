@@ -24,6 +24,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import bftsmart.reconfiguration.ViewController;
+import bftsmart.serialization.MessageSerializer;
 import bftsmart.serialization.MessageSerializerFactory;
 import bftsmart.serialization.messages.TOMMessageWire;
 import bftsmart.tom.core.messages.TOMMessage;
@@ -50,6 +51,9 @@ public class NettyTOMMessageDecoder extends ByteToMessageDecoder {
     private boolean firstTime;
     private ReentrantReadWriteLock rl;
     private int bytesToSkip;
+
+
+    private final MessageSerializer serializer;
     
     
     public NettyTOMMessageDecoder(boolean isClient, 
@@ -62,6 +66,7 @@ public class NettyTOMMessageDecoder extends ByteToMessageDecoder {
         this.firstTime = true;
         this.rl = rl;
         this.bytesToSkip = 0;
+        this.serializer = MessageSerializerFactory.getSerializer();
         logger.debug("new NettyTOMMessageDecoder!!, isClient=" + isClient);
         logger.trace("\n\t isClient: {};"
         		+ 	 "\n\t sessionTable: {};"
@@ -142,7 +147,7 @@ public class NettyTOMMessageDecoder extends ByteToMessageDecoder {
 
         try {
             ByteArrayInputStream bais = new ByteArrayInputStream(data);
-            TOMMessageWire smPlain = (TOMMessageWire) MessageSerializerFactory.getSerializer().deserialize(bais);
+            TOMMessageWire smPlain = (TOMMessageWire) serializer.deserialize(bais);
             TOMMessage sm = new TOMMessage(smPlain);
             sm.serializedMessage = data;
 

@@ -18,6 +18,7 @@ package bftsmart.communication.server;
 import bftsmart.communication.SystemMessage;
 import bftsmart.reconfiguration.ServerViewController;
 import bftsmart.reconfiguration.VMMessage;
+import bftsmart.serialization.MessageSerializer;
 import bftsmart.serialization.MessageSerializerFactory;
 import bftsmart.tom.ServiceReplica;
 import bftsmart.tom.util.TOMUtil;
@@ -361,13 +362,15 @@ public class ServerConnection {
 	 */
 	protected class ReceiverThread extends Thread {
 
+		private final MessageSerializer serializer;
+
 		public ReceiverThread() {
 			super("Receiver for " + remoteId);
+			serializer = MessageSerializerFactory.getSerializer();
 		}
 
 		@Override
 		public void run() {
-
 			while (doWork) {
 				if (socket != null && socketInStream != null) {
 
@@ -388,7 +391,7 @@ public class ServerConnection {
 
 						SystemMessage sm = null;
 						try (ByteArrayInputStream in = new ByteArrayInputStream(data)) {
-							sm = MessageSerializerFactory.getSerializer().deserialize(in);
+							sm = serializer.deserialize(in);
 						}
 
 						//The verification it is done for the SSL/TLS protocol.
@@ -430,15 +433,16 @@ public class ServerConnection {
 	protected class TTPReceiverThread extends Thread {
 
 		private final ServiceReplica replica;
+		private final MessageSerializer serializer;
 
 		public TTPReceiverThread(ServiceReplica replica) {
 			super("TTPReceiver for " + remoteId);
 			this.replica = replica;
+			this.serializer = MessageSerializerFactory.getSerializer();
 		}
 
 		@Override
 		public void run() {
-
 			while (doWork) {
 				if (socket != null && socketInStream != null) {
 					try {
@@ -454,7 +458,7 @@ public class ServerConnection {
 						} while (read < dataLength);
 
 						ByteArrayInputStream bis = new ByteArrayInputStream(data);
-						VMMessage sm = (VMMessage) MessageSerializerFactory.getSerializer().deserialize(bis);
+						VMMessage sm = (VMMessage) serializer.deserialize(bis);
 
 						if (sm.getSender() == remoteId) {
 							this.replica.joinMsgReceived(sm);

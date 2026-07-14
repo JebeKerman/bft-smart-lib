@@ -20,6 +20,7 @@ import java.nio.ByteBuffer;
 import java.util.Random;
 
 import bftsmart.reconfiguration.ServerViewController;
+import bftsmart.serialization.MessageSerializer;
 import bftsmart.serialization.MessageSerializerFactory;
 import bftsmart.serialization.messages.TOMMessageWire;
 import bftsmart.tom.core.messages.TOMMessage;
@@ -34,11 +35,13 @@ public final class BatchReader {
 
     private ByteBuffer proposalBuffer;
     private boolean useSignatures;
+    private final MessageSerializer serializer;
 
     /** wrap buffer */
     public BatchReader(byte[] batch, boolean useSignatures) {
         proposalBuffer = ByteBuffer.wrap(batch);
         this.useSignatures = useSignatures;
+        serializer = MessageSerializerFactory.getSerializer();
     }
 
     public TOMMessage[] deserialiseRequests(ServerViewController controller) {
@@ -87,7 +90,7 @@ public final class BatchReader {
             }
             try {
                 ByteArrayInputStream ois = new ByteArrayInputStream(message);
-                TOMMessageWire tmPlain = (TOMMessageWire) MessageSerializerFactory.getSerializer().deserialize(ois);
+                TOMMessageWire tmPlain = (TOMMessageWire) serializer.deserialize(ois);
                 TOMMessage tm = new TOMMessage(tmPlain);
 
                 tm.serializedMessage = message;

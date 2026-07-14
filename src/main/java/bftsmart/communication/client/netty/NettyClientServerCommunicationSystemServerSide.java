@@ -18,6 +18,7 @@ package bftsmart.communication.client.netty;
 import bftsmart.communication.client.CommunicationSystemServerSide;
 import bftsmart.communication.client.RequestReceiver;
 import bftsmart.reconfiguration.ServerViewController;
+import bftsmart.serialization.MessageSerializer;
 import bftsmart.serialization.MessageSerializerFactory;
 import bftsmart.tom.core.messages.TOMMessage;
 import bftsmart.tom.util.TOMUtil;
@@ -71,9 +72,12 @@ public class NettyClientServerCommunicationSystemServerSide extends SimpleChanne
 	private static final int connectionBacklog = 1024; /* pending connections boss thread will queue to accept */
 	private static final int connectionTimeoutMsec = 40000; /* (40 seconds) */
 	private PrivateKey privKey;
+
 	/* Tulio Ribeiro */
+	private final MessageSerializer serializer;
 
 	public NettyClientServerCommunicationSystemServerSide(ServerViewController controller) {
+		serializer = MessageSerializerFactory.getSerializer();
 		try {
 
 			this.controller = controller;
@@ -154,7 +158,7 @@ public class NettyClientServerCommunicationSystemServerSide extends SimpleChanne
 			logger.info("SSL/TLS enabled, protocol version: {}", controller.getStaticConf().getSSLTLSProtocolVersion());
 
 			/* Tulio Ribeiro END */
-
+		
 			mainChannel = f.channel();
 
 		} catch (InterruptedException | UnknownHostException ex) {
@@ -285,7 +289,7 @@ public class NettyClientServerCommunicationSystemServerSide extends SimpleChanne
 		byte[] data = null;
 		try {
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			MessageSerializerFactory.getSerializer().serialize(sm, baos);
+			this.serializer.serialize(sm, baos);
 			data = baos.toByteArray();
 			sm.serializedMessage = data;
 		} catch (IOException ex) {

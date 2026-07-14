@@ -16,28 +16,34 @@ public class MessageSerializerFactory {
 
     private static final String MEASURE_PROPERTY = "serialization.measure.bytes";
 
-    private static MessageSerializer serializer;
     private static ByteCountMessageSerializer byteCountSerializer = null;
-    static {
+
+    public static MessageSerializer getSerializer() {
         String type = System.getProperty(PROPERTY, DEFAULT_SERIALIZER);
         Serializer serializerType = Serializer.fromName(type);
-        serializer = serializerType.serializer;
-        if (serializerType == Serializer.Kryo) {
-            KryoSerializer.getInstance().register(StandardSMMessage.class);
-            KryoSerializer.getInstance().register(CSTSMMessage.class);
-            KryoSerializer.getInstance().register(TOMMessage.class);
-            KryoSerializer.getInstance().register(LCMessage.class);
-            KryoSerializer.getInstance().register(DefaultApplicationState.class);
-            KryoSerializer.getInstance().register(TreeMap.class);
+        MessageSerializer serializer = null;
+        switch (serializerType) {
+            case Kryo:
+                KryoSerializer instance = KryoSerializer.getInstance();
+                instance.register(StandardSMMessage.class);
+                instance.register(CSTSMMessage.class);
+                instance.register(TOMMessage.class);
+                instance.register(LCMessage.class);
+                instance.register(DefaultApplicationState.class);
+                instance.register(TreeMap.class);
+                serializer = instance;
+                break;
+            case Proto:
+                serializer = ProtoSerializer.getInstance();
+                break;
+            case Java:
+                serializer = JavaSerializer.getInstance();
+                break;
         }
-
         if (Boolean.getBoolean(MEASURE_PROPERTY)) {
             byteCountSerializer = new ByteCountMessageSerializer(serializer);
             serializer = byteCountSerializer;
         }
-    }
-
-    public static MessageSerializer getSerializer() {
         return serializer;
     }
 
@@ -48,15 +54,9 @@ public class MessageSerializerFactory {
     private MessageSerializerFactory() { }
 
     private static enum Serializer {
-        Java(JavaSerializer.getInstance()),
-        Proto(ProtoSerializer.getInstance()),
-        Kryo(KryoSerializer.getInstance());
-
-        final MessageSerializer serializer;
-
-        private Serializer(final MessageSerializer serializer) {
-            this.serializer = serializer;
-        } 
+        Java,
+        Proto,
+        Kryo;
 
         private static Serializer fromName(String name) {
             switch (name) {

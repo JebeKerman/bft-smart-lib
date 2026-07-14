@@ -45,6 +45,7 @@ import org.slf4j.LoggerFactory;
 import bftsmart.communication.client.CommunicationSystemClientSide;
 import bftsmart.communication.client.ReplyReceiver;
 import bftsmart.reconfiguration.ClientViewController;
+import bftsmart.serialization.MessageSerializer;
 import bftsmart.serialization.MessageSerializerFactory;
 import bftsmart.tom.core.messages.TOMMessage;
 import bftsmart.tom.util.TOMUtil;
@@ -98,11 +99,14 @@ public class NettyClientServerCommunicationSystemClientSide extends SimpleChanne
 	private TOMMessage pendingRequest;
 	private boolean pendingRequestSign;
 
+	private final MessageSerializer serializer;
+
 	public NettyClientServerCommunicationSystemClientSide(int clientId, ClientViewController controller) {
 		super();
 
 		this.clientId = clientId;
 		this.workerGroup = new NioEventLoopGroup(Runtime.getRuntime().availableProcessors());
+		this.serializer = MessageSerializerFactory.getSerializer();
 		try {
 
 			this.secretKeyFactory = TOMUtil.getSecretFactory();
@@ -340,7 +344,7 @@ public class NettyClientServerCommunicationSystemClientSide extends SimpleChanne
 		// serialize message
 		try {
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			MessageSerializerFactory.getSerializer().serialize(sm, baos);
+			serializer.serialize(sm, baos);
 			sm.serializedMessage = baos.toByteArray();
 		} catch (IOException ex) {
 			logger.error("Impossible to serialize message: " + sm);
@@ -352,7 +356,7 @@ public class NettyClientServerCommunicationSystemClientSide extends SimpleChanne
 		byte[] data = null;
 		try {
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			MessageSerializerFactory.getSerializer().serialize(sm, baos);
+			serializer.serialize(sm, baos);
 			data = baos.toByteArray();
 			sm.serializedMessage = data;
 		} catch (IOException ex) {

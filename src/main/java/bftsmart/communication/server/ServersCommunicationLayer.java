@@ -17,6 +17,7 @@ package bftsmart.communication.server;
 
 import bftsmart.communication.SystemMessage;
 import bftsmart.reconfiguration.ServerViewController;
+import bftsmart.serialization.MessageSerializer;
 import bftsmart.serialization.MessageSerializerFactory;
 import bftsmart.tom.ServiceReplica;
 import bftsmart.tom.util.TOMUtil;
@@ -76,6 +77,8 @@ public class ServersCommunicationLayer extends Thread {
 	private static final String SECRET = "MySeCreT_2hMOygBwY";
 	private final SecretKey selfPwd;
 	private final SSLServerSocket serverSocketSSLTLS;
+
+	private final MessageSerializer serializer;
 
 	public ServersCommunicationLayer(ServerViewController controller,
 									 LinkedBlockingQueue<SystemMessage> inQueue,
@@ -162,6 +165,7 @@ public class ServersCommunicationLayer extends Thread {
 				}
 			}
 		}
+		serializer = MessageSerializerFactory.getSerializer();
 
 		start();
 	}
@@ -223,7 +227,7 @@ public class ServersCommunicationLayer extends Thread {
 	public final void send(int[] targets, SystemMessage sm, boolean useMAC) {
 		ByteArrayOutputStream bOut = new ByteArrayOutputStream(248);
 		try {
-			MessageSerializerFactory.getSerializer().serialize(sm, bOut);
+			serializer.serialize(sm, bOut);
 		} catch (IOException ex) {
 			logger.error("Failed to serialize message", ex);
 		}

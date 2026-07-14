@@ -27,10 +27,8 @@ public class KryoSerializer implements MessageSerializer {
 
     private final Kryo kryo;
 
-    private static final KryoSerializer instance = new KryoSerializer();
-
     public static KryoSerializer getInstance() {
-        return instance;
+        return new KryoSerializer();
     }
 
     @Override
