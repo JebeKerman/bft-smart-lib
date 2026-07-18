@@ -1,4 +1,0 @@
-Serializer,ConsensusMessage,LCMessage,StandardSMMessage,TOMMessage
-Java,203.34,,573.25,241.48
-Kryo,65.98,5.0,18.21,54.85
-Proto,43.97,,290.68,71.07
