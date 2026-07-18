@@ -6,6 +6,8 @@ from typing import Dict
 import matplotlib.pyplot as plt
 import pandas as pd
 
+from analysis.util import save_as_pdf_and_png
+
 
 def main():
     if len(sys.argv) != 3:
@@ -127,10 +129,7 @@ def plot_bar_charts(df: pd.DataFrame, output_dir: Path):
         plt.xticks(rotation=45, ha="right")
         plt.tight_layout()
 
-        output_file = output_dir / f"avg_time_by_message_{method}.pdf"
-        plt.savefig(output_file, dpi=200)
-        plt.close()
-        print(f"Generated plot {output_file}")
+        save_as_pdf_and_png(output_dir, f"avg_time_by_message_{method}")
 
 
 def plot_relative_speedup(df: pd.DataFrame, output_dir: Path):
@@ -161,10 +160,7 @@ def plot_relative_speedup(df: pd.DataFrame, output_dir: Path):
         plt.xticks(rotation=45, ha="right")
         plt.tight_layout()
 
-        output_file = output_dir / f"relative_speedup_{method}.pdf"
-        plt.savefig(output_file, dpi=200)
-        plt.close()
-        print(f"Generated plot {output_file}")
+        save_as_pdf_and_png(output_dir, f"relative_speedup_{method}")
 
 
 def table_relative_speedup(df: pd.DataFrame, output_dir: Path):

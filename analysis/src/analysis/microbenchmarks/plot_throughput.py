@@ -3,7 +3,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from analysis.util import PLOT_COLORS
+from analysis.util import PLOT_COLORS, save_as_pdf_and_png
 
 
 def plot_tp(df: pd.DataFrame, out_dir: Path):
@@ -41,12 +41,9 @@ def plot_tp_over_time(df: pd.DataFrame, out_dir: Path):
     ax.legend()
     ax.grid(axis="y", alpha=0.3)
 
-    out_file = out_dir / "throughput.pdf"
     plt.tight_layout()
-    plt.savefig(out_file)
-    plt.close()
 
-    print(f"Generated plot {out_file}")
+    save_as_pdf_and_png(out_dir, "throughput")
 
 
 def plot_tp_mean(df: pd.DataFrame, out_dir: Path):
@@ -64,13 +61,10 @@ def plot_tp_mean(df: pd.DataFrame, out_dir: Path):
     ax.set_title("Mean throughput by serializer")
     ax.grid(axis="y", alpha=0.3)
 
-    out_file = out_dir / "throughput_mean.pdf"
     plt.xticks(rotation=0)
     plt.tight_layout()
-    plt.savefig(out_file)
-    plt.close()
 
-    print(f"Generated plot {out_file}")
+    save_as_pdf_and_png(out_dir, "throughput_mean")
 
 
 def plot_latency_mean(df: pd.DataFrame, out_dir: Path):
@@ -87,13 +81,10 @@ def plot_latency_mean(df: pd.DataFrame, out_dir: Path):
     ax.set_title("Latency by serializer")
     ax.grid(axis="y", alpha=0.3)
 
-    out_file = out_dir / "latency_mean.pdf"
     plt.xticks(rotation=0)
     plt.tight_layout()
-    plt.savefig(out_file)
-    plt.close()
 
-    print(f"Generated plot {out_file}")
+    save_as_pdf_and_png(out_dir, "latency_mean")
 
 
 def plot_runs(df: pd.DataFrame, out_dir: Path):
@@ -126,11 +117,9 @@ def plot_runs(df: pd.DataFrame, out_dir: Path):
     ax.grid(alpha=0.3)
     ax.legend()
 
-    out_file = out_dir / "latency_vs_throughput.pdf"
     plt.tight_layout()
-    plt.savefig(out_file)
-    plt.close()
-    print(f"Generated plot {out_file}")
+
+    save_as_pdf_and_png(out_dir, "latency_vs_throughput")
 
 
 def plot_runs_tp(df: pd.DataFrame, out_dir: Path):
@@ -153,12 +142,10 @@ def plot_runs_tp(df: pd.DataFrame, out_dir: Path):
     ax.grid(axis="y", alpha=0.3)
     ax.legend()
 
-    out_file = out_dir / "throughput.pdf"
     plt.xticks(rotation=0, ha="center")
     plt.tight_layout()
-    plt.savefig(out_file)
-    plt.close()
-    print(f"Generated plot {out_file}")
+
+    save_as_pdf_and_png(out_dir, "throughput")
 
 
 def plot_runs_latency(df: pd.DataFrame, out_dir: Path):
@@ -181,9 +168,8 @@ def plot_runs_latency(df: pd.DataFrame, out_dir: Path):
     ax.grid(axis="y", alpha=0.3)
     ax.legend()
 
-    out_file = out_dir / "latency.pdf"
     plt.xticks(rotation=0, ha="center")
     plt.tight_layout()
-    plt.savefig(out_file)
-    plt.close()
-    print(f"Generated plot {out_file}")
+
+    save_as_pdf_and_png(out_dir, "latency")
+

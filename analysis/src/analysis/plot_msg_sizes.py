@@ -6,7 +6,7 @@ from typing import Dict
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from analysis.util import PLOT_COLORS
+from analysis.util import PLOT_COLORS, save_as_pdf_and_png
 
 
 def main():
@@ -116,10 +116,7 @@ def plot_message_sizes_absolute(df: pd.DataFrame, output_dir: Path):
     plt.xticks(rotation=30, ha="right")
     plt.tight_layout()
 
-    output_file = output_dir / "message_size_absolute.pdf"
-    plt.savefig(output_file, dpi=200)
-    plt.close()
-    print(f"Generated plot {output_file}")
+    save_as_pdf_and_png(output_dir, "message_size_absolute")
 
 
 def plot_message_sizes_relative(df: pd.DataFrame, output_dir: Path):
@@ -143,10 +140,7 @@ def plot_message_sizes_relative(df: pd.DataFrame, output_dir: Path):
     plt.xticks(rotation=30, ha="right")
     plt.tight_layout()
 
-    output_file = output_dir / "message_size_relative.pdf"
-    plt.savefig(output_file, dpi=200)
-    plt.close()
-    print(f"Generated plot {output_file}")
+    save_as_pdf_and_png(output_dir, "message_size_relative")
 
 
 def table_message_size(df: pd.DataFrame, output_dir: Path):

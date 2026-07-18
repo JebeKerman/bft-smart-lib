@@ -3,6 +3,8 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
 
+from analysis.util import save_as_pdf_and_png
+
 
 def plot_msg_sizes(df: pd.DataFrame, out_dir: Path):
     for run_id, df in df.groupby("run_id"):
@@ -31,10 +33,7 @@ def plot_msg_sizes_absolute(df: pd.DataFrame, out_dir: Path):
     plt.xticks(rotation=30, ha="right")
     plt.tight_layout()
 
-    output_file = out_dir / "message_size_absolute.pdf"
-    plt.savefig(output_file, dpi=200)
-    plt.close()
-    print(f"Generated plot {output_file}")
+    save_as_pdf_and_png(out_dir, "message_size_absolute")
 
 
 def plot_msg_sizes_mean(df: pd.DataFrame, out_dir: Path):
@@ -58,10 +57,7 @@ def plot_msg_sizes_mean(df: pd.DataFrame, out_dir: Path):
     plt.xticks(rotation=30, ha="right")
     plt.tight_layout()
 
-    output_file = out_dir / "message_size_mean.pdf"
-    plt.savefig(output_file, dpi=200)
-    plt.close()
-    print(f"Generated plot {output_file}")
+    save_as_pdf_and_png(out_dir, "message_size_mean")
 
 
 def csv_table(df: pd.DataFrame, out_dir: Path):
