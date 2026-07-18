@@ -19,6 +19,10 @@ java {
     targetCompatibility = JavaLanguageVersion.of(8)
 }
 
+repositories {
+    mavenCentral()
+}
+
 spotless {
     groovyGradle {
         target '*.gradle'
@@ -89,10 +93,6 @@ subprojects {
             showStandardStreams false
         }
     }
-}
-
-repositories {
-    mavenCentral()
 }
 
 jar {
