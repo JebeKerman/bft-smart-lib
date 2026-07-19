@@ -1,0 +1,36 @@
+Launching client 1030
+Launching client 1031
+Launching client 1032
+Launching client 1033
+Launching client 1034
+Launching client 1035
+Launching client 1036
+Launching client 1037
+Launching client 1038
+Launching client 1039
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+1030 // Average time for 500 executions (-10%) = 11510.527255 us 
+1030 // Standard desviation for 500 executions (-10%) = 1947.6025275468419 us 
+1030 // Average time for 500 executions (all samples) = 11509.17233 us 
+1030 // Standard desviation for 500 executions (all samples) = 2785.24345343559 us 
+1030 // Maximum time for 500 executions (all samples) = 24181 us 
+All clients done.

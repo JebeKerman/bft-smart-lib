@@ -1,0 +1,4205 @@
+{
+  "id" : 2,
+  "interval" : 1000,
+  "measurements" : [ {
+    "ops" : 1000,
+    "time" : 1784369349714,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 97.37099,
+      "max" : 97.37099
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 13431.270906,
+      "total_dp" : 7536,
+      "consensus" : 3027.95395,
+      "consensus_dp" : 2459,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 10776.97158,
+      "pos_consensus_dp" : 6546,
+      "propose" : 650.294034,
+      "propose_dp" : 540,
+      "write" : 493.033634,
+      "write_dp" : 651,
+      "accept" : 1884.626282,
+      "accept_dp" : 1765
+    },
+    "batch_requests" : {
+      "avg_size" : 23.148936170212767,
+      "dp" : 21
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 18808,
+      "message_count" : 288
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 104580,
+      "message_count" : 1976
+    } ]
+  }, {
+    "ops" : 2000,
+    "time" : 1784369350025,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3278.6885,
+      "max" : 3278.6885
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 21029.128158,
+      "total_dp" : 13672,
+      "consensus" : 2602.045411,
+      "consensus_dp" : 578,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 18730.223877999997,
+      "pos_consensus_dp" : 13508,
+      "propose" : 482.373783,
+      "propose_dp" : 233,
+      "write" : 373.28876,
+      "write_dp" : 281,
+      "accept" : 1746.382868,
+      "accept_dp" : 358
+    },
+    "batch_requests" : {
+      "avg_size" : 29.347826086956523,
+      "dp" : 26
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 29495,
+      "message_count" : 450
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 209548,
+      "message_count" : 3960
+    } ]
+  }, {
+    "ops" : 3000,
+    "time" : 1784369350305,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3610.1084,
+      "max" : 3610.1084
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 9523.024562999999,
+      "total_dp" : 3417,
+      "consensus" : 2189.31207,
+      "consensus_dp" : 407,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 7534.285672,
+      "pos_consensus_dp" : 3414,
+      "propose" : 358.252767,
+      "propose_dp" : 157,
+      "write" : 306.365856,
+      "write_dp" : 233,
+      "accept" : 1524.6934469999999,
+      "accept_dp" : 359
+    },
+    "batch_requests" : {
+      "avg_size" : 29.21359223300971,
+      "dp" : 22
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 41374,
+      "message_count" : 630
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 314405,
+      "message_count" : 5942
+    } ]
+  }, {
+    "ops" : 4000,
+    "time" : 1784369350615,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3236.2458,
+      "max" : 3610.1084
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 10043.409095,
+      "total_dp" : 5478,
+      "consensus" : 2164.057065,
+      "consensus_dp" : 363,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 8087.7251160000005,
+      "pos_consensus_dp" : 5549,
+      "propose" : 339.43433,
+      "propose_dp" : 118,
+      "write" : 342.362718,
+      "write_dp" : 292,
+      "accept" : 1482.260017,
+      "accept_dp" : 201
+    },
+    "batch_requests" : {
+      "avg_size" : 28.607142857142858,
+      "dp" : 21
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 51472,
+      "message_count" : 783
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 420108,
+      "message_count" : 7940
+    } ]
+  }, {
+    "ops" : 5000,
+    "time" : 1784369350943,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3067.4846,
+      "max" : 3610.1084
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 11292.205890000001,
+      "total_dp" : 5738,
+      "consensus" : 2511.798741,
+      "consensus_dp" : 584,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 9007.82128,
+      "pos_consensus_dp" : 5853,
+      "propose" : 337.972875,
+      "propose_dp" : 516,
+      "write" : 635.470293,
+      "write_dp" : 285,
+      "accept" : 1538.355573,
+      "accept_dp" : 260
+    },
+    "batch_requests" : {
+      "avg_size" : 28.361581920903955,
+      "dp" : 20
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 62173,
+      "message_count" : 945
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 526771,
+      "message_count" : 9956
+    } ]
+  }, {
+    "ops" : 6000,
+    "time" : 1784369351240,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3389.8306,
+      "max" : 3610.1084
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8622.791286,
+      "total_dp" : 3329,
+      "consensus" : 2537.514842,
+      "consensus_dp" : 1331,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6301.15888,
+      "pos_consensus_dp" : 3092,
+      "propose" : 369.256206,
+      "propose_dp" : 116,
+      "write" : 305.816483,
+      "write_dp" : 220,
+      "accept" : 1862.442153,
+      "accept_dp" : 1286
+    },
+    "batch_requests" : {
+      "avg_size" : 27.61467889908257,
+      "dp" : 19
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 73547,
+      "message_count" : 1118
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 632183,
+      "message_count" : 11948
+    } ]
+  }, {
+    "ops" : 7000,
+    "time" : 1784369351558,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3154.5742,
+      "max" : 3610.1084
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 12348.907177,
+      "total_dp" : 5367,
+      "consensus" : 2663.221009,
+      "consensus_dp" : 546,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 9905.948523000001,
+      "pos_consensus_dp" : 5332,
+      "propose" : 389.005176,
+      "propose_dp" : 125,
+      "write" : 678.0170420000001,
+      "write_dp" : 436,
+      "accept" : 1596.198791,
+      "accept_dp" : 335
+    },
+    "batch_requests" : {
+      "avg_size" : 28.565040650406505,
+      "dp" : 20
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 83361,
+      "message_count" : 1266
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 738730,
+      "message_count" : 13920
+    } ]
+  }, {
+    "ops" : 8000,
+    "time" : 1784369351906,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 2881.8445,
+      "max" : 3610.1084
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 44580.275635,
+      "total_dp" : 12153,
+      "consensus" : 2756.729425,
+      "consensus_dp" : 474,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 42173.547554,
+      "pos_consensus_dp" : 12047,
+      "propose" : 493.70766499999996,
+      "propose_dp" : 190,
+      "write" : 444.19441700000004,
+      "write_dp" : 291,
+      "accept" : 1818.8273430000002,
+      "accept_dp" : 414
+    },
+    "batch_requests" : {
+      "avg_size" : 31.507874015748033,
+      "dp" : 26
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 94648,
+      "message_count" : 1437
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 830560,
+      "message_count" : 15594
+    } ]
+  }, {
+    "ops" : 9000,
+    "time" : 1784369352150,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 4115.2266,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 30109.285962,
+      "total_dp" : 17261,
+      "consensus" : 2624.292312,
+      "consensus_dp" : 1158,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 27737.747268,
+      "pos_consensus_dp" : 17413,
+      "propose" : 380.12723700000004,
+      "propose_dp" : 115,
+      "write" : 776.558003,
+      "write_dp" : 1349,
+      "accept" : 1467.607072,
+      "accept_dp" : 356
+    },
+    "batch_requests" : {
+      "avg_size" : 33.45724907063197,
+      "dp" : 29
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 103759,
+      "message_count" : 1575
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 959054,
+      "message_count" : 17935
+    } ]
+  }, {
+    "ops" : 10000,
+    "time" : 1784369352414,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3802.2812,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7617.386465,
+      "total_dp" : 1988,
+      "consensus" : 2471.775517,
+      "consensus_dp" : 258,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5383.329838000001,
+      "pos_consensus_dp" : 1987,
+      "propose" : 404.32962599999996,
+      "propose_dp" : 95,
+      "write" : 530.55459,
+      "write_dp" : 248,
+      "accept" : 1536.8913009999999,
+      "accept_dp" : 151
+    },
+    "batch_requests" : {
+      "avg_size" : 31.955271565495206,
+      "dp" : 27
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 116703,
+      "message_count" : 1772
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 1070950,
+      "message_count" : 19973
+    } ]
+  }, {
+    "ops" : 11000,
+    "time" : 1784369352680,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3787.879,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8657.406367000001,
+      "total_dp" : 2585,
+      "consensus" : 2407.9391830000004,
+      "consensus_dp" : 902,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6476.727925,
+      "pos_consensus_dp" : 2452,
+      "propose" : 380.981242,
+      "propose_dp" : 79,
+      "write" : 471.116908,
+      "write_dp" : 212,
+      "accept" : 1555.8410330000002,
+      "accept_dp" : 848
+    },
+    "batch_requests" : {
+      "avg_size" : 31.286931818181817,
+      "dp" : 26
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 130568,
+      "message_count" : 1982
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 1180320,
+      "message_count" : 21965
+    } ]
+  }, {
+    "ops" : 12000,
+    "time" : 1784369352943,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3816.794,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8805.584898,
+      "total_dp" : 2735,
+      "consensus" : 2322.594083,
+      "consensus_dp" : 253,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6706.9924869999995,
+      "pos_consensus_dp" : 2813,
+      "propose" : 344.36298999999997,
+      "propose_dp" : 103,
+      "write" : 562.6309749999999,
+      "write_dp" : 273,
+      "accept" : 1415.600118,
+      "accept_dp" : 216
+    },
+    "batch_requests" : {
+      "avg_size" : 30.969072164948454,
+      "dp" : 25
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 142744,
+      "message_count" : 2166
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 1290791,
+      "message_count" : 23977
+    } ]
+  }, {
+    "ops" : 13000,
+    "time" : 1784369353209,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3773.585,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8462.056647,
+      "total_dp" : 3000,
+      "consensus" : 2321.325565,
+      "consensus_dp" : 218,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6368.910711,
+      "pos_consensus_dp" : 3017,
+      "propose" : 340.769602,
+      "propose_dp" : 99,
+      "write" : 515.013729,
+      "write_dp" : 224,
+      "accept" : 1465.542234,
+      "accept_dp" : 181
+    },
+    "batch_requests" : {
+      "avg_size" : 30.739952718676122,
+      "dp" : 24
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 154909,
+      "message_count" : 2351
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 1398302,
+      "message_count" : 25935
+    } ]
+  }, {
+    "ops" : 14000,
+    "time" : 1784369353469,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3846.1538,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8143.873014999999,
+      "total_dp" : 2577,
+      "consensus" : 2455.9851519999997,
+      "consensus_dp" : 239,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5938.067493,
+      "pos_consensus_dp" : 2523,
+      "propose" : 419.71988500000003,
+      "propose_dp" : 68,
+      "write" : 517.576027,
+      "write_dp" : 228,
+      "accept" : 1518.68924,
+      "accept_dp" : 207
+    },
+    "batch_requests" : {
+      "avg_size" : 30.047210300429185,
+      "dp" : 23
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 166902,
+      "message_count" : 2532
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 1508660,
+      "message_count" : 27945
+    } ]
+  }, {
+    "ops" : 15000,
+    "time" : 1784369353727,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3891.0505,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 9461.926526000001,
+      "total_dp" : 3065,
+      "consensus" : 2332.9562400000004,
+      "consensus_dp" : 271,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 7362.853544,
+      "pos_consensus_dp" : 3019,
+      "propose" : 396.474017,
+      "propose_dp" : 85,
+      "write" : 486.40769,
+      "write_dp" : 200,
+      "accept" : 1450.074533,
+      "accept_dp" : 155
+    },
+    "batch_requests" : {
+      "avg_size" : 29.89243027888446,
+      "dp" : 23
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 179651,
+      "message_count" : 2726
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 1618689,
+      "message_count" : 29949
+    } ]
+  }, {
+    "ops" : 16000,
+    "time" : 1784369354003,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3636.3635,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8100.42556,
+      "total_dp" : 3317,
+      "consensus" : 2315.716185,
+      "consensus_dp" : 283,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6030.847925,
+      "pos_consensus_dp" : 3359,
+      "propose" : 425.92338299999994,
+      "propose_dp" : 80,
+      "write" : 449.167124,
+      "write_dp" : 249,
+      "accept" : 1440.625678,
+      "accept_dp" : 252
+    },
+    "batch_requests" : {
+      "avg_size" : 29.613678373382626,
+      "dp" : 22
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 191241,
+      "message_count" : 2901
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 1730140,
+      "message_count" : 31979
+    } ]
+  }, {
+    "ops" : 17000,
+    "time" : 1784369354280,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3610.1084,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8256.545716,
+      "total_dp" : 3273,
+      "consensus" : 2456.290435,
+      "consensus_dp" : 261,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6052.673989,
+      "pos_consensus_dp" : 3265,
+      "propose" : 407.04148499999997,
+      "propose_dp" : 86,
+      "write" : 601.521717,
+      "write_dp" : 228,
+      "accept" : 1447.727233,
+      "accept_dp" : 180
+    },
+    "batch_requests" : {
+      "avg_size" : 29.152397260273972,
+      "dp" : 22
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 202211,
+      "message_count" : 3068
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 1837649,
+      "message_count" : 33937
+    } ]
+  }, {
+    "ops" : 18000,
+    "time" : 1784369354533,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3968.254,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8583.091529,
+      "total_dp" : 2548,
+      "consensus" : 2244.209102,
+      "consensus_dp" : 252,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6586.161414,
+      "pos_consensus_dp" : 2485,
+      "propose" : 412.655402,
+      "propose_dp" : 68,
+      "write" : 515.450868,
+      "write_dp" : 235,
+      "accept" : 1316.102832,
+      "accept_dp" : 212
+    },
+    "batch_requests" : {
+      "avg_size" : 29.119547657512115,
+      "dp" : 21
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 215396,
+      "message_count" : 3267
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 1950973,
+      "message_count" : 36001
+    } ]
+  }, {
+    "ops" : 19000,
+    "time" : 1784369354803,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3703.7036,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8085.01809,
+      "total_dp" : 2812,
+      "consensus" : 2527.4714249999997,
+      "consensus_dp" : 1054,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5785.030113,
+      "pos_consensus_dp" : 2520,
+      "propose" : 394.301723,
+      "propose_dp" : 76,
+      "write" : 401.74003000000005,
+      "write_dp" : 211,
+      "accept" : 1731.429672,
+      "accept_dp" : 1070
+    },
+    "batch_requests" : {
+      "avg_size" : 28.771558245083206,
+      "dp" : 21
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 227674,
+      "message_count" : 3453
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 2060671,
+      "message_count" : 37999
+    } ]
+  }, {
+    "ops" : 20000,
+    "time" : 1784369355067,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3787.879,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8291.580327,
+      "total_dp" : 2413,
+      "consensus" : 2148.567864,
+      "consensus_dp" : 218,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6367.880786999999,
+      "pos_consensus_dp" : 2448,
+      "propose" : 384.921633,
+      "propose_dp" : 78,
+      "write" : 429.164239,
+      "write_dp" : 225,
+      "accept" : 1334.481992,
+      "accept_dp" : 231
+    },
+    "batch_requests" : {
+      "avg_size" : 28.574893009985736,
+      "dp" : 20
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 241025,
+      "message_count" : 3656
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 2169598,
+      "message_count" : 39983
+    } ]
+  }, {
+    "ops" : 21000,
+    "time" : 1784369355326,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3861.004,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7653.883610999999,
+      "total_dp" : 1917,
+      "consensus" : 2456.827331,
+      "consensus_dp" : 268,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5425.435706,
+      "pos_consensus_dp" : 1916,
+      "propose" : 403.282188,
+      "propose_dp" : 105,
+      "write" : 600.2059059999999,
+      "write_dp" : 181,
+      "accept" : 1453.339237,
+      "accept_dp" : 206
+    },
+    "batch_requests" : {
+      "avg_size" : 28.272849462365592,
+      "dp" : 20
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 253812,
+      "message_count" : 3849
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 2279957,
+      "message_count" : 41993
+    } ]
+  }, {
+    "ops" : 22000,
+    "time" : 1784369355586,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3861.004,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8573.452975,
+      "total_dp" : 2609,
+      "consensus" : 2494.868855,
+      "consensus_dp" : 658,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6319.491397,
+      "pos_consensus_dp" : 2526,
+      "propose" : 405.704445,
+      "propose_dp" : 67,
+      "write" : 608.108371,
+      "write_dp" : 753,
+      "accept" : 1481.056039,
+      "accept_dp" : 174
+    },
+    "batch_requests" : {
+      "avg_size" : 28.22948717948718,
+      "dp" : 20
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 265337,
+      "message_count" : 4024
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 2390097,
+      "message_count" : 43999
+    } ]
+  }, {
+    "ops" : 23000,
+    "time" : 1784369355842,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3921.5686,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8973.324105,
+      "total_dp" : 1960,
+      "consensus" : 2455.499726,
+      "consensus_dp" : 246,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6721.613247,
+      "pos_consensus_dp" : 1949,
+      "propose" : 328.164632,
+      "propose_dp" : 106,
+      "write" : 629.6382689999999,
+      "write_dp" : 230,
+      "accept" : 1497.696825,
+      "accept_dp" : 167
+    },
+    "batch_requests" : {
+      "avg_size" : 28.16156670746634,
+      "dp" : 19
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 278833,
+      "message_count" : 4229
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 2498478,
+      "message_count" : 45973
+    } ]
+  }, {
+    "ops" : 24000,
+    "time" : 1784369356100,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3875.969,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8548.609763,
+      "total_dp" : 1940,
+      "consensus" : 2464.038767,
+      "consensus_dp" : 508,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6307.786865,
+      "pos_consensus_dp" : 1867,
+      "propose" : 387.77246,
+      "propose_dp" : 78,
+      "write" : 494.238007,
+      "write_dp" : 198,
+      "accept" : 1582.0283,
+      "accept_dp" : 485
+    },
+    "batch_requests" : {
+      "avg_size" : 28.09590643274854,
+      "dp" : 19
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 292212,
+      "message_count" : 4431
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 2607847,
+      "message_count" : 47965
+    } ]
+  }, {
+    "ops" : 25000,
+    "time" : 1784369356349,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 4032.258,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8550.775185,
+      "total_dp" : 2219,
+      "consensus" : 2324.150721,
+      "consensus_dp" : 230,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6454.601366000001,
+      "pos_consensus_dp" : 2172,
+      "propose" : 370.713056,
+      "propose_dp" : 68,
+      "write" : 522.773852,
+      "write_dp" : 226,
+      "accept" : 1430.6638130000001,
+      "accept_dp" : 164
+    },
+    "batch_requests" : {
+      "avg_size" : 28.04035874439462,
+      "dp" : 19
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 305476,
+      "message_count" : 4632
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 2718755,
+      "message_count" : 49985
+    } ]
+  }, {
+    "ops" : 26000,
+    "time" : 1784369356606,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3906.25,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8178.424128,
+      "total_dp" : 2436,
+      "consensus" : 2525.877472,
+      "consensus_dp" : 676,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5897.984778,
+      "pos_consensus_dp" : 2293,
+      "propose" : 398.250365,
+      "propose_dp" : 73,
+      "write" : 528.239608,
+      "write_dp" : 225,
+      "accept" : 1599.3874990000002,
+      "accept_dp" : 663
+    },
+    "batch_requests" : {
+      "avg_size" : 27.850107066381156,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 317844,
+      "message_count" : 4820
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 2828017,
+      "message_count" : 51975
+    } ]
+  }, {
+    "ops" : 27000,
+    "time" : 1784369356865,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3875.969,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8504.718581000001,
+      "total_dp" : 2962,
+      "consensus" : 2491.261689,
+      "consensus_dp" : 510,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6262.695334,
+      "pos_consensus_dp" : 2958,
+      "propose" : 386.068167,
+      "propose_dp" : 144,
+      "write" : 601.4688930000001,
+      "write_dp" : 206,
+      "accept" : 1503.724629,
+      "accept_dp" : 500
+    },
+    "batch_requests" : {
+      "avg_size" : 27.754620123203285,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 330321,
+      "message_count" : 5009
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 2937386,
+      "message_count" : 53967
+    } ]
+  }, {
+    "ops" : 28000,
+    "time" : 1784369357126,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3846.1538,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8633.495034,
+      "total_dp" : 2288,
+      "consensus" : 2449.6743250000004,
+      "consensus_dp" : 225,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6425.298822,
+      "pos_consensus_dp" : 2313,
+      "propose" : 388.85568,
+      "propose_dp" : 64,
+      "write" : 491.33768699999996,
+      "write_dp" : 269,
+      "accept" : 1569.480958,
+      "accept_dp" : 189
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 341409,
+      "message_count" : 5177
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 3048072,
+      "message_count" : 55983
+    } ]
+  }, {
+    "ops" : 29000,
+    "time" : 1784369357389,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3802.2812,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8256.292158,
+      "total_dp" : 2686,
+      "consensus" : 2396.90638,
+      "consensus_dp" : 504,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6092.516215,
+      "pos_consensus_dp" : 2604,
+      "propose" : 404.084199,
+      "propose_dp" : 70,
+      "write" : 453.129011,
+      "write_dp" : 222,
+      "accept" : 1539.69317,
+      "accept_dp" : 462
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 353611,
+      "message_count" : 5361
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 3157889,
+      "message_count" : 57983
+    } ]
+  }, {
+    "ops" : 30000,
+    "time" : 1784369357663,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3663.0037,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8459.099004000002,
+      "total_dp" : 3583,
+      "consensus" : 2521.707571,
+      "consensus_dp" : 264,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6193.579804999999,
+      "pos_consensus_dp" : 3562,
+      "propose" : 428.85249,
+      "propose_dp" : 87,
+      "write" : 598.609569,
+      "write_dp" : 195,
+      "accept" : 1494.2455120000002,
+      "accept_dp" : 156
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 364502,
+      "message_count" : 5526
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 3266490,
+      "message_count" : 59961
+    } ]
+  }, {
+    "ops" : 31000,
+    "time" : 1784369357918,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3937.0078,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7333.759481,
+      "total_dp" : 1996,
+      "consensus" : 2326.3681770000003,
+      "consensus_dp" : 208,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5242.967979,
+      "pos_consensus_dp" : 2015,
+      "propose" : 393.640303,
+      "propose_dp" : 62,
+      "write" : 523.003775,
+      "write_dp" : 161,
+      "accept" : 1409.724099,
+      "accept_dp" : 183
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 376858,
+      "message_count" : 5714
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 3376189,
+      "message_count" : 61959
+    } ]
+  }, {
+    "ops" : 32000,
+    "time" : 1784369358174,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3921.5686,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8014.215383000001,
+      "total_dp" : 2094,
+      "consensus" : 2404.093221,
+      "consensus_dp" : 228,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5848.573499,
+      "pos_consensus_dp" : 2064,
+      "propose" : 393.810339,
+      "propose_dp" : 72,
+      "write" : 517.608445,
+      "write_dp" : 245,
+      "accept" : 1492.674437,
+      "accept_dp" : 133
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 389640,
+      "message_count" : 5907
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 3487319,
+      "message_count" : 63983
+    } ]
+  }, {
+    "ops" : 33000,
+    "time" : 1784369358434,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3861.004,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7982.977390999999,
+      "total_dp" : 2620,
+      "consensus" : 2424.993828,
+      "consensus_dp" : 365,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5785.927716,
+      "pos_consensus_dp" : 2544,
+      "propose" : 364.18590500000005,
+      "propose_dp" : 90,
+      "write" : 610.981213,
+      "write_dp" : 228,
+      "accept" : 1449.82671,
+      "accept_dp" : 309
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 401793,
+      "message_count" : 6092
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 3593061,
+      "message_count" : 65909
+    } ]
+  }, {
+    "ops" : 34000,
+    "time" : 1784369358708,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3663.0037,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8006.201993,
+      "total_dp" : 2685,
+      "consensus" : 2474.727249,
+      "consensus_dp" : 421,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5805.491214,
+      "pos_consensus_dp" : 2649,
+      "propose" : 435.30247399999996,
+      "propose_dp" : 87,
+      "write" : 489.272974,
+      "write_dp" : 223,
+      "accept" : 1550.151801,
+      "accept_dp" : 361
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 413861,
+      "message_count" : 6275
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 3706168,
+      "message_count" : 67969
+    } ]
+  }, {
+    "ops" : 35000,
+    "time" : 1784369358959,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3984.0637,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7806.532448,
+      "total_dp" : 2189,
+      "consensus" : 2454.69629,
+      "consensus_dp" : 220,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5586.857824,
+      "pos_consensus_dp" : 2180,
+      "propose" : 397.243152,
+      "propose_dp" : 67,
+      "write" : 597.990461,
+      "write_dp" : 152,
+      "accept" : 1459.462677,
+      "accept_dp" : 152
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 425350,
+      "message_count" : 6449
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 3815535,
+      "message_count" : 69961
+    } ]
+  }, {
+    "ops" : 36000,
+    "time" : 1784369359219,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3861.004,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7352.535574,
+      "total_dp" : 2300,
+      "consensus" : 2396.899228,
+      "consensus_dp" : 314,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5190.757774000001,
+      "pos_consensus_dp" : 2306,
+      "propose" : 387.48765999999995,
+      "propose_dp" : 70,
+      "write" : 580.907988,
+      "write_dp" : 208,
+      "accept" : 1428.50358,
+      "accept_dp" : 328
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 437539,
+      "message_count" : 6633
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 3924573,
+      "message_count" : 71947
+    } ]
+  }, {
+    "ops" : 37000,
+    "time" : 1784369359482,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3816.794,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7779.2601270000005,
+      "total_dp" : 2731,
+      "consensus" : 2287.554685,
+      "consensus_dp" : 635,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5728.214724,
+      "pos_consensus_dp" : 2644,
+      "propose" : 391.050725,
+      "propose_dp" : 86,
+      "write" : 605.117179,
+      "write_dp" : 240,
+      "accept" : 1291.386781,
+      "accept_dp" : 619
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 450017,
+      "message_count" : 6822
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 4036358,
+      "message_count" : 73983
+    } ]
+  }, {
+    "ops" : 38000,
+    "time" : 1784369359736,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3937.0078,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7591.27695,
+      "total_dp" : 2327,
+      "consensus" : 2459.714196,
+      "consensus_dp" : 254,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5363.149968000001,
+      "pos_consensus_dp" : 2323,
+      "propose" : 384.566761,
+      "propose_dp" : 82,
+      "write" : 635.493652,
+      "write_dp" : 194,
+      "accept" : 1439.653783,
+      "accept_dp" : 211
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 462283,
+      "message_count" : 7008
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 4146720,
+      "message_count" : 75993
+    } ]
+  }, {
+    "ops" : 39000,
+    "time" : 1784369359994,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3891.0505,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7149.989139,
+      "total_dp" : 2312,
+      "consensus" : 2352.069079,
+      "consensus_dp" : 212,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5044.058196999999,
+      "pos_consensus_dp" : 2294,
+      "propose" : 401.07610700000004,
+      "propose_dp" : 90,
+      "write" : 490.720127,
+      "write_dp" : 209,
+      "accept" : 1460.272845,
+      "accept_dp" : 146
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 473570,
+      "message_count" : 7179
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 4255757,
+      "message_count" : 77979
+    } ]
+  }, {
+    "ops" : 40000,
+    "time" : 1784369360249,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3921.5686,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7104.573342000001,
+      "total_dp" : 2112,
+      "consensus" : 2333.668162,
+      "consensus_dp" : 273,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5003.296847,
+      "pos_consensus_dp" : 2137,
+      "propose" : 400.47503600000005,
+      "propose_dp" : 60,
+      "write" : 523.167752,
+      "write_dp" : 197,
+      "accept" : 1410.025374,
+      "accept_dp" : 179
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 486638,
+      "message_count" : 7377
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 4366006,
+      "message_count" : 79987
+    } ]
+  }, {
+    "ops" : 41000,
+    "time" : 1784369360505,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3921.5686,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 6835.627157,
+      "total_dp" : 1928,
+      "consensus" : 2412.993326,
+      "consensus_dp" : 187,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 4668.647105,
+      "pos_consensus_dp" : 1905,
+      "propose" : 410.331684,
+      "propose_dp" : 78,
+      "write" : 571.105952,
+      "write_dp" : 160,
+      "accept" : 1431.55569,
+      "accept_dp" : 126
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 499706,
+      "message_count" : 7575
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 4475924,
+      "message_count" : 81989
+    } ]
+  }, {
+    "ops" : 42000,
+    "time" : 1784369360764,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3875.969,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 9372.045551000001,
+      "total_dp" : 2418,
+      "consensus" : 2344.512721,
+      "consensus_dp" : 263,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 7250.803247999999,
+      "pos_consensus_dp" : 2432,
+      "propose" : 387.05510300000003,
+      "propose_dp" : 64,
+      "write" : 527.525007,
+      "write_dp" : 230,
+      "accept" : 1429.932611,
+      "accept_dp" : 213
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 513168,
+      "message_count" : 7779
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 4584855,
+      "message_count" : 83973
+    } ]
+  }, {
+    "ops" : 43000,
+    "time" : 1784369361022,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3891.0505,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8407.800518999999,
+      "total_dp" : 2322,
+      "consensus" : 2614.255767,
+      "consensus_dp" : 749,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6028.803087,
+      "pos_consensus_dp" : 2320,
+      "propose" : 402.39664799999997,
+      "propose_dp" : 68,
+      "write" : 726.4089799999999,
+      "write_dp" : 812,
+      "accept" : 1485.450139,
+      "accept_dp" : 153
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 525433,
+      "message_count" : 7965
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 4694665,
+      "message_count" : 85973
+    } ]
+  }, {
+    "ops" : 44000,
+    "time" : 1784369361281,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3861.004,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7800.3701040000005,
+      "total_dp" : 2586,
+      "consensus" : 2401.758142,
+      "consensus_dp" : 380,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5626.603252999999,
+      "pos_consensus_dp" : 2562,
+      "propose" : 378.478925,
+      "propose_dp" : 69,
+      "write" : 560.161797,
+      "write_dp" : 176,
+      "accept" : 1463.11742,
+      "accept_dp" : 360
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 537595,
+      "message_count" : 8150
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 4803376,
+      "message_count" : 87953
+    } ]
+  }, {
+    "ops" : 45000,
+    "time" : 1784369361537,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3906.25,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7488.840556,
+      "total_dp" : 2312,
+      "consensus" : 2391.173996,
+      "consensus_dp" : 212,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5337.808474,
+      "pos_consensus_dp" : 2331,
+      "propose" : 383.759595,
+      "propose_dp" : 95,
+      "write" : 557.765528,
+      "write_dp" : 190,
+      "accept" : 1449.6488729999999,
+      "accept_dp" : 163
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 549787,
+      "message_count" : 8334
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 4912752,
+      "message_count" : 89945
+    } ]
+  }, {
+    "ops" : 46000,
+    "time" : 1784369361796,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3875.969,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8071.248613,
+      "total_dp" : 2715,
+      "consensus" : 2306.19738,
+      "consensus_dp" : 439,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6001.95047,
+      "pos_consensus_dp" : 2690,
+      "propose" : 386.399425,
+      "propose_dp" : 63,
+      "write" : 487.249288,
+      "write_dp" : 216,
+      "accept" : 1432.5486669999998,
+      "accept_dp" : 414
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 561955,
+      "message_count" : 8519
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 5022999,
+      "message_count" : 91953
+    } ]
+  }, {
+    "ops" : 47000,
+    "time" : 1784369362052,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3921.5686,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8381.825121,
+      "total_dp" : 2498,
+      "consensus" : 2459.133256,
+      "consensus_dp" : 861,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6265.820199,
+      "pos_consensus_dp" : 2466,
+      "propose" : 477.141123,
+      "propose_dp" : 831,
+      "write" : 508.58283500000005,
+      "write_dp" : 319,
+      "accept" : 1473.409298,
+      "accept_dp" : 261
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 574346,
+      "message_count" : 8706
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 5135221,
+      "message_count" : 93997
+    } ]
+  }, {
+    "ops" : 48000,
+    "time" : 1784369362304,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3968.254,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7669.540204,
+      "total_dp" : 1633,
+      "consensus" : 2340.868105,
+      "consensus_dp" : 217,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5548.366025,
+      "pos_consensus_dp" : 1609,
+      "propose" : 369.861154,
+      "propose_dp" : 68,
+      "write" : 547.7548149999999,
+      "write_dp" : 191,
+      "accept" : 1423.2521359999998,
+      "accept_dp" : 179
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 587810,
+      "message_count" : 8910
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 5243931,
+      "message_count" : 95977
+    } ]
+  }, {
+    "ops" : 49000,
+    "time" : 1784369362558,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3937.0078,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8079.9982580000005,
+      "total_dp" : 2490,
+      "consensus" : 2368.445232,
+      "consensus_dp" : 193,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5939.396621,
+      "pos_consensus_dp" : 2519,
+      "propose" : 382.455425,
+      "propose_dp" : 60,
+      "write" : 529.836138,
+      "write_dp" : 185,
+      "accept" : 1456.153669,
+      "accept_dp" : 147
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 600468,
+      "message_count" : 9102
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 5353418,
+      "message_count" : 97971
+    } ]
+  }, {
+    "ops" : 50000,
+    "time" : 1784369362817,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3875.969,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 10094.157459,
+      "total_dp" : 3542,
+      "consensus" : 2379.170857,
+      "consensus_dp" : 892,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 7955.340915,
+      "pos_consensus_dp" : 3346,
+      "propose" : 385.176848,
+      "propose_dp" : 66,
+      "write" : 434.22057,
+      "write_dp" : 219,
+      "accept" : 1559.773439,
+      "accept_dp" : 858
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 613150,
+      "message_count" : 9294
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 5461587,
+      "message_count" : 99936
+    } ]
+  }, {
+    "ops" : 51000,
+    "time" : 1784369363074,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3891.0505,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 9286.164442,
+      "total_dp" : 1882,
+      "consensus" : 2399.509617,
+      "consensus_dp" : 781,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 7123.7597319999995,
+      "pos_consensus_dp" : 1885,
+      "propose" : 389.896822,
+      "propose_dp" : 128,
+      "write" : 567.228556,
+      "write_dp" : 792,
+      "accept" : 1442.384239,
+      "accept_dp" : 153
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 626882,
+      "message_count" : 9503
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 5571617,
+      "message_count" : 101940
+    } ]
+  }, {
+    "ops" : 52000,
+    "time" : 1784369363328,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3937.0078,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8029.723718,
+      "total_dp" : 2422,
+      "consensus" : 2315.613281,
+      "consensus_dp" : 204,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5948.532822,
+      "pos_consensus_dp" : 2476,
+      "propose" : 377.69901600000003,
+      "propose_dp" : 65,
+      "write" : 523.029708,
+      "write_dp" : 197,
+      "accept" : 1414.884557,
+      "accept_dp" : 169
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 638866,
+      "message_count" : 9684
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 5683396,
+      "message_count" : 103976
+    } ]
+  }, {
+    "ops" : 53000,
+    "time" : 1784369363583,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3937.0078,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8929.688756,
+      "total_dp" : 2778,
+      "consensus" : 2332.83871,
+      "consensus_dp" : 205,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6827.205833,
+      "pos_consensus_dp" : 2740,
+      "propose" : 387.745296,
+      "propose_dp" : 74,
+      "write" : 503.13248,
+      "write_dp" : 205,
+      "accept" : 1441.960934,
+      "accept_dp" : 157
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 651036,
+      "message_count" : 9869
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 5792214,
+      "message_count" : 105958
+    } ]
+  }, {
+    "ops" : 54000,
+    "time" : 1784369363840,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3906.25,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7999.525592,
+      "total_dp" : 2565,
+      "consensus" : 2385.4259700000002,
+      "consensus_dp" : 217,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5844.937275,
+      "pos_consensus_dp" : 2604,
+      "propose" : 377.13113699999997,
+      "propose_dp" : 75,
+      "write" : 591.868834,
+      "write_dp" : 177,
+      "accept" : 1416.425999,
+      "accept_dp" : 124
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 663312,
+      "message_count" : 10055
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 5904548,
+      "message_count" : 108004
+    } ]
+  }, {
+    "ops" : 55000,
+    "time" : 1784369364093,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3968.254,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7946.257933,
+      "total_dp" : 2153,
+      "consensus" : 2386.106213,
+      "consensus_dp" : 240,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5771.324931,
+      "pos_consensus_dp" : 2149,
+      "propose" : 363.26110600000004,
+      "propose_dp" : 70,
+      "write" : 576.310201,
+      "write_dp" : 199,
+      "accept" : 1446.5349059999999,
+      "accept_dp" : 173
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 674914,
+      "message_count" : 10230
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 6012051,
+      "message_count" : 109962
+    } ]
+  }, {
+    "ops" : 56000,
+    "time" : 1784369364359,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3773.585,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 9770.666791,
+      "total_dp" : 2756,
+      "consensus" : 2380.361167,
+      "consensus_dp" : 296,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 7607.004926,
+      "pos_consensus_dp" : 2711,
+      "propose" : 377.84812900000003,
+      "propose_dp" : 63,
+      "write" : 576.881197,
+      "write_dp" : 246,
+      "accept" : 1425.6318410000001,
+      "accept_dp" : 194
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 687391,
+      "message_count" : 10419
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 6124273,
+      "message_count" : 112006
+    } ]
+  }, {
+    "ops" : 57000,
+    "time" : 1784369364614,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3921.5686,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 9893.35417,
+      "total_dp" : 2593,
+      "consensus" : 2351.09412,
+      "consensus_dp" : 346,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 7780.4988109999995,
+      "pos_consensus_dp" : 2565,
+      "propose" : 395.336007,
+      "propose_dp" : 67,
+      "write" : 526.876292,
+      "write_dp" : 335,
+      "accept" : 1428.881821,
+      "accept_dp" : 191
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 698470,
+      "message_count" : 10587
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 6232433,
+      "message_count" : 113976
+    } ]
+  }, {
+    "ops" : 58000,
+    "time" : 1784369364877,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3802.2812,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8135.787592000001,
+      "total_dp" : 2380,
+      "consensus" : 2382.370963,
+      "consensus_dp" : 239,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5983.5287450000005,
+      "pos_consensus_dp" : 2409,
+      "propose" : 388.76656099999997,
+      "propose_dp" : 87,
+      "write" : 546.035643,
+      "write_dp" : 213,
+      "accept" : 1447.568759,
+      "accept_dp" : 179
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 710544,
+      "message_count" : 10770
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 6341586,
+      "message_count" : 115964
+    } ]
+  }, {
+    "ops" : 59000,
+    "time" : 1784369365130,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3952.569,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8871.73612,
+      "total_dp" : 2464,
+      "consensus" : 2353.5304589999996,
+      "consensus_dp" : 213,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6726.281687,
+      "pos_consensus_dp" : 2501,
+      "propose" : 349.34247100000005,
+      "propose_dp" : 61,
+      "write" : 534.924658,
+      "write_dp" : 204,
+      "accept" : 1469.26333,
+      "accept_dp" : 181
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 724296,
+      "message_count" : 10979
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 6451945,
+      "message_count" : 117974
+    } ]
+  }, {
+    "ops" : 60000,
+    "time" : 1784369365384,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3952.569,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 9079.439078,
+      "total_dp" : 2264,
+      "consensus" : 2428.408164,
+      "consensus_dp" : 516,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6872.814133000001,
+      "pos_consensus_dp" : 2226,
+      "propose" : 380.85999200000003,
+      "propose_dp" : 73,
+      "write" : 516.036513,
+      "write_dp" : 178,
+      "accept" : 1531.511659,
+      "accept_dp" : 512
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 737680,
+      "message_count" : 11181
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 6563623,
+      "message_count" : 120008
+    } ]
+  }, {
+    "ops" : 61000,
+    "time" : 1784369365644,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3861.004,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7951.652894000001,
+      "total_dp" : 2229,
+      "consensus" : 2523.817959,
+      "consensus_dp" : 587,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5654.195894,
+      "pos_consensus_dp" : 2215,
+      "propose" : 375.468323,
+      "propose_dp" : 67,
+      "write" : 518.490884,
+      "write_dp" : 254,
+      "accept" : 1629.858752,
+      "accept_dp" : 616
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 750154,
+      "message_count" : 11370
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 6670689,
+      "message_count" : 121958
+    } ]
+  }, {
+    "ops" : 62000,
+    "time" : 1784369365901,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3891.0505,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 9820.437159,
+      "total_dp" : 2449,
+      "consensus" : 2308.2681669999997,
+      "consensus_dp" : 214,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 7724.884392,
+      "pos_consensus_dp" : 2415,
+      "propose" : 362.174141,
+      "propose_dp" : 62,
+      "write" : 502.367411,
+      "write_dp" : 218,
+      "accept" : 1443.726615,
+      "accept_dp" : 157
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 763224,
+      "message_count" : 11568
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 6780498,
+      "message_count" : 123958
+    } ]
+  }, {
+    "ops" : 63000,
+    "time" : 1784369366160,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3875.969,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 17023.871015,
+      "total_dp" : 3065,
+      "consensus" : 2432.343394,
+      "consensus_dp" : 427,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 14809.396302,
+      "pos_consensus_dp" : 3115,
+      "propose" : 380.25592700000004,
+      "propose_dp" : 60,
+      "write" : 556.3165359999999,
+      "write_dp" : 191,
+      "accept" : 1495.770931,
+      "accept_dp" : 377
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 775499,
+      "message_count" : 11754
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 6887669,
+      "message_count" : 125910
+    } ]
+  }, {
+    "ops" : 64000,
+    "time" : 1784369366420,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3846.1538,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 17015.270735,
+      "total_dp" : 3588,
+      "consensus" : 2231.5589219999997,
+      "consensus_dp" : 521,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 15011.10336,
+      "pos_consensus_dp" : 3656,
+      "propose" : 371.836875,
+      "propose_dp" : 78,
+      "write" : 471.360424,
+      "write_dp" : 215,
+      "accept" : 1388.361623,
+      "accept_dp" : 471
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 788952,
+      "message_count" : 11958
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 6993303,
+      "message_count" : 127834
+    } ]
+  }, {
+    "ops" : 65000,
+    "time" : 1784369366669,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 4032.258,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 17129.023669,
+      "total_dp" : 3187,
+      "consensus" : 2251.314743,
+      "consensus_dp" : 262,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 15113.939636,
+      "pos_consensus_dp" : 3261,
+      "propose" : 391.348838,
+      "propose_dp" : 80,
+      "write" : 454.658357,
+      "write_dp" : 217,
+      "accept" : 1405.307548,
+      "accept_dp" : 145
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 800912,
+      "message_count" : 12140
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 7110912,
+      "message_count" : 129976
+    } ]
+  }, {
+    "ops" : 66000,
+    "time" : 1784369366921,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3984.0637,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 9736.641708000001,
+      "total_dp" : 3063,
+      "consensus" : 2372.646147,
+      "consensus_dp" : 1241,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 7585.354932,
+      "pos_consensus_dp" : 2907,
+      "propose" : 377.984695,
+      "propose_dp" : 71,
+      "write" : 528.568717,
+      "write_dp" : 903,
+      "accept" : 1466.0927350000002,
+      "accept_dp" : 374
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 813700,
+      "message_count" : 12333
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 7223685,
+      "message_count" : 132014
+    } ]
+  }, {
+    "ops" : 67000,
+    "time" : 1784369367173,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3984.0637,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8171.375852,
+      "total_dp" : 2422,
+      "consensus" : 2310.001636,
+      "consensus_dp" : 730,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6077.923046,
+      "pos_consensus_dp" : 2357,
+      "propose" : 372.13562199999996,
+      "propose_dp" : 52,
+      "write" : 543.161069,
+      "write_dp" : 778,
+      "accept" : 1394.704945,
+      "accept_dp" : 181
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 827153,
+      "message_count" : 12537
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 7333056,
+      "message_count" : 134006
+    } ]
+  }, {
+    "ops" : 68000,
+    "time" : 1784369367436,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3816.794,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7447.894329,
+      "total_dp" : 2368,
+      "consensus" : 2201.505228,
+      "consensus_dp" : 306,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5480.445598,
+      "pos_consensus_dp" : 2351,
+      "propose" : 390.391771,
+      "propose_dp" : 67,
+      "write" : 419.595389,
+      "write_dp" : 188,
+      "accept" : 1391.5180679999999,
+      "accept_dp" : 268
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 839021,
+      "message_count" : 12717
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 7441655,
+      "message_count" : 135984
+    } ]
+  }, {
+    "ops" : 69000,
+    "time" : 1784369367700,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3802.2812,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7639.0242450000005,
+      "total_dp" : 2681,
+      "consensus" : 2312.539569,
+      "consensus_dp" : 217,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5577.167219999999,
+      "pos_consensus_dp" : 2684,
+      "propose" : 406.65892599999995,
+      "propose_dp" : 69,
+      "write" : 498.904567,
+      "write_dp" : 173,
+      "accept" : 1406.976076,
+      "accept_dp" : 135
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 849911,
+      "message_count" : 12882
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 7551793,
+      "message_count" : 137990
+    } ]
+  }, {
+    "ops" : 70000,
+    "time" : 1784369367964,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3802.2812,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8256.144936,
+      "total_dp" : 2708,
+      "consensus" : 2358.889149,
+      "consensus_dp" : 221,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6137.279947999999,
+      "pos_consensus_dp" : 2667,
+      "propose" : 400.269686,
+      "propose_dp" : 77,
+      "write" : 535.2415500000001,
+      "write_dp" : 198,
+      "accept" : 1423.377913,
+      "accept_dp" : 189
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 861590,
+      "message_count" : 13059
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 7663802,
+      "message_count" : 140030
+    } ]
+  }, {
+    "ops" : 71000,
+    "time" : 1784369368224,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3846.1538,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7601.870875,
+      "total_dp" : 2469,
+      "consensus" : 2351.399256,
+      "consensus_dp" : 431,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5528.624807,
+      "pos_consensus_dp" : 2467,
+      "propose" : 434.658378,
+      "propose_dp" : 422,
+      "write" : 480.724071,
+      "write_dp" : 212,
+      "accept" : 1436.016807,
+      "accept_dp" : 135
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 874151,
+      "message_count" : 13250
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 7773283,
+      "message_count" : 142024
+    } ]
+  }, {
+    "ops" : 72000,
+    "time" : 1784369368484,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3846.1538,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7703.115967,
+      "total_dp" : 2371,
+      "consensus" : 2440.115997,
+      "consensus_dp" : 211,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5491.690382,
+      "pos_consensus_dp" : 2371,
+      "propose" : 391.252612,
+      "propose_dp" : 61,
+      "write" : 599.165189,
+      "write_dp" : 178,
+      "accept" : 1449.698196,
+      "accept_dp" : 152
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 886154,
+      "message_count" : 13431
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 7882112,
+      "message_count" : 144006
+    } ]
+  }, {
+    "ops" : 73000,
+    "time" : 1784369368744,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3861.004,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8686.482076,
+      "total_dp" : 2622,
+      "consensus" : 2456.982564,
+      "consensus_dp" : 609,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6443.366158,
+      "pos_consensus_dp" : 2548,
+      "propose" : 346.677722,
+      "propose_dp" : 83,
+      "write" : 567.6720479999999,
+      "write_dp" : 181,
+      "accept" : 1542.632794,
+      "accept_dp" : 586
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 898030,
+      "message_count" : 13611
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 7989832,
+      "message_count" : 145968
+    } ]
+  }, {
+    "ops" : 74000,
+    "time" : 1784369369004,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3861.004,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8058.104695,
+      "total_dp" : 2436,
+      "consensus" : 2542.683009,
+      "consensus_dp" : 539,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5816.195675,
+      "pos_consensus_dp" : 2396,
+      "propose" : 456.79643300000004,
+      "propose_dp" : 533,
+      "write" : 612.561657,
+      "write_dp" : 247,
+      "accept" : 1473.324919,
+      "accept_dp" : 154
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 910397,
+      "message_count" : 13799
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 8100522,
+      "message_count" : 147984
+    } ]
+  }, {
+    "ops" : 75000,
+    "time" : 1784369369261,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3906.25,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7896.271589,
+      "total_dp" : 2056,
+      "consensus" : 2355.7028280000004,
+      "consensus_dp" : 263,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5735.375189,
+      "pos_consensus_dp" : 2051,
+      "propose" : 329.806956,
+      "propose_dp" : 95,
+      "write" : 529.4641790000001,
+      "write_dp" : 253,
+      "accept" : 1496.431693,
+      "accept_dp" : 176
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 922582,
+      "message_count" : 13983
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 8212860,
+      "message_count" : 150030
+    } ]
+  }, {
+    "ops" : 76000,
+    "time" : 1784369369514,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3952.569,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 9765.147568,
+      "total_dp" : 2407,
+      "consensus" : 2372.728089,
+      "consensus_dp" : 818,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 7598.741744,
+      "pos_consensus_dp" : 2260,
+      "propose" : 348.79389000000003,
+      "propose_dp" : 84,
+      "write" : 491.825147,
+      "write_dp" : 220,
+      "accept" : 1532.109052,
+      "accept_dp" : 768
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 935859,
+      "message_count" : 14184
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 8322670,
+      "message_count" : 152030
+    } ]
+  }, {
+    "ops" : 77000,
+    "time" : 1784369369766,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3984.0637,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 9035.958052999998,
+      "total_dp" : 2478,
+      "consensus" : 2357.825503,
+      "consensus_dp" : 747,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6894.684972,
+      "pos_consensus_dp" : 2473,
+      "propose" : 371.758039,
+      "propose_dp" : 81,
+      "write" : 427.741159,
+      "write_dp" : 239,
+      "accept" : 1558.326305,
+      "accept_dp" : 686
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 949324,
+      "message_count" : 14388
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 8430278,
+      "message_count" : 153990
+    } ]
+  }, {
+    "ops" : 78000,
+    "time" : 1784369370024,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3875.969,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8115.7562290000005,
+      "total_dp" : 2352,
+      "consensus" : 2470.4066439999997,
+      "consensus_dp" : 643,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5887.456829,
+      "pos_consensus_dp" : 2251,
+      "propose" : 397.013179,
+      "propose_dp" : 85,
+      "write" : 556.8444420000001,
+      "write_dp" : 269,
+      "accept" : 1516.549023,
+      "accept_dp" : 687
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 962186,
+      "message_count" : 14583
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 8539319,
+      "message_count" : 155976
+    } ]
+  }, {
+    "ops" : 79000,
+    "time" : 1784369370273,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 4016.0642,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8513.717647,
+      "total_dp" : 2136,
+      "consensus" : 2355.674372,
+      "consensus_dp" : 242,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6371.110718999999,
+      "pos_consensus_dp" : 2141,
+      "propose" : 360.264842,
+      "propose_dp" : 69,
+      "write" : 512.460934,
+      "write_dp" : 225,
+      "accept" : 1482.948596,
+      "accept_dp" : 167
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 975452,
+      "message_count" : 14784
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 8650884,
+      "message_count" : 158008
+    } ]
+  }, {
+    "ops" : 80000,
+    "time" : 1784369370526,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3968.254,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 9386.634914,
+      "total_dp" : 2417,
+      "consensus" : 2277.052334,
+      "consensus_dp" : 242,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 7318.320326999999,
+      "pos_consensus_dp" : 2419,
+      "propose" : 354.538621,
+      "propose_dp" : 82,
+      "write" : 409.744525,
+      "write_dp" : 254,
+      "accept" : 1512.769188,
+      "accept_dp" : 195
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 989112,
+      "message_count" : 14991
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 8759709,
+      "message_count" : 159990
+    } ]
+  }, {
+    "ops" : 81000,
+    "time" : 1784369370786,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3861.004,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8485.440405,
+      "total_dp" : 2709,
+      "consensus" : 2501.720742,
+      "consensus_dp" : 787,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6323.578813,
+      "pos_consensus_dp" : 2677,
+      "propose" : 501.29268199999996,
+      "propose_dp" : 823,
+      "write" : 560.866949,
+      "write_dp" : 197,
+      "accept" : 1439.561111,
+      "accept_dp" : 142
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 1001084,
+      "message_count" : 15173
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 8868751,
+      "message_count" : 161976
+    } ]
+  }, {
+    "ops" : 82000,
+    "time" : 1784369371055,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3731.3433,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8555.074205,
+      "total_dp" : 2719,
+      "consensus" : 2384.849793,
+      "consensus_dp" : 237,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6395.015122000001,
+      "pos_consensus_dp" : 2735,
+      "propose" : 382.718436,
+      "propose_dp" : 69,
+      "write" : 579.3828149999999,
+      "write_dp" : 218,
+      "accept" : 1422.7485419999998,
+      "accept_dp" : 170
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 1012881,
+      "message_count" : 15351
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 8980752,
+      "message_count" : 164016
+    } ]
+  }, {
+    "ops" : 83000,
+    "time" : 1784369371307,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3984.0637,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 11620.925968,
+      "total_dp" : 2286,
+      "consensus" : 2510.9223309999998,
+      "consensus_dp" : 822,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 9316.49553,
+      "pos_consensus_dp" : 2381,
+      "propose" : 347.580493,
+      "propose_dp" : 84,
+      "write" : 575.144165,
+      "write_dp" : 269,
+      "accept" : 1588.197673,
+      "accept_dp" : 795
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 1026541,
+      "message_count" : 15558
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 9091223,
+      "message_count" : 166028
+    } ]
+  }, {
+    "ops" : 84000,
+    "time" : 1784369371560,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3968.254,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 9363.589826,
+      "total_dp" : 2129,
+      "consensus" : 2321.438326,
+      "consensus_dp" : 253,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 7249.713823,
+      "pos_consensus_dp" : 2133,
+      "propose" : 374.825703,
+      "propose_dp" : 62,
+      "write" : 507.26957799999997,
+      "write_dp" : 209,
+      "accept" : 1439.3430449999998,
+      "accept_dp" : 159
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 1040002,
+      "message_count" : 15762
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 9200046,
+      "message_count" : 168010
+    } ]
+  }, {
+    "ops" : 85000,
+    "time" : 1784369371821,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3831.4177,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8319.408191999999,
+      "total_dp" : 2350,
+      "consensus" : 2379.3951349999998,
+      "consensus_dp" : 297,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6172.349357,
+      "pos_consensus_dp" : 2385,
+      "propose" : 394.02162699999997,
+      "propose_dp" : 66,
+      "write" : 589.355777,
+      "write_dp" : 344,
+      "accept" : 1396.017731,
+      "accept_dp" : 170
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 1052473,
+      "message_count" : 15951
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 9310296,
+      "message_count" : 170018
+    } ]
+  }, {
+    "ops" : 86000,
+    "time" : 1784369372069,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 4032.258,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 9320.972517,
+      "total_dp" : 2317,
+      "consensus" : 2377.0588620000003,
+      "consensus_dp" : 218,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 7146.624762,
+      "pos_consensus_dp" : 2265,
+      "propose" : 364.533988,
+      "propose_dp" : 74,
+      "write" : 574.2838,
+      "write_dp" : 208,
+      "accept" : 1438.241074,
+      "accept_dp" : 148
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 1065146,
+      "message_count" : 16143
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 9419998,
+      "message_count" : 172016
+    } ]
+  }, {
+    "ops" : 87000,
+    "time" : 1784369372325,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3921.5686,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8340.508693,
+      "total_dp" : 2102,
+      "consensus" : 2281.9335720000004,
+      "consensus_dp" : 322,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6274.596807,
+      "pos_consensus_dp" : 2073,
+      "propose" : 371.322918,
+      "propose_dp" : 53,
+      "write" : 472.303719,
+      "write_dp" : 174,
+      "accept" : 1438.306935,
+      "accept_dp" : 296
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 1078417,
+      "message_count" : 16344
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 9530576,
+      "message_count" : 174030
+    } ]
+  }, {
+    "ops" : 88000,
+    "time" : 1784369372580,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3937.0078,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8336.42115,
+      "total_dp" : 2037,
+      "consensus" : 2421.873581,
+      "consensus_dp" : 466,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6128.644949,
+      "pos_consensus_dp" : 2058,
+      "propose" : 368.983344,
+      "propose_dp" : 66,
+      "write" : 566.038968,
+      "write_dp" : 245,
+      "accept" : 1486.851269,
+      "accept_dp" : 405
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 1092276,
+      "message_count" : 16554
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 9639617,
+      "message_count" : 176016
+    } ]
+  }, {
+    "ops" : 89000,
+    "time" : 1784369372828,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 4048.583,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8879.489808,
+      "total_dp" : 1795,
+      "consensus" : 2330.1851349999997,
+      "consensus_dp" : 257,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6763.220993,
+      "pos_consensus_dp" : 1768,
+      "propose" : 352.640649,
+      "propose_dp" : 77,
+      "write" : 617.417021,
+      "write_dp" : 206,
+      "accept" : 1360.127465,
+      "accept_dp" : 211
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 1105546,
+      "message_count" : 16755
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 9747668,
+      "message_count" : 177984
+    } ]
+  }, {
+    "ops" : 90000,
+    "time" : 1784369373087,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3875.969,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8337.106825,
+      "total_dp" : 2498,
+      "consensus" : 2045.295883,
+      "consensus_dp" : 178,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6518.892242,
+      "pos_consensus_dp" : 2486,
+      "propose" : 387.626658,
+      "propose_dp" : 54,
+      "write" : 500.334208,
+      "write_dp" : 223,
+      "accept" : 1157.3350169999999,
+      "accept_dp" : 195
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 1118021,
+      "message_count" : 16944
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 9859231,
+      "message_count" : 180016
+    } ]
+  }, {
+    "ops" : 91000,
+    "time" : 1784369373345,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3875.969,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8931.792030999999,
+      "total_dp" : 2673,
+      "consensus" : 2191.745712,
+      "consensus_dp" : 452,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6948.990764,
+      "pos_consensus_dp" : 2627,
+      "propose" : 344.82169,
+      "propose_dp" : 92,
+      "write" : 592.995311,
+      "write_dp" : 445,
+      "accept" : 1253.9287109999998,
+      "accept_dp" : 201
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 1130581,
+      "message_count" : 17135
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 9967061,
+      "message_count" : 181980
+    } ]
+  }, {
+    "ops" : 92000,
+    "time" : 1784369373608,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3816.794,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 12533.094806,
+      "total_dp" : 2244,
+      "consensus" : 2280.424792,
+      "consensus_dp" : 252,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 10454.032596000001,
+      "pos_consensus_dp" : 2211,
+      "propose" : 327.732986,
+      "propose_dp" : 91,
+      "write" : 581.613855,
+      "write_dp" : 266,
+      "accept" : 1371.077951,
+      "accept_dp" : 198
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 1145151,
+      "message_count" : 17355
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 10074672,
+      "message_count" : 183940
+    } ]
+  }, {
+    "ops" : 93000,
+    "time" : 1784369373854,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 4081.6326,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 10032.482546,
+      "total_dp" : 2948,
+      "consensus" : 2301.658812,
+      "consensus_dp" : 234,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 7939.74367,
+      "pos_consensus_dp" : 2987,
+      "propose" : 345.219809,
+      "propose_dp" : 75,
+      "write" : 535.577467,
+      "write_dp" : 234,
+      "accept" : 1420.8615360000001,
+      "accept_dp" : 156
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 1158498,
+      "message_count" : 17558
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 10189431,
+      "message_count" : 186030
+    } ]
+  }, {
+    "ops" : 94000,
+    "time" : 1784369374108,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3952.569,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7668.789892,
+      "total_dp" : 2192,
+      "consensus" : 2358.83345,
+      "consensus_dp" : 751,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5536.896929,
+      "pos_consensus_dp" : 2070,
+      "propose" : 378.579918,
+      "propose_dp" : 72,
+      "write" : 467.83358899999996,
+      "write_dp" : 207,
+      "accept" : 1512.4199429999999,
+      "accept_dp" : 741
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 1171570,
+      "message_count" : 17756
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 10297373,
+      "message_count" : 187996
+    } ]
+  }, {
+    "ops" : 95000,
+    "time" : 1784369374369,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3846.1538,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7707.6826200000005,
+      "total_dp" : 2644,
+      "consensus" : 2291.6413700000003,
+      "consensus_dp" : 447,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5658.621734,
+      "pos_consensus_dp" : 2630,
+      "propose" : 390.05927299999996,
+      "propose_dp" : 134,
+      "write" : 487.899067,
+      "write_dp" : 202,
+      "accept" : 1413.68303,
+      "accept_dp" : 399
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 1184551,
+      "message_count" : 17952
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 10407181,
+      "message_count" : 189996
+    } ]
+  }, {
+    "ops" : 96000,
+    "time" : 1784369374619,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 4016.0642,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8014.805165,
+      "total_dp" : 1768,
+      "consensus" : 2375.684776,
+      "consensus_dp" : 185,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5855.293495,
+      "pos_consensus_dp" : 1763,
+      "propose" : 369.88149699999997,
+      "propose_dp" : 57,
+      "write" : 566.367851,
+      "write_dp" : 178,
+      "accept" : 1439.435428,
+      "accept_dp" : 168
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 1197823,
+      "message_count" : 18153
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 10516876,
+      "message_count" : 191994
+    } ]
+  }, {
+    "ops" : 97000,
+    "time" : 1784369374871,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3984.0637,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 9057.346219000001,
+      "total_dp" : 2164,
+      "consensus" : 2419.3874100000003,
+      "consensus_dp" : 736,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6847.959207999999,
+      "pos_consensus_dp" : 2017,
+      "propose" : 361.97215500000004,
+      "propose_dp" : 64,
+      "write" : 633.8927659999999,
+      "write_dp" : 857,
+      "accept" : 1423.522489,
+      "accept_dp" : 216
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 1211296,
+      "message_count" : 18357
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 10626143,
+      "message_count" : 193984
+    } ]
+  }, {
+    "ops" : 98000,
+    "time" : 1784369375127,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3921.5686,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 8189.932852,
+      "total_dp" : 2291,
+      "consensus" : 2343.102694,
+      "consensus_dp" : 616,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 6065.82826,
+      "pos_consensus_dp" : 2203,
+      "propose" : 346.140526,
+      "propose_dp" : 86,
+      "write" : 495.90235600000005,
+      "write_dp" : 197,
+      "accept" : 1501.059812,
+      "accept_dp" : 566
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 1224757,
+      "message_count" : 18561
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 10737707,
+      "message_count" : 196016
+    } ]
+  }, {
+    "ops" : 99000,
+    "time" : 1784369375382,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 3937.0078,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 7790.796326000001,
+      "total_dp" : 1676,
+      "consensus" : 2043.536378,
+      "consensus_dp" : 219,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 5937.843732,
+      "pos_consensus_dp" : 1675,
+      "propose" : 303.586891,
+      "propose_dp" : 91,
+      "write" : 478.198424,
+      "write_dp" : 169,
+      "accept" : 1261.7510630000002,
+      "accept_dp" : 205
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 1239094,
+      "message_count" : 18779
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 10847187,
+      "message_count" : 198010
+    } ]
+  }, {
+    "ops" : 100000,
+    "time" : 1784369375734,
+    "throughput" : {
+      "unit" : "ops/sec",
+      "tp" : 2849.003,
+      "max" : 4115.2266
+    },
+    "latency" : {
+      "unit" : "us",
+      "total" : 4360.884006,
+      "total_dp" : 2356,
+      "consensus" : 1281.013379,
+      "consensus_dp" : 529,
+      "pre_consensus" : 0.0,
+      "pre_consensus_dp" : 0,
+      "pos_consensus" : 3159.9756719999996,
+      "pos_consensus_dp" : 2047,
+      "propose" : 132.248915,
+      "propose_dp" : 91,
+      "write" : 256.59962,
+      "write_dp" : 338,
+      "accept" : 892.164844,
+      "accept_dp" : 366
+    },
+    "batch_requests" : {
+      "avg_size" : 27.743,
+      "dp" : 18
+    },
+    "message_sizes" : [ {
+      "name" : "ConsensusMessage",
+      "byte_count" : 1279017,
+      "message_count" : 19383
+    }, {
+      "name" : "StandardSMMessage",
+      "byte_count" : 424,
+      "message_count" : 22
+    }, {
+      "name" : "TOMMessage",
+      "byte_count" : 10958081,
+      "message_count" : 200030
+    } ]
+  } ]
+}

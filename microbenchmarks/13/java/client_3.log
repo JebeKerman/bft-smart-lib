@@ -1,0 +1,66 @@
+Launching client 1060
+Launching client 1061
+Launching client 1062
+Launching client 1063
+Launching client 1064
+Launching client 1065
+Launching client 1066
+Launching client 1067
+Launching client 1068
+Launching client 1069
+Launching client 1070
+Launching client 1071
+Launching client 1072
+Launching client 1073
+Launching client 1074
+Launching client 1075
+Launching client 1076
+Launching client 1077
+Launching client 1078
+Launching client 1079
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Warm up...
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+Executing experiment for 500 ops
+1060 // Average time for 500 executions (-10%) = 15993.617975 us 
+1060 // Standard desviation for 500 executions (-10%) = 860.6570046631989 us 
+1060 // Average time for 500 executions (all samples) = 15888.830539999999 us 
+1060 // Standard desviation for 500 executions (all samples) = 2372.3624766246903 us 
+1060 // Maximum time for 500 executions (all samples) = 27647 us 
+All clients done.
