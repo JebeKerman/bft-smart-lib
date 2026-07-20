@@ -28,19 +28,18 @@ def main():
     df_measurements = convert_measurements_to_df(server_logs)
     df_message_sizes = convert_message_sizes_to_df(server_logs)
 
-
-#    print(df_message_sizes)
-#    df = df_message_sizes.sort_values(["run_id", "server_id", "serializer", "message", "ops"])
-#    df["msg_count_diff"] = df["message_count"].diff()
-#    df["time_diff_s"] = df["time"].diff() / 1000
-#    df["msg_per_second"] = df["msg_count_diff"] / df["time_diff_s"]
-#    mean_counts = (
-#        df.groupby(["run_id", "serializer", "message",])["msg_per_second"]
-#        .mean()
-#        .reset_index(name="mean_count_per_second")
-#    )
-#    print(df)
-#    print(mean_counts[mean_counts["run_id"] == "16"][mean_counts["message"] != "StandardSMMessage"])
+    #    print(df_message_sizes)
+    #    df = df_message_sizes.sort_values(["run_id", "server_id", "serializer", "message", "ops"])
+    #    df["msg_count_diff"] = df["message_count"].diff()
+    #    df["time_diff_s"] = df["time"].diff() / 1000
+    #    df["msg_per_second"] = df["msg_count_diff"] / df["time_diff_s"]
+    #    mean_counts = (
+    #        df.groupby(["run_id", "serializer", "message",])["msg_per_second"]
+    #        .mean()
+    #        .reset_index(name="mean_count_per_second")
+    #    )
+    #    print(df)
+    #    print(mean_counts[mean_counts["run_id"] == "16"][mean_counts["message"] != "StandardSMMessage"])
     plot_tp(df_measurements, output_dir)
     plot_msg_sizes(df_message_sizes, output_dir)
 
@@ -89,6 +88,7 @@ def convert_measurements_to_df(server_logs: list[Dict]) -> pd.DataFrame:
         }
     )
     df["latency"] = df["latency"] / 1000
+    df["num_clients"] = df["num_clients"].astype(int)
     return df
 
 
@@ -119,6 +119,7 @@ def convert_message_sizes_to_df(server_logs: list[Dict]) -> pd.DataFrame:
             "proto": "Proto",
         }
     )
+    df["num_clients"] = df["num_clients"].astype(int)
     return df
 
 

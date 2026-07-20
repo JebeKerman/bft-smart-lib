@@ -7,6 +7,7 @@ PLOT_COLORS = {
     "Proto": "tab:green",
 }
 
+
 def save_as_pdf_and_png(output_dir: Path, file_name: str):
     output_file = output_dir / f"{file_name}.png"
     plt.savefig(output_file, dpi=200)

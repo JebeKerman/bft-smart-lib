@@ -11,7 +11,7 @@ def plot_tp(df: pd.DataFrame, out_dir: Path):
         plot_tp_over_time(group_df, out_dir / run_id)
         plot_tp_mean(group_df, out_dir / run_id)
         plot_latency_mean(group_df, out_dir / run_id)
-    
+
     plot_runs(df, out_dir)
     plot_runs_tp(df, out_dir)
     plot_runs_latency(df, out_dir)
@@ -123,12 +123,14 @@ def plot_runs(df: pd.DataFrame, out_dir: Path):
 
 
 def plot_runs_tp(df: pd.DataFrame, out_dir: Path):
-    plot_df = df.groupby(["serializer", "run_id", "num_clients"], as_index=False).agg(
-        mean_throughput=("throughput", "mean")
-    ).pivot(
-        index="num_clients",
-        columns="serializer",
-        values="mean_throughput",
+    plot_df = (
+        df.groupby(["serializer", "run_id", "num_clients"], as_index=False)
+        .agg(mean_throughput=("throughput", "mean"))
+        .pivot(
+            index="num_clients",
+            columns="serializer",
+            values="mean_throughput",
+        )
     )
 
     ax = plot_df.plot.bar(
@@ -149,12 +151,14 @@ def plot_runs_tp(df: pd.DataFrame, out_dir: Path):
 
 
 def plot_runs_latency(df: pd.DataFrame, out_dir: Path):
-    plot_df = df.groupby(["serializer", "run_id", "num_clients"], as_index=False).agg(
-        mean_latency=("latency", "mean")
-    ).pivot(
-        index="num_clients",
-        columns="serializer",
-        values="mean_latency",
+    plot_df = (
+        df.groupby(["serializer", "run_id", "num_clients"], as_index=False)
+        .agg(mean_latency=("latency", "mean"))
+        .pivot(
+            index="num_clients",
+            columns="serializer",
+            values="mean_latency",
+        )
     )
 
     ax = plot_df.plot.bar(
@@ -172,4 +176,3 @@ def plot_runs_latency(df: pd.DataFrame, out_dir: Path):
     plt.tight_layout()
 
     save_as_pdf_and_png(out_dir, "latency")
-
