@@ -1,0 +1,34 @@
+{
+    "11": {
+        "num_clients": "5",
+        "mode": "synchronous"
+    },
+    "12": {
+        "num_clients": "50",
+        "mode": "synchronous"
+    },
+    "13": {
+        "num_clients": "100",
+        "mode": "synchronous"
+    },
+    "14": {
+        "num_clients": "200",
+        "mode": "synchronous"
+    },
+    "15": {
+        "num_clients": "400",
+        "mode": "synchronous"
+    },
+    "16": {
+        "num_clients": "800",
+        "mode": "synchronous"
+    },
+    "17": {
+        "num_clients": "1200",
+        "mode": "synchronous" 
+    },
+    "18": {
+        "num_clients": "1600",
+        "mode": "synchronous" 
+    }
+}
