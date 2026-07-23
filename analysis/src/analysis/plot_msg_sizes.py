@@ -25,6 +25,7 @@ def main():
     df = extend_df(df)
 
     plot_message_sizes_absolute(df, output_dir)
+    plot_message_sizes_absolute_ppt(df, output_dir)
     plot_message_sizes_relative(df, output_dir)
     table_message_size(df, output_dir)
 
@@ -141,6 +142,37 @@ def plot_message_sizes_relative(df: pd.DataFrame, output_dir: Path):
     plt.tight_layout()
 
     save_as_pdf_and_png(output_dir, "message_size_relative")
+
+
+def plot_message_sizes_absolute_ppt(df: pd.DataFrame, output_dir: Path):
+    pivot = df.pivot(
+        index="message",
+        columns="serializer",
+        values="byte_size",
+    )
+    ax = pivot.plot.bar(
+        capsize=4,
+        figsize=(8, 4),
+        color=PLOT_COLORS,
+    )
+
+    ax.set_title("")
+    ax.set_xlabel("")
+    ax.set_ylabel("Message Size [Byte]", fontsize=12)
+    ax.get_legend().remove()
+
+    ax.grid(axis="y", alpha=0.3)
+
+    ax.tick_params(axis="both", labelsize=11)
+
+    ax.grid(axis="y", alpha=0.3)
+    plt.xticks(rotation=30, ha="right")
+    plt.tight_layout()
+
+    save_as_pdf_and_png(
+        output_dir,
+        "message_size_absolute_ppt",
+    )
 
 
 def table_message_size(df: pd.DataFrame, output_dir: Path):

@@ -14,7 +14,9 @@ def plot_tp(df: pd.DataFrame, out_dir: Path):
 
     plot_runs(df, out_dir)
     plot_runs_tp(df, out_dir)
+    plot_runs_tp_ppt(df, out_dir)
     plot_runs_latency(df, out_dir)
+    plot_runs_latency_ppt(df, out_dir)
 
 
 def plot_tp_over_time(df: pd.DataFrame, out_dir: Path):
@@ -150,6 +152,43 @@ def plot_runs_tp(df: pd.DataFrame, out_dir: Path):
     save_as_pdf_and_png(out_dir, "throughput")
 
 
+def plot_runs_tp_ppt(df: pd.DataFrame, output_dir: Path):
+    plot_df = (
+        df.groupby(["serializer", "run_id", "num_clients"], as_index=False)
+        .agg(mean_throughput=("throughput", "mean"))
+        .pivot(
+            index="num_clients",
+            columns="serializer",
+            values="mean_throughput",
+        )
+    )
+
+    ax = plot_df.plot.bar(
+        capsize=4,
+        figsize=(6, 4),
+    )
+
+    ax.set_title("")
+    ax.set_xlabel("Number of Clients")
+    ax.set_ylabel("Mean Throughput [ops/s]")
+    ax.get_legend().remove()
+
+    ax.tick_params(axis="both", labelsize=11)
+
+    plt.xticks(rotation=30, ha="right")
+
+    ax.grid(
+        axis="y",
+        alpha=0.25,
+    )
+
+    plt.xticks(rotation=0, ha="center")
+
+    plt.tight_layout()
+
+    save_as_pdf_and_png(output_dir, "throughput_ppt")
+
+
 def plot_runs_latency(df: pd.DataFrame, out_dir: Path):
     plot_df = (
         df.groupby(["serializer", "run_id", "num_clients"], as_index=False)
@@ -176,3 +215,39 @@ def plot_runs_latency(df: pd.DataFrame, out_dir: Path):
     plt.tight_layout()
 
     save_as_pdf_and_png(out_dir, "latency")
+
+
+def plot_runs_latency_ppt(df: pd.DataFrame, out_dir: Path):
+
+    plot_df = (
+        df.groupby(["serializer", "run_id", "num_clients"], as_index=False)
+        .agg(mean_latency=("latency", "mean"))
+        .pivot(
+            index="num_clients",
+            columns="serializer",
+            values="mean_latency",
+        )
+    )
+
+    ax = plot_df.plot.bar(
+        capsize=4,
+        figsize=(6, 4),
+    )
+
+    ax.set_title("")
+    ax.set_xlabel("Number of Clients")
+    ax.set_ylabel("Mean Latency [ms]")
+    ax.get_legend().remove()
+
+    ax.tick_params(axis="both", labelsize=11)
+    plt.xticks(rotation=30, ha="right")
+
+    ax.grid(
+        axis="y",
+        alpha=0.25,
+    )
+
+    plt.xticks(rotation=0, ha="center")
+
+    plt.tight_layout()
+    save_as_pdf_and_png(out_dir, "latency_ppt")
