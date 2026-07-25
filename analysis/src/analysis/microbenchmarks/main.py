@@ -52,7 +52,6 @@ def main():
             mean_counts["message"] != "StandardSMMessage"
         ]
     )
-    sys.exit(2)
 
     plot_tp(df_measurements, output_dir)
     plot_msg_sizes(df_message_sizes, output_dir)
