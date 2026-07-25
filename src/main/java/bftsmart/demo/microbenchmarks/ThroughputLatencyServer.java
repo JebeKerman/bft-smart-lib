@@ -87,10 +87,9 @@ public final class ThroughputLatencyServer extends DefaultRecoverable {
     private FileChannel channel = null;
 
     /** Optional jsonWrite to store in json file instead of printing to stdout */
-    private BufferedWriter jsonWriter;
-    private ArrayNode measurements;
-
-    private ObjectMapper mapper = new ObjectMapper();
+    private final boolean createJsonFile;
+    private final ArrayNode measurements;
+    private final ObjectMapper mapper;
 
     public ThroughputLatencyServer(int id, int interval, int replySize, int stateSize,
             boolean context, int signed, int write) throws IOException {
@@ -142,15 +141,9 @@ public final class ThroughputLatencyServer extends DefaultRecoverable {
         }
         replica = new ServiceReplica(id, this, this);
 
-        if (metricsFile != null) {
-            Path path = Paths.get(metricsFile);
-
-            jsonWriter = Files.newBufferedWriter(
-                path,
-                StandardOpenOption.CREATE,
-                StandardOpenOption.TRUNCATE_EXISTING
-            );
-
+        createJsonFile = metricsFile != null;
+        if (createJsonFile) {
+            mapper = new ObjectMapper();
             ObjectNode root = mapper.createObjectNode();
 
             root.put("id", id);
@@ -162,6 +155,12 @@ public final class ThroughputLatencyServer extends DefaultRecoverable {
                 @Override
                 public void run() {
                     try {
+                        Path path = Paths.get(metricsFile);
+                        BufferedWriter jsonWriter = Files.newBufferedWriter(
+                            path,
+                            StandardOpenOption.CREATE,
+                            StandardOpenOption.TRUNCATE_EXISTING
+                        );
                         mapper.writerWithDefaultPrettyPrinter().writeValue(jsonWriter, root);
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -169,7 +168,8 @@ public final class ThroughputLatencyServer extends DefaultRecoverable {
                 }
             });
         } else {
-            jsonWriter = null;
+            mapper = null;
+            measurements = null;
         }
     }
 
@@ -351,10 +351,12 @@ public final class ThroughputLatencyServer extends DefaultRecoverable {
             if (tp > maxTp)
                 maxTp = tp;
 
-            if (jsonWriter != null) {
+            if (createJsonFile) {
                 ObjectNode m = mapper.createObjectNode();
-
+                long time = System.currentTimeMillis();
                 m.put("ops", iterations);
+                m.put("time", time);
+
                 ObjectNode throughput = m.putObject("throughput");
                 throughput.put("unit", "ops/sec");
                 throughput.put("tp", tp);

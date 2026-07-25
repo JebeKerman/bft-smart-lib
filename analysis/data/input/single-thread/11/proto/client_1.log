@@ -1,0 +1,9 @@
+Launching client 1001
+Warm up...
+Executing experiment for 500 ops
+1001 // Average time for 500 executions (-10%) = 6770.433150000001 us 
+1001 // Standard desviation for 500 executions (-10%) = 343.2803288249202 us 
+1001 // Average time for 500 executions (all samples) = 6940.3159780000005 us 
+1001 // Standard desviation for 500 executions (all samples) = 1250.244239879062 us 
+1001 // Maximum time for 500 executions (all samples) = 20997 us 
+All clients done.

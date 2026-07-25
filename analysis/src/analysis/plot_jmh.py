@@ -6,6 +6,8 @@ from typing import Dict
 import matplotlib.pyplot as plt
 import pandas as pd
 
+from analysis.util import save_as_pdf_and_png
+
 
 def main():
     if len(sys.argv) != 3:
@@ -24,6 +26,7 @@ def main():
 
     plot_bar_charts(df, output_dir)
     plot_relative_speedup(df, output_dir)
+    plot_relative_speedup_ppt(df, output_dir)
     table_relative_speedup(df, output_dir)
 
 
@@ -127,10 +130,7 @@ def plot_bar_charts(df: pd.DataFrame, output_dir: Path):
         plt.xticks(rotation=45, ha="right")
         plt.tight_layout()
 
-        output_file = output_dir / f"avg_time_by_message_{method}.pdf"
-        plt.savefig(output_file, dpi=200)
-        plt.close()
-        print(f"Generated plot {output_file}")
+        save_as_pdf_and_png(output_dir, f"avg_time_by_message_{method}")
 
 
 def plot_relative_speedup(df: pd.DataFrame, output_dir: Path):
@@ -161,10 +161,54 @@ def plot_relative_speedup(df: pd.DataFrame, output_dir: Path):
         plt.xticks(rotation=45, ha="right")
         plt.tight_layout()
 
-        output_file = output_dir / f"relative_speedup_{method}.pdf"
-        plt.savefig(output_file, dpi=200)
-        plt.close()
-        print(f"Generated plot {output_file}")
+        save_as_pdf_and_png(output_dir, f"relative_speedup_{method}")
+
+
+def plot_relative_speedup_ppt(df: pd.DataFrame, output_dir: Path):
+    for method, method_df in df.groupby("method", observed=True):
+        speedup_table = method_df.pivot(
+            index="message",
+            columns="serializer",
+            values="speedup_vs_java",
+        )
+        speedup_table = speedup_table[["Java", "Proto", "Kryo"]].round(2)
+
+        ax = speedup_table.plot.bar(
+            figsize=(7, 4.2),
+            width=0.8,
+            capsize=3,
+        )
+
+        ax.set_title("")
+        ax.set_xlabel("")
+        ax.set_ylabel("Speedup vs. Java", fontsize=12)
+        ax.get_legend().remove()
+
+        ax.tick_params(axis="both", labelsize=11)
+
+        plt.xticks(
+            rotation=30,
+            ha="right",
+        )
+
+        ax.grid(
+            axis="y",
+            alpha=0.25,
+        )
+
+        ax.axhline(
+            y=1,
+            linestyle="--",
+            linewidth=1,
+            alpha=0.6,
+        )
+
+        plt.tight_layout()
+
+        save_as_pdf_and_png(
+            output_dir,
+            f"relative_speedup_{method}_ppt",
+        )
 
 
 def table_relative_speedup(df: pd.DataFrame, output_dir: Path):

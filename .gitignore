@@ -14,3 +14,5 @@ build
 .jqwik-database
 
 __pycache__
+
+analysis/data/out/
